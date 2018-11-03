@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Exterior Closures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @exterior_closures.each do |exterior_closure| %>
+      <tr>
+        <td><%= exterior_closure.name %></td>
+        <td><%= exterior_closure.value %></td>
+        <td><%= link_to 'Show', exterior_closure %></td>
+        <td><%= link_to 'Edit', edit_exterior_closure_path(exterior_closure) %></td>
+        <td><%= link_to 'Destroy', exterior_closure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Exterior Closure', new_exterior_closure_path %>

@@ -1,0 +1,2 @@
+module PropertyExteriorClosuresHelper
+end

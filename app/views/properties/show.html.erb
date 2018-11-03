@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Debt taxation:</strong>
+  <%= @property.debt_taxation %>
+</p>
+
+<p>
+  <strong>Antiquity:</strong>
+  <%= @property.antiquity %>
+</p>
+
+<p>
+  <strong>Expropriation:</strong>
+  <%= @property.expropriation %>
+</p>
+
+<p>
+  <strong>Sill:</strong>
+  <%= @property.sill %>
+</p>
+
+<p>
+  <strong>Assessment:</strong>
+  <%= @property.assessment %>
+</p>
+
+<p>
+  <strong>Facilities:</strong>
+  <%= @property.facilities %>
+</p>
+
+<%= link_to 'Edit', edit_property_path(@property) %> |
+<%= link_to 'Back', properties_path %>

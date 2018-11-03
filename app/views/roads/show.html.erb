@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @road.name %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @road.value %>
+</p>
+
+<%= link_to 'Edit', edit_road_path(@road) %> |
+<%= link_to 'Back', roads_path %>

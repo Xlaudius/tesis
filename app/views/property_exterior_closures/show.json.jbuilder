@@ -1,0 +1,1 @@
+json.partial! "property_exterior_closures/property_exterior_closure", property_exterior_closure: @property_exterior_closure

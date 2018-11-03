@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Distance:</strong>
+  <%= @property_sector.distance %>
+</p>
+
+<p>
+  <strong>Property:</strong>
+  <%= @property_sector.property %>
+</p>
+
+<p>
+  <strong>Sector:</strong>
+  <%= @property_sector.sector %>
+</p>
+
+<%= link_to 'Edit', edit_property_sector_path(@property_sector) %> |
+<%= link_to 'Back', property_sectors_path %>

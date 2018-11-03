@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Property Dry Walls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dry wall</th>
+      <th>Property</th>
+      <th>Other</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @property_dry_walls.each do |property_dry_wall| %>
+      <tr>
+        <td><%= property_dry_wall.dry_wall %></td>
+        <td><%= property_dry_wall.property %></td>
+        <td><%= property_dry_wall.other %></td>
+        <td><%= link_to 'Show', property_dry_wall %></td>
+        <td><%= link_to 'Edit', edit_property_dry_wall_path(property_dry_wall) %></td>
+        <td><%= link_to 'Destroy', property_dry_wall, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property Dry Wall', new_property_dry_wall_path %>

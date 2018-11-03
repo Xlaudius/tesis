@@ -1,0 +1,2 @@
+module FurnitureCoversHelper
+end

@@ -1,0 +1,2 @@
+module InteriorClosuresHelper
+end

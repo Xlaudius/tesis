@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ga.name %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @ga.value %>
+</p>
+
+<%= link_to 'Edit', edit_ga_path(@ga) %> |
+<%= link_to 'Back', gas_path %>

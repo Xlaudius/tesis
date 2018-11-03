@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @drinking_water.name %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @drinking_water.value %>
+</p>
+
+<%= link_to 'Edit', edit_drinking_water_path(@drinking_water) %> |
+<%= link_to 'Back', drinking_waters_path %>

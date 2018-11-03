@@ -1,0 +1,27 @@
+<%= form_with(model: property_drinking_water, local: true) do |form| %>
+  <% if property_drinking_water.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(property_drinking_water.errors.count, "error") %> prohibited this property_drinking_water from being saved:</h2>
+
+      <ul>
+      <% property_drinking_water.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :drinking_water_id %>
+    <%= form.text_field :drinking_water_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :property_id %>
+    <%= form.text_field :property_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

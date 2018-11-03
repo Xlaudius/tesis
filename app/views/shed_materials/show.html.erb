@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @shed_material.name %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @shed_material.value %>
+</p>
+
+<%= link_to 'Edit', edit_shed_material_path(@shed_material) %> |
+<%= link_to 'Back', shed_materials_path %>

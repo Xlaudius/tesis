@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @door_frame.name %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @door_frame.value %>
+</p>
+
+<%= link_to 'Edit', edit_door_frame_path(@door_frame) %> |
+<%= link_to 'Back', door_frames_path %>

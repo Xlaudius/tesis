@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Heating:</strong>
+  <%= @property_heating.heating %>
+</p>
+
+<p>
+  <strong>Property:</strong>
+  <%= @property_heating.property %>
+</p>
+
+<%= link_to 'Edit', edit_property_heating_path(@property_heating) %> |
+<%= link_to 'Back', property_heatings_path %>

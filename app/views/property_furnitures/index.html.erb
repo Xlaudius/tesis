@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Property Furnitures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Furniture</th>
+      <th>Property</th>
+      <th>Furniture cover</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @property_furnitures.each do |property_furniture| %>
+      <tr>
+        <td><%= property_furniture.furniture %></td>
+        <td><%= property_furniture.property %></td>
+        <td><%= property_furniture.furniture_cover %></td>
+        <td><%= link_to 'Show', property_furniture %></td>
+        <td><%= link_to 'Edit', edit_property_furniture_path(property_furniture) %></td>
+        <td><%= link_to 'Destroy', property_furniture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property Furniture', new_property_furniture_path %>

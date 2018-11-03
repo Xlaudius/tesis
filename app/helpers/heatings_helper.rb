@@ -1,0 +1,2 @@
+module HeatingsHelper
+end

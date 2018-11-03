@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @housing_quality.name %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @housing_quality.value %>
+</p>
+
+<%= link_to 'Edit', edit_housing_quality_path(@housing_quality) %> |
+<%= link_to 'Back', housing_qualities_path %>

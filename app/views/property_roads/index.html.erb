@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Property Roads</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Road</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @property_roads.each do |property_road| %>
+      <tr>
+        <td><%= property_road.property %></td>
+        <td><%= property_road.road %></td>
+        <td><%= link_to 'Show', property_road %></td>
+        <td><%= link_to 'Edit', edit_property_road_path(property_road) %></td>
+        <td><%= link_to 'Destroy', property_road, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property Road', new_property_road_path %>

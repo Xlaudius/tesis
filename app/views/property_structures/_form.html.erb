@@ -1,0 +1,32 @@
+<%= form_with(model: property_structure, local: true) do |form| %>
+  <% if property_structure.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(property_structure.errors.count, "error") %> prohibited this property_structure from being saved:</h2>
+
+      <ul>
+      <% property_structure.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :observations %>
+    <%= form.text_area :observations %>
+  </div>
+
+  <div class="field">
+    <%= form.label :property_id %>
+    <%= form.text_field :property_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :structure_id %>
+    <%= form.text_field :structure_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+module HousingQualitiesHelper
+end

@@ -1,0 +1,47 @@
+<%= form_with(model: property, local: true) do |form| %>
+  <% if property.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
+
+      <ul>
+      <% property.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :debt_taxation %>
+    <%= form.text_field :debt_taxation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :antiquity %>
+    <%= form.number_field :antiquity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expropriation %>
+    <%= form.check_box :expropriation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sill %>
+    <%= form.check_box :sill %>
+  </div>
+
+  <div class="field">
+    <%= form.label :assessment_id %>
+    <%= form.text_field :assessment_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :facilities %>
+    <%= form.check_box :facilities %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

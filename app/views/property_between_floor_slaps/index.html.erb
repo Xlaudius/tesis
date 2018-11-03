@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Property Between Floor Slaps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Between floor slap</th>
+      <th>Property</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @property_between_floor_slaps.each do |property_between_floor_slap| %>
+      <tr>
+        <td><%= property_between_floor_slap.between_floor_slap %></td>
+        <td><%= property_between_floor_slap.property %></td>
+        <td><%= link_to 'Show', property_between_floor_slap %></td>
+        <td><%= link_to 'Edit', edit_property_between_floor_slap_path(property_between_floor_slap) %></td>
+        <td><%= link_to 'Destroy', property_between_floor_slap, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property Between Floor Slap', new_property_between_floor_slap_path %>

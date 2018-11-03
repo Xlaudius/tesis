@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pavement.name %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @pavement.value %>
+</p>
+
+<%= link_to 'Edit', edit_pavement_path(@pavement) %> |
+<%= link_to 'Back', pavements_path %>

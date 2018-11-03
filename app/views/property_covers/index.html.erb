@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Property Covers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Observations</th>
+      <th>Property</th>
+      <th>Cover</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @property_covers.each do |property_cover| %>
+      <tr>
+        <td><%= property_cover.observations %></td>
+        <td><%= property_cover.property %></td>
+        <td><%= property_cover.cover %></td>
+        <td><%= link_to 'Show', property_cover %></td>
+        <td><%= link_to 'Edit', edit_property_cover_path(property_cover) %></td>
+        <td><%= link_to 'Destroy', property_cover, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property Cover', new_property_cover_path %>

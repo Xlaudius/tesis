@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sewerage:</strong>
+  <%= @property_sewerage.sewerage %>
+</p>
+
+<p>
+  <strong>Property:</strong>
+  <%= @property_sewerage.property %>
+</p>
+
+<%= link_to 'Edit', edit_property_sewerage_path(@property_sewerage) %> |
+<%= link_to 'Back', property_sewerages_path %>

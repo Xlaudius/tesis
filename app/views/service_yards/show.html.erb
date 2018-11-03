@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Img:</strong>
+  <%= @service_yard.img %>
+</p>
+
+<p>
+  <strong>Mts2:</strong>
+  <%= @service_yard.mts2 %>
+</p>
+
+<p>
+  <strong>Property:</strong>
+  <%= @service_yard.property %>
+</p>
+
+<%= link_to 'Edit', edit_service_yard_path(@service_yard) %> |
+<%= link_to 'Back', service_yards_path %>

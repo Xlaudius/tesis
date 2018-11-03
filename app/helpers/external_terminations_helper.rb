@@ -1,0 +1,2 @@
+module ExternalTerminationsHelper
+end

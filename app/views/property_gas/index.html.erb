@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Property Gas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Gas</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @property_gas.each do |property_ga| %>
+      <tr>
+        <td><%= property_ga.property %></td>
+        <td><%= property_ga.gas %></td>
+        <td><%= link_to 'Show', property_ga %></td>
+        <td><%= link_to 'Edit', edit_property_ga_path(property_ga) %></td>
+        <td><%= link_to 'Destroy', property_ga, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property Ga', new_property_ga_path %>

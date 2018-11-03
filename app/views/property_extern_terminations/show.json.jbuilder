@@ -1,0 +1,1 @@
+json.partial! "property_extern_terminations/property_extern_termination", property_extern_termination: @property_extern_termination

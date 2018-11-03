@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Property Heatings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Heating</th>
+      <th>Property</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @property_heatings.each do |property_heating| %>
+      <tr>
+        <td><%= property_heating.heating %></td>
+        <td><%= property_heating.property %></td>
+        <td><%= link_to 'Show', property_heating %></td>
+        <td><%= link_to 'Edit', edit_property_heating_path(property_heating) %></td>
+        <td><%= link_to 'Destroy', property_heating, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property Heating', new_property_heating_path %>

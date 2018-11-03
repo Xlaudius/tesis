@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Street Locations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @street_locations.each do |street_location| %>
+      <tr>
+        <td><%= street_location.name %></td>
+        <td><%= street_location.value %></td>
+        <td><%= link_to 'Show', street_location %></td>
+        <td><%= link_to 'Edit', edit_street_location_path(street_location) %></td>
+        <td><%= link_to 'Destroy', street_location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Street Location', new_street_location_path %>

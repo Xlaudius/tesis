@@ -1,0 +1,2 @@
+module PropertyCoversHelper
+end

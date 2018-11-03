@@ -1,0 +1,1 @@
+json.partial! "property_toilet_artifacts/property_toilet_artifact", property_toilet_artifact: @property_toilet_artifact

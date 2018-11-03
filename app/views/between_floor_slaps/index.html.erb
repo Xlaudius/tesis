@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Between Floor Slaps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @between_floor_slaps.each do |between_floor_slap| %>
+      <tr>
+        <td><%= between_floor_slap.name %></td>
+        <td><%= between_floor_slap.value %></td>
+        <td><%= link_to 'Show', between_floor_slap %></td>
+        <td><%= link_to 'Edit', edit_between_floor_slap_path(between_floor_slap) %></td>
+        <td><%= link_to 'Destroy', between_floor_slap, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Between Floor Slap', new_between_floor_slap_path %>
