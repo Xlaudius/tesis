@@ -1,0 +1,32 @@
+<%= form_with(model: property_toilet_artifact, local: true) do |form| %>
+  <% if property_toilet_artifact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(property_toilet_artifact.errors.count, "error") %> prohibited this property_toilet_artifact from being saved:</h2>
+
+      <ul>
+      <% property_toilet_artifact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :property_id %>
+    <%= form.text_field :property_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :toilet_artifact_id %>
+    <%= form.text_field :toilet_artifact_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quality_id %>
+    <%= form.text_field :quality_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

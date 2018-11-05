@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Property Pavements</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pavement</th>
+      <th>Property</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @property_pavements.each do |property_pavement| %>
+      <tr>
+        <td><%= property_pavement.pavement %></td>
+        <td><%= property_pavement.property %></td>
+        <td><%= link_to 'Show', property_pavement %></td>
+        <td><%= link_to 'Edit', edit_property_pavement_path(property_pavement) %></td>
+        <td><%= link_to 'Destroy', property_pavement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property Pavement', new_property_pavement_path %>

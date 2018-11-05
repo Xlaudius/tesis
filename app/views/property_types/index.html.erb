@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Property Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @property_types.each do |property_type| %>
+      <tr>
+        <td><%= property_type.name %></td>
+        <td><%= link_to 'Show', property_type %></td>
+        <td><%= link_to 'Edit', edit_property_type_path(property_type) %></td>
+        <td><%= link_to 'Destroy', property_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property Type', new_property_type_path %>

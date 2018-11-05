@@ -1,0 +1,2 @@
+module PropertySecCharacteristicsHelper
+end

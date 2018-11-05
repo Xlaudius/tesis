@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Observations:</strong>
+  <%= @property_cover.observations %>
+</p>
+
+<p>
+  <strong>Property:</strong>
+  <%= @property_cover.property %>
+</p>
+
+<p>
+  <strong>Cover:</strong>
+  <%= @property_cover.cover %>
+</p>
+
+<%= link_to 'Edit', edit_property_cover_path(@property_cover) %> |
+<%= link_to 'Back', property_covers_path %>

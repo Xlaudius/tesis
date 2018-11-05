@@ -1,0 +1,2 @@
+module ToiletArtifactsHelper
+end

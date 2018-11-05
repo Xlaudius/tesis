@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Property Windows</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Window</th>
+      <th>Property</th>
+      <th>Other</th>
+      <th>Protections</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @property_windows.each do |property_window| %>
+      <tr>
+        <td><%= property_window.window %></td>
+        <td><%= property_window.property %></td>
+        <td><%= property_window.other %></td>
+        <td><%= property_window.protections %></td>
+        <td><%= link_to 'Show', property_window %></td>
+        <td><%= link_to 'Edit', edit_property_window_path(property_window) %></td>
+        <td><%= link_to 'Destroy', property_window, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property Window', new_property_window_path %>

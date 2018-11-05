@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Property Land Shapes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Land shape</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @property_land_shapes.each do |property_land_shape| %>
+      <tr>
+        <td><%= property_land_shape.property %></td>
+        <td><%= property_land_shape.land_shape %></td>
+        <td><%= link_to 'Show', property_land_shape %></td>
+        <td><%= link_to 'Edit', edit_property_land_shape_path(property_land_shape) %></td>
+        <td><%= link_to 'Destroy', property_land_shape, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property Land Shape', new_property_land_shape_path %>

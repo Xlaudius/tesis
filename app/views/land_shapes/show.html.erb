@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @land_shape.name %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @land_shape.value %>
+</p>
+
+<%= link_to 'Edit', edit_land_shape_path(@land_shape) %> |
+<%= link_to 'Back', land_shapes_path %>

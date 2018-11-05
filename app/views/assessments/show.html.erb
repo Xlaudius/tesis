@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number assesment:</strong>
+  <%= @assessment.number_assesment %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @assessment.state %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @assessment.location %>
+</p>
+
+<p>
+  <strong>Inhabited:</strong>
+  <%= @assessment.inhabited %>
+</p>
+
+<p>
+  <strong>Habitant:</strong>
+  <%= @assessment.habitant %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @assessment.client %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @assessment.owner %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @assessment.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @assessment.end_date %>
+</p>
+
+<%= link_to 'Edit', edit_assessment_path(@assessment) %> |
+<%= link_to 'Back', assessments_path %>

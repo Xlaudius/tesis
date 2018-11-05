@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @window.name %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @window.value %>
+</p>
+
+<%= link_to 'Edit', edit_window_path(@window) %> |
+<%= link_to 'Back', windows_path %>

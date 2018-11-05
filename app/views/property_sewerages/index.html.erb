@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Property Sewerages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sewerage</th>
+      <th>Property</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @property_sewerages.each do |property_sewerage| %>
+      <tr>
+        <td><%= property_sewerage.sewerage %></td>
+        <td><%= property_sewerage.property %></td>
+        <td><%= link_to 'Show', property_sewerage %></td>
+        <td><%= link_to 'Edit', edit_property_sewerage_path(property_sewerage) %></td>
+        <td><%= link_to 'Destroy', property_sewerage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property Sewerage', new_property_sewerage_path %>

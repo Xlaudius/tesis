@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Property Stairs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Stair</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @property_stairs.each do |property_stair| %>
+      <tr>
+        <td><%= property_stair.property %></td>
+        <td><%= property_stair.stair %></td>
+        <td><%= link_to 'Show', property_stair %></td>
+        <td><%= link_to 'Edit', edit_property_stair_path(property_stair) %></td>
+        <td><%= link_to 'Destroy', property_stair, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property Stair', new_property_stair_path %>

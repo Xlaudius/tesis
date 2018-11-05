@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Side walk:</strong>
+  <%= @property_sidewalk.side_walk %>
+</p>
+
+<p>
+  <strong>Property:</strong>
+  <%= @property_sidewalk.property %>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @property_sidewalk.width %>
+</p>
+
+<%= link_to 'Edit', edit_property_sidewalk_path(@property_sidewalk) %> |
+<%= link_to 'Back', property_sidewalks_path %>

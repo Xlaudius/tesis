@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Property Water Rain Ducts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Water rain duct</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @property_water_rain_ducts.each do |property_water_rain_duct| %>
+      <tr>
+        <td><%= property_water_rain_duct.property %></td>
+        <td><%= property_water_rain_duct.water_rain_duct %></td>
+        <td><%= link_to 'Show', property_water_rain_duct %></td>
+        <td><%= link_to 'Edit', edit_property_water_rain_duct_path(property_water_rain_duct) %></td>
+        <td><%= link_to 'Destroy', property_water_rain_duct, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property Water Rain Duct', new_property_water_rain_duct_path %>

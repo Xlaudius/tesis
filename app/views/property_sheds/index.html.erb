@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Property Sheds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Shed</th>
+      <th>Property</th>
+      <th>Shed material</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @property_sheds.each do |property_shed| %>
+      <tr>
+        <td><%= property_shed.shed %></td>
+        <td><%= property_shed.property %></td>
+        <td><%= property_shed.shed_material %></td>
+        <td><%= link_to 'Show', property_shed %></td>
+        <td><%= link_to 'Edit', edit_property_shed_path(property_shed) %></td>
+        <td><%= link_to 'Destroy', property_shed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property Shed', new_property_shed_path %>

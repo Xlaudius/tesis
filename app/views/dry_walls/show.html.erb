@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @dry_wall.name %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @dry_wall.value %>
+</p>
+
+<%= link_to 'Edit', edit_dry_wall_path(@dry_wall) %> |
+<%= link_to 'Back', dry_walls_path %>

@@ -1,0 +1,27 @@
+<%= form_with(model: property_enlar_quality, local: true) do |form| %>
+  <% if property_enlar_quality.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(property_enlar_quality.errors.count, "error") %> prohibited this property_enlar_quality from being saved:</h2>
+
+      <ul>
+      <% property_enlar_quality.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :enlargements_quality_id %>
+    <%= form.text_field :enlargements_quality_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :property_id %>
+    <%= form.text_field :property_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

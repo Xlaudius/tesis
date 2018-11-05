@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>External Terminations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @external_terminations.each do |external_termination| %>
+      <tr>
+        <td><%= external_termination.name %></td>
+        <td><%= external_termination.value %></td>
+        <td><%= link_to 'Show', external_termination %></td>
+        <td><%= link_to 'Edit', edit_external_termination_path(external_termination) %></td>
+        <td><%= link_to 'Destroy', external_termination, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New External Termination', new_external_termination_path %>

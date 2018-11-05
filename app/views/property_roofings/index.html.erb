@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Property Roofings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Roofing</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @property_roofings.each do |property_roofing| %>
+      <tr>
+        <td><%= property_roofing.property %></td>
+        <td><%= property_roofing.roofing %></td>
+        <td><%= link_to 'Show', property_roofing %></td>
+        <td><%= link_to 'Edit', edit_property_roofing_path(property_roofing) %></td>
+        <td><%= link_to 'Destroy', property_roofing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property Roofing', new_property_roofing_path %>

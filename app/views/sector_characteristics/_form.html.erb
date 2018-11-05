@@ -1,0 +1,27 @@
+<%= form_with(model: sector_characteristic, local: true) do |form| %>
+  <% if sector_characteristic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sector_characteristic.errors.count, "error") %> prohibited this sector_characteristic from being saved:</h2>
+
+      <ul>
+      <% sector_characteristic.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.text_field :value %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

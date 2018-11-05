@@ -1,0 +1,32 @@
+<%= form_with(model: service_yard, local: true) do |form| %>
+  <% if service_yard.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(service_yard.errors.count, "error") %> prohibited this service_yard from being saved:</h2>
+
+      <ul>
+      <% service_yard.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :img %>
+    <%= form.text_field :img %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mts2 %>
+    <%= form.text_field :mts2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :property_id %>
+    <%= form.text_field :property_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

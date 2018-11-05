@@ -1,0 +1,32 @@
+<%= form_with(model: property_door, local: true) do |form| %>
+  <% if property_door.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(property_door.errors.count, "error") %> prohibited this property_door from being saved:</h2>
+
+      <ul>
+      <% property_door.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :door_id %>
+    <%= form.text_field :door_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :door_frame_id %>
+    <%= form.text_field :door_frame_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :property_id %>
+    <%= form.text_field :property_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

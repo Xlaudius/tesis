@@ -1,0 +1,2 @@
+module StreetLocationsHelper
+end

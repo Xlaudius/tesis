@@ -1,0 +1,1 @@
+json.partial! "property_between_floor_slaps/property_between_floor_slap", property_between_floor_slap: @property_between_floor_slap
