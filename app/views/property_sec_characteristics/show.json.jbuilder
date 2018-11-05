@@ -1,1 +1,0 @@
-json.partial! "property_sec_characteristics/property_sec_characteristic", property_sec_characteristic: @property_sec_characteristic

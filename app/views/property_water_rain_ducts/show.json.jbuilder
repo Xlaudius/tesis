@@ -1,1 +1,0 @@
-json.partial! "property_water_rain_ducts/property_water_rain_duct", property_water_rain_duct: @property_water_rain_duct

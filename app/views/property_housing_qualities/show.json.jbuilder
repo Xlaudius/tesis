@@ -1,1 +1,0 @@
-json.partial! "property_housing_qualities/property_housing_quality", property_housing_quality: @property_housing_quality

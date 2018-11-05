@@ -1,1 +1,0 @@
-json.partial! "property_interior_closures/property_interior_closure", property_interior_closure: @property_interior_closure

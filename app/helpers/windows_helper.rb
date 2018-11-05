@@ -1,2 +1,0 @@
-module WindowsHelper
-end
