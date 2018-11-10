@@ -15,6 +15,10 @@
   > docker-compose exec web bin/rails db:migrate</br>
   > docker-compose exec web bin/rails db:seed</br>
 
+## Building changes in Docker on a local system
+  > docker-compose build web
+  > docker-compose --force-recreate web
+
 ## How to run the test suite
 `docker-compose exec web bin/rails spec`</br>
 NOTE: The tests execute randomly, once the suite is ran, check the start of the message, tests can be both Red of Green, check for conflicts on the Red models.</br>
