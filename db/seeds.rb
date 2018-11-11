@@ -376,6 +376,10 @@ Sector.create(name: street)
 end
 
 90.times do |tasacion| #indicar cuantas tasaciones quieres crear
+    firstQuality = Quality.first
+    lastQuality = Quality.last
+    rngQuality1 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]
+    rngQuality2 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]
 
     firstClient = Client.first 
     lastClient = Client.last
@@ -436,20 +440,31 @@ end
     rngQuality1 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]
     rngQuality2 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]
 
-    PropertyBetweenFloorSlap.create(between_floor_slap_id: rngBetween, property_id: property.id)    
+    PropertyBetweenFloorSlap.create(between_floor_slap_id: rngBetween, property_id: property.id, quality_id: rngQuality1)  
+
     PropertyCloset.create(closet_id: rngCloset1, property_id: property.id, qualities_id: rngQuality1)
     PropertyCloset.create(closet_id: rngCloset2, property_id: property.id, qualities_id: rngQuality2)
     
     rng10.times do
+        firstQuality = Quality.first
+        lastQuality = Quality.last
+    firstQuality = Quality.first
+    lastQuality = Quality.last
+    rngQuality1 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]
+    rngQuality2 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]
         firstCover = Cover.first
         lastCover = Cover.last
         rngCover = (firstCover.id .. lastCover.id).sort_by{rand}[1]
-        PropertyCover.create(observations: '',property_id: property.id, cover_id: rngCover)
+        PropertyCover.create(observations: '',property_id: property.id, cover_id: rngCover, quality_id: rngQuality1)
     end    
-    
-
 
     rng6.times do
+        firstQuality = Quality.first
+        lastQuality = Quality.last
+    firstQuality = Quality.first
+    lastQuality = Quality.last
+    rngQuality1 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]
+    rngQuality2 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]
         firstDoor = Door.first
         lastDoor = Door.last
         rngDoor = (firstDoor.id .. lastDoor.id).sort_by{rand}[1]
@@ -457,18 +472,18 @@ end
         firstFrame = DoorFrame.first
         lastFrame = DoorFrame.last
         rngFrame = (firstFrame.id .. lastFrame.id).sort_by{rand}[1]
-        PropertyDoor.create(door_id: rngDoor, door_frame_id: rngFrame, property_id: property.id)
+        PropertyDoor.create(door_id: rngDoor, door_frame_id: rngFrame, property_id: property.id, quality_id: rngQuality1)
     end
     
     firstDrinking = DrinkingWater.first
     lastDrinking = DrinkingWater.last
     rngDrinking = (firstDrinking.id .. lastDrinking.id).sort_by{rand}[1]
-    PropertyDrinkingWater.create(drinking_water_id: rngDrinking, property_id: property.id)
+    PropertyDrinkingWater.create(drinking_water_id: rngDrinking, property_id: property.id, quality_id: rngQuality1)
 
     firstDry = DryWall.first
     lastDry = DryWall.last
     rngDry = (firstDry.id .. lastDry.id).sort_by{rand}[1]
-    PropertyDryWall.create(dry_wall_id: rngDry, property_id: property.id, other:'')
+    PropertyDryWall.create(dry_wall_id: rngDry, property_id: property.id, other:'', quality_id: rngQuality1)
 
     if  hasElectricity == true
         rng34 = (3 .. 4).sort_by{rand}[1]
@@ -490,16 +505,24 @@ end
     firstExterClos = ExteriorClosure.first
     lastExterClos = ExteriorClosure.last
     rngEnlar = (firstExterClos.id .. lastExterClos.id).sort_by{rand}[1]
-    PropertyExteriorClosure.create(other: '',property_id: property.id, exterior_closure_id: rngEnlar)
+    PropertyExteriorClosure.create(other: '',property_id: property.id, exterior_closure_id: rngEnlar, quality_id: rngQuality1)
     
     2.times do
+    firstQuality = Quality.first
+    lastQuality = Quality.last
+    rngQuality1 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]
+    rngQuality2 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]
         firstExternal = ExternalTermination.first
         lastExternal = ExternalTermination.last
         rngExternal = (firstExternal.id .. lastExternal.id).sort_by{rand}[1]
-        PropertyExternTermination.create(property_id: property.id, external_termination_id: rngExternal)
+        PropertyExternTermination.create(property_id: property.id, external_termination_id: rngExternal, quality_id: rngQuality1)
     end    
 
     rng3.times do
+    firstQuality = Quality.first
+    lastQuality = Quality.last
+    rngQuality1 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]
+    rngQuality2 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]
         firstFurniture = Furniture.first
         lastFurniture = Furniture.last
         rngFurniture = (firstFurniture.id .. lastFurniture.id).sort_by{rand}[1]
@@ -507,20 +530,24 @@ end
         lastFurniCover = FurnitureCover.last
         rngForniCover = (firstForniCover.id .. lastFurniCover.id).sort_by{rand}[1]
 
-        PropertyFurniture.create(furniture_id: rngFurniture, property_id: property.id, furniture_cover_id: rngForniCover)
+        PropertyFurniture.create(furniture_id: rngFurniture, property_id: property.id, furniture_cover_id: rngForniCover, quality_id: rngQuality1)
     end
     
 
     firstGas = Ga.first
     lastGas = Ga.last
     rngGas = (firstGas.id .. lastGas.id).sort_by{rand}[1]
-    PropertyGa.create(property_id: property.id, gas_id: rngGas.to_i)
+    PropertyGa.create(property_id: property.id, gas_id: rngGas.to_i, quality_id: rngQuality1)
         
     if rngHeat == true
+    firstQuality = Quality.first
+    lastQuality = Quality.last
+    rngQuality1 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]
+    rngQuality2 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]
         firstHeating = Heating.first
         lastHeating = Heating.last
         rngHeating = (firstHeating.id .. lastHeating.id).sort_by{rand}[1]
-        PropertyHeating.create(heating_id: rngHeating, property_id: property.id)
+        PropertyHeating.create(heating_id: rngHeating, property_id: property.id, quality_id: rngQuality1)
     end
 
     firstHousing = HousingQuality.first
@@ -538,19 +565,19 @@ end
     lastLandShape = LandShape.last
     rngLandShape = (firstLandShape.id .. lastLandShape.id).sort_by{rand}[1]
 
-    PropertyLandShape.create(property_id: property.id, land_shape_id: rngLandShape)
+    PropertyLandShape.create(property_id: property.id, land_shape_id: rngLandShape, quality_id: rngQuality1)
 
     firstMaintenance = Maintenance.first
     lastMaintenance = Maintenance.last
     rngMaintenance = (firstMaintenance.id .. lastMaintenance.id).sort_by{rand}[1]
 
-    PropertyMaintenance.create(maintenance_id: rngMaintenance, property_id: property.id)
+    PropertyMaintenance.create(maintenance_id: rngMaintenance, property_id: property.id, quality_id: rngQuality1)
 
     firstPavement = Pavement.first
     lastPAvement = Pavement.last
     rngPavement = (firstPavement.id .. lastPAvement.id).sort_by{rand}[1]
 
-    PropertyPavement.create(pavement_id: rngPavement, property_id: property.id)
+    PropertyPavement.create(pavement_id: rngPavement, property_id: property.id, quality_id: rngQuality1)
 
     propertyTipe = PropertyType.find_by(name: 'Vivienda')
 
@@ -568,7 +595,7 @@ end
     lastRoofing = Roofing.last    
     rngRoofing = (firstRoofing.id .. lastRoofing.id).sort_by{rand}[1]
 
-    PropertyRoofing.create(property_id: property.id, roofing_id: rngRoofing)
+    PropertyRoofing.create(property_id: property.id, roofing_id: rngRoofing, quality_id: rngQuality1)
 
     firstSectorChar = SectorCharacteristic.first
     lastSectorChar = SectorCharacteristic.last
@@ -581,7 +608,7 @@ end
     lastSewerage = Sewerage.last
     rngSewerage = (firstSewerage.id .. lastSewerage.id).sort_by{rand}[1]
 
-    PropertySewerage.create(sewerage_id: rngSewerage, property_id: property.id)
+    PropertySewerage.create(sewerage_id: rngSewerage, property_id: property.id, quality_id: rngQuality1)
 
     firstShedMate = ShedMaterial.first
     lastShedMate = ShedMaterial.last
@@ -589,8 +616,8 @@ end
 
     shed1= Shed.find_by(name: 'Estructura') 
     shed2= Shed.find_by(name: 'Cercha')
-    PropertyShed.create(shed_id: shed1.id, property_id: property.id, shed_material_id: rngShedMaterial)
-    PropertyShed.create(shed_id: shed2.id, property_id: property.id, shed_material_id: rngShedMaterial)
+    PropertyShed.create(shed_id: shed1.id, property_id: property.id, shed_material_id: rngShedMaterial, quality_id: rngQuality1)
+    PropertyShed.create(shed_id: shed2.id, property_id: property.id, shed_material_id: rngShedMaterial, quality_id: rngQuality2)
 
     firstSidewalk = SideWalk.first
     lastSidewalk = SideWalk.last
@@ -599,11 +626,15 @@ end
     PropertySidewalk.create(side_walk_id: rngSidewalk, property_id: property.id, width: rngWidth)
 
     if hasStair == true
+    firstQuality = Quality.first
+    lastQuality = Quality.last
+    rngQuality1 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]
+    rngQuality2 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]
         firstStair = Stair.first
         lastStair = Stair.last
         rngStair = (firstStair.id .. lastStair.id).sort_by{rand}[1]
 
-        PropertyStair.create(property_id: property.id, stair_id: rngStair)
+        PropertyStair.create(property_id: property.id, stair_id: rngStair, quality_id: rngQuality1)
     end
 
     firstStreetLoca = StreetLocation.first
@@ -616,9 +647,13 @@ end
     lastStructure = Structure.last
     rngStructure = (firstStructure.id .. lastStructure.id).sort_by{rand}[1]
 
-    PropertyStructure.create(observations: '', property_id: property.id, structure_id: rngStructure)
+    PropertyStructure.create(observations: '', property_id: property.id, structure_id: rngStructure, quality_id: rngQuality1)
 
     rng10.times do
+    firstQuality = Quality.first
+    lastQuality = Quality.last
+    rngQuality1 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]
+    rngQuality2 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]
         firstToiletAr = ToiletArtifact.first
         lastToiletAr = ToiletArtifact.last
         rngToiletAr = (firstToiletAr.id .. lastToiletAr.id).sort_by{rand}[1]
@@ -629,12 +664,12 @@ end
     firstRainDuct = WaterRainDuct.first
     lastRainDuct = WaterRainDuct.last
     rngRainDuct = (firstRainDuct.id .. lastRainDuct.id).sort_by{rand}[1]
-    PropertyWaterRainDuct.create(property_id: property.id, water_rain_duct_id: rngRainDuct)
+    PropertyWaterRainDuct.create(property_id: property.id, water_rain_duct_id: rngRainDuct, quality_id: rngQuality1)
 
     firstWindow = Window.first
     lastWindow = Window.last
     rngWindow = (firstWindow.id .. lastWindow.id).sort_by{rand}[1]
-    PropertyWindow.create(window_id: rngWindow, property_id: property.id, other: '', protections: hasProtection)
+    PropertyWindow.create(window_id: rngWindow, property_id: property.id, other: '', protections: hasProtection, quality_id: rngQuality1)
 
     if hasPool == true
         Pool.create(img: 'img',volumen: rngVolumen, property_id: property.id)     

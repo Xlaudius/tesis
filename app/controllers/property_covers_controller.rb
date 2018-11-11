@@ -69,6 +69,6 @@ class PropertyCoversController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_cover_params
-      params.require(:property_cover).permit(:observations, :property_id, :cover_id)
+      params.require(:property_cover).permit(:observations, :property_id, :cover_id, :quality_id)
     end
 end

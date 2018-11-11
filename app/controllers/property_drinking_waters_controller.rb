@@ -69,6 +69,6 @@ class PropertyDrinkingWatersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_drinking_water_params
-      params.require(:property_drinking_water).permit(:drinking_water_id, :property_id)
+      params.require(:property_drinking_water).permit(:drinking_water_id, :property_id, :quality_id)
     end
 end

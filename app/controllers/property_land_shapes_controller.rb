@@ -69,6 +69,6 @@ class PropertyLandShapesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_land_shape_params
-      params.require(:property_land_shape).permit(:property_id, :land_shape_id)
+      params.require(:property_land_shape).permit(:property_id, :land_shape_id, :quality_id)
     end
 end

@@ -69,6 +69,6 @@ class PropertyFurnituresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_furniture_params
-      params.require(:property_furniture).permit(:furniture_id, :property_id, :furniture_cover_id)
+      params.require(:property_furniture).permit(:furniture_id, :property_id, :furniture_cover_id, :quality_id)
     end
 end

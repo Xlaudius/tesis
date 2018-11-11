@@ -69,6 +69,6 @@ class PropertyRoofingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_roofing_params
-      params.require(:property_roofing).permit(:property_id, :roofing_id)
+      params.require(:property_roofing).permit(:property_id, :roofing_id, :quality_id)
     end
 end

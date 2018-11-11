@@ -69,6 +69,6 @@ class PropertySeweragesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_sewerage_params
-      params.require(:property_sewerage).permit(:sewerage_id, :property_id)
+      params.require(:property_sewerage).permit(:sewerage_id, :property_id, :quality_id)
     end
 end

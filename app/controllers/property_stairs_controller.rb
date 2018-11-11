@@ -69,6 +69,6 @@ class PropertyStairsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_stair_params
-      params.require(:property_stair).permit(:property_id, :stair_id)
+      params.require(:property_stair).permit(:property_id, :stair_id, :quality_id)
     end
 end

@@ -69,6 +69,6 @@ class PropertyPavementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_pavement_params
-      params.require(:property_pavement).permit(:pavement_id, :property_id)
+      params.require(:property_pavement).permit(:pavement_id, :property_id, :quality_id)
     end
 end

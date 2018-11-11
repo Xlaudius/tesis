@@ -69,6 +69,6 @@ class PropertyWaterRainDuctsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_water_rain_duct_params
-      params.require(:property_water_rain_duct).permit(:property_id, :water_rain_duct_id)
+      params.require(:property_water_rain_duct).permit(:property_id, :water_rain_duct_id, :quality_id)
     end
 end

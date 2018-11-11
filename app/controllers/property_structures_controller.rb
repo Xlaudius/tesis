@@ -69,6 +69,6 @@ class PropertyStructuresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_structure_params
-      params.require(:property_structure).permit(:observations, :property_id, :structure_id)
+      params.require(:property_structure).permit(:observations, :property_id, :structure_id, :quality_id)
     end
 end

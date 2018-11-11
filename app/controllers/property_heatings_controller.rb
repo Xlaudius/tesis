@@ -69,6 +69,6 @@ class PropertyHeatingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_heating_params
-      params.require(:property_heating).permit(:heating_id, :property_id)
+      params.require(:property_heating).permit(:heating_id, :property_id, :quality_id)
     end
 end
