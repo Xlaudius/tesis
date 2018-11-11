@@ -224,7 +224,7 @@ Maintenance.create(name: 'Normal', value: 2)
 Maintenance.create(name: 'Regular', value: 3)
 Maintenance.create(name: 'Deficiente', value: 4)
 
-300.times do |i|
+30.times do |i|
     name = Faker::Name.name
     num = 7000000 +i
     dv = (0...9).sort_by{rand}[1]
@@ -354,7 +354,7 @@ Window.create(name: 'PVC con folio', value: 7)
 Window.create(name: 'Otro', value: 8)
 
 
-60.times do
+6.times do
     first = Region.first
     last = Region.last
     rngRegion = (first.id .. last.id).sort_by{rand}[1]
@@ -362,7 +362,7 @@ Window.create(name: 'Otro', value: 8)
     City.create(name: city, region_id: rngRegion)
 end
 
-180.times do
+18.times do
     first = City.first
     last = City.last
     rngCity = (first.id .. last.id).sort_by{rand}[1]
@@ -370,12 +370,12 @@ end
     Province.create(name: province, city_id: rngCity)
 end
 
-500.times do
+50.times do
 street = Faker::Address.street_name
 Sector.create(name: street)
 end
 
-900.times do |tasacion| #indicar cuantas tasaciones quieres crear
+90.times do |tasacion| #indicar cuantas tasaciones quieres crear
 
     firstClient = Client.first 
     lastClient = Client.last
