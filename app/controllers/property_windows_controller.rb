@@ -69,6 +69,6 @@ class PropertyWindowsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_window_params
-      params.require(:property_window).permit(:window_id, :property_id, :other, :protections)
+      params.require(:property_window).permit(:window_id, :property_id, :other, :protections, :quality_id)
     end
 end

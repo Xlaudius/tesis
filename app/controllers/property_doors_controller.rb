@@ -69,6 +69,6 @@ class PropertyDoorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_door_params
-      params.require(:property_door).permit(:door_id, :door_frame_id, :property_id)
+      params.require(:property_door).permit(:door_id, :door_frame_id, :property_id, :quality_id)
     end
 end

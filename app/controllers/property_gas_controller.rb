@@ -69,6 +69,6 @@ class PropertyGasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_ga_params
-      params.require(:property_ga).permit(:property_id, :gas_id)
+      params.require(:property_ga).permit(:property_id, :gas_id, :quality_id)
     end
 end

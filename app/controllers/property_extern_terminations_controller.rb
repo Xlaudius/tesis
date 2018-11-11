@@ -69,6 +69,6 @@ class PropertyExternTerminationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_extern_termination_params
-      params.require(:property_extern_termination).permit(:property_id, :external_termination_id)
+      params.require(:property_extern_termination).permit(:property_id, :external_termination_id, :quality_id)
     end
 end

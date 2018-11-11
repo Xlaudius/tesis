@@ -69,6 +69,6 @@ class PropertyExteriorClosuresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_exterior_closure_params
-      params.require(:property_exterior_closure).permit(:other, :property_id, :exterior_closure_id)
+      params.require(:property_exterior_closure).permit(:other, :property_id, :exterior_closure_id, :quality_id)
     end
 end

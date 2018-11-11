@@ -69,6 +69,6 @@ class PropertyDryWallsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_dry_wall_params
-      params.require(:property_dry_wall).permit(:dry_wall_id, :property_id, :other)
+      params.require(:property_dry_wall).permit(:dry_wall_id, :property_id, :other, :quality_id)
     end
 end

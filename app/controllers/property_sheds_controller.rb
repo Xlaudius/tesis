@@ -69,6 +69,6 @@ class PropertyShedsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_shed_params
-      params.require(:property_shed).permit(:shed_id, :property_id, :shed_material_id)
+      params.require(:property_shed).permit(:shed_id, :property_id, :shed_material_id, :quality_id)
     end
 end

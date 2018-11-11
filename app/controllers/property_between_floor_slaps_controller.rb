@@ -69,6 +69,6 @@ class PropertyBetweenFloorSlapsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_between_floor_slap_params
-      params.require(:property_between_floor_slap).permit(:between_floor_slap_id, :property_id)
+      params.require(:property_between_floor_slap).permit(:between_floor_slap_id, :property_id, :quality_id)
     end
 end
