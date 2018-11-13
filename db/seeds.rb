@@ -448,14 +448,12 @@ end
     rng10.times do
         firstQuality = Quality.first
         lastQuality = Quality.last
-    firstQuality = Quality.first
-    lastQuality = Quality.last
-    rngQuality1 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]
-    rngQuality2 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]
+        rngQuality1 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]
+        rngQuality2 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]
         firstCover = Cover.first
         lastCover = Cover.last
         rngCover = (firstCover.id .. lastCover.id).sort_by{rand}[1]
-        PropertyCover.create(observations: '',property_id: property.id, cover_id: rngCover, quality_id: rngQuality1)
+        PropertyCover.create(observations: 'hola', property_id: property.id, cover_id: rngCover, quality_id: rngQuality1)
     end    
 
     rng6.times do
@@ -647,7 +645,7 @@ end
     lastStructure = Structure.last
     rngStructure = (firstStructure.id .. lastStructure.id).sort_by{rand}[1]
 
-    PropertyStructure.create(observations: '', property_id: property.id, structure_id: rngStructure, quality_id: rngQuality1)
+    PropertyStructure.create(observations: 'hola', property_id: property.id, structure_id: rngStructure, quality_id: rngQuality1)
 
     rng10.times do
     firstQuality = Quality.first
