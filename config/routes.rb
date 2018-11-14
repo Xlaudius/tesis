@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+ 
+  devise_for :users, controllers: {
+              registrations: 'users/registrations'
+  }
+
   resources :property_closets
   resources :closets
   resources :property_housing_qualities
