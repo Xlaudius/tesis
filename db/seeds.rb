@@ -676,6 +676,3 @@ end
         ServiceYard.create(img: 'img', mts2: rngM2, property_id: property.id)
     end
 end
-
-
-
