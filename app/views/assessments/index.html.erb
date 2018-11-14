@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Assessments</h1>
+<h1>Tasaciones</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Number assesment</th>
-      <th>State</th>
-      <th>Location</th>
-      <th>Inhabited</th>
-      <th>Habitant</th>
-      <th>Client</th>
-      <th>Owner</th>
-      <th>Start date</th>
-      <th>End date</th>
+      <th>Numero de Tasación</th>
+      <th>Region</th>
+      <th>Dirección</th>
+      <th>Inhabitada</th>
+      <th>Habitante</th>
+      <th>Cliente</th>
+      <th>Dueño</th>
+      <th>Fecha inicio</th>
+      <th>Fecha cierre</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -30,9 +30,9 @@
         <td><%= assessment.owner %></td>
         <td><%= assessment.start_date %></td>
         <td><%= assessment.end_date %></td>
-        <td><%= link_to 'Show', assessment %></td>
-        <td><%= link_to 'Edit', edit_assessment_path(assessment) %></td>
-        <td><%= link_to 'Destroy', assessment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Detalles', assessment %></td>
+        <td><%= link_to 'Editar', edit_assessment_path(assessment) %></td>
+        <td><%= link_to 'Eliminar', assessment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -40,4 +40,4 @@
 
 <br>
 
-<%= link_to 'New Assessment', new_assessment_path %>
+<%= link_to 'Nueva Tasación', new_assessment_path %>
