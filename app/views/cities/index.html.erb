@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Ciudad</th>
       <th>Region</th>
       <th colspan="3"></th>
     </tr>
@@ -16,9 +16,9 @@
       <tr>
         <td><%= city.name %></td>
         <td><%= city.region %></td>
-        <td><%= link_to 'Show', city %></td>
-        <td><%= link_to 'Edit', edit_city_path(city) %></td>
-        <td><%= link_to 'Destroy', city, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Detalles', city %></td>
+        <td><%= link_to 'Editar', edit_city_path(city) %></td>
+        <td><%= link_to 'Eliminar', city, method: :delete, data: { confirm: 'Esta seguro de eliminar esta ciudad?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New City', new_city_path %>
+<%= link_to 'Agregar nueva ciudad', new_city_path %>
