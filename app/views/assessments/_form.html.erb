@@ -37,9 +37,9 @@
   </div>
 
   <div class="field">
-    <%= form.label :client_id %>
-    <%= form.select :client_id, Client.pluck (:name, :id),prompt: 'Lista clientes' %>
-  </div>
+  <%= form.label :client_id %>
+  <%= form.select :client_id, Client.pluck(:name, :id), prompt: 'Elige cliente' %>
+</div>
 
   <div class="field">
     <%= form.label :owner_id %>
