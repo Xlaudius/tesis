@@ -32,7 +32,7 @@
         <td><%= assessment.end_date %></td>
         <td><%= link_to 'Detalles', assessment %></td>
         <td><%= link_to 'Editar', edit_assessment_path(assessment) %></td>
-        <td><%= link_to 'Eliminar', assessment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Eliminar', assessment, method: :delete, data: { confirm: 'Seguro que desea eliminar esta tasación?' } %></td>
       </tr>
     <% end %>
   </tbody>

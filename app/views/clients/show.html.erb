@@ -22,8 +22,8 @@
 
 <p>
   <strong>Client type:</strong>
-  <%= @client.client_type %>
+  <%= @client.client_type.name %>
 </p>
 
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+<%= link_to 'Editar', edit_client_path(@client) %> |
+<%= link_to 'Volver', clients_path %>
