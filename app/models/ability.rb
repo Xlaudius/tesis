@@ -16,7 +16,6 @@ class Ability
         can :read, :all
     elsif user.is? :assistant
         can :read, :all
-
     end
 
     #
