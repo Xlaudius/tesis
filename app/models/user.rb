@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  Roles = [ :admin , :engineer, :office_appraiser, :land_appraiser, :assistant]
+  enum role: [ :admin , :engineer, :office_appraiser, :land_appraiser, :assistant]
 
   def is?( requested_role )
     self.role == requested_role.to_s

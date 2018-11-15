@@ -6,15 +6,17 @@ class Ability
     #
     user ||= User.new # guest user (not logged in)
     
-    if user.is? :admin
+    if user.admin?
         can :manage, :all
-    elsif user.is? :engineer
+    elsif user.engineer?
         can :read, :all
-    elsif user.is? :office_appraiser
+    elsif user.office_appraiser?
         can :read, :all
-    elsif user.is? :land_appraiser
+    elsif user.land_appraiser?
         can :read, :all
-    elsif user.is? :assistant
+    elsif user.assistant?
+        can :read, :all
+    else
         can :read, :all
     end
 
