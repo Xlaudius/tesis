@@ -7,7 +7,7 @@
 
 <p>
   <strong>State:</strong>
-  <%= @assessment.state %>
+  <%= @assessment.state.name%>
 </p>
 
 <p>
@@ -27,12 +27,12 @@
 
 <p>
   <strong>Client:</strong>
-  <%= @assessment.client %>
+  <%= @assessment.client.name%>
 </p>
 
 <p>
   <strong>Owner:</strong>
-  <%= @assessment.owner %>
+  <%= @assessment.owner.name%>
 </p>
 
 <p>
@@ -45,5 +45,5 @@
   <%= @assessment.end_date %>
 </p>
 
-<%= link_to 'Edit', edit_assessment_path(@assessment) %> |
-<%= link_to 'Back', assessments_path %>
+<%= link_to 'Editar', edit_assessment_path(@assessment) %> |
+<%= link_to 'Volver', assessments_path %>

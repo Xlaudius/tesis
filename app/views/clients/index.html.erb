@@ -8,7 +8,7 @@
       <th>Nombre</th>
       <th>Contacto</th>
       <th>Numero de contacto</th>
-      <th>Disponible</th>
+      <th>Disponibilidad</th>
       <th>Tipo Cliente</th>
       <th colspan="3"></th>
     </tr>
@@ -21,7 +21,7 @@
         <td><%= client.contact %></td>
         <td><%= client.number %></td>
         <td><%= client.available %></td>
-        <td><%= client.client_type %></td>
+        <td><%= client.client_type.name %></td>
         <td><%= link_to 'Detalles', client %></td>
         <td><%= link_to 'Editar', edit_client_path(client) %></td>
         <td><%= link_to 'Eliminar', client, method: :delete, data: { confirm: 'Seguro que desea eliminar el cliente?' } %></td>

@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Numero de Tasación</th>
-      <th>Region</th>
+      <th>Estado</th>
       <th>Dirección</th>
       <th>Inhabitada</th>
       <th>Habitante</th>
@@ -22,17 +22,18 @@
     <% @assessments.each do |assessment| %>
       <tr>
         <td><%= assessment.number_assesment %></td>
-        <td><%= assessment.state %></td>
+        <td><%= assessment.state.name %></td>
         <td><%= assessment.location %></td>
         <td><%= assessment.inhabited %></td>
         <td><%= assessment.habitant %></td>
-        <td><%= assessment.client %></td>
-        <td><%= assessment.owner %></td>
+        <td><%= assessment.client.name %></td>
+        <td><%= assessment.owner.name %></td>
         <td><%= assessment.start_date %></td>
         <td><%= assessment.end_date %></td>
         <td><%= link_to 'Detalles', assessment %></td>
-        <td><%= link_to 'Editar', edit_assessment_path(assessment)   %></td>
-        <td><%= link_to 'Eliminar', assessment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Editar', edit_assessment_path(assessment) %></td>
+        <td><%= link_to 'Eliminar', assessment, method: :delete, data: { confirm: 'Seguro que desea eliminar esta tasación?' } %></td>
+
       </tr>
     <% end %>
   </tbody>

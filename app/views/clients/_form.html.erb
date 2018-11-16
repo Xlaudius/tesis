@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= form.label :client_type_id %>
-    <%= form.text_field :client_type_id %>
+    <%= form.select :client_type_id,ClientType.pluck(:name,:id), promp: 'Elige tipo cliente' %>
   </div>
 
   <div class="actions">
