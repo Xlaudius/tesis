@@ -421,7 +421,7 @@ end
     habitant = Faker::Name.name
     state = State.find_by(name: 'Entregada')
 
-    Assessment.create(state_id: state.id, location: address, inhabited: false , habitant: habitant, client_id: rngClient, owner_id: rngOwner)
+    Assessment.create(:number_assesment tasacion, state_id: state.id, location: address, inhabited: false , habitant: habitant, client_id: rngClient, owner_id: rngOwner)
     assesment = Assessment.last
     Property.create(debt_taxation: rngDebt, antiquity: rngAnti, expropriation: rngExpro, sill: rngSill ,assessment_id: assesment.id, facilities: rngFacil)
     property = Property.last

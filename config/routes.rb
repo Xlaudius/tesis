@@ -4,6 +4,7 @@ Rails.application.routes.draw do
               registrations: 'users/registrations'
   }
 
+
   resources :property_closets
   resources :closets
   resources :property_housing_qualities
@@ -84,5 +85,7 @@ Rails.application.routes.draw do
   resources :states
   resources :clients
   resources :client_types
+
+  root 'assessments#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

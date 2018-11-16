@@ -12,6 +12,9 @@ gem 'rails-erd'
 
 gem 'devise'
 
+gem 'cancancan', '~> 1.9'
+
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets

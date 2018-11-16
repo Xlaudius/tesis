@@ -4,6 +4,11 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label 'Cargo' %><br />
+    <%= f.text_field :role, autofocus: true, autocomplete: "role" %>
+  </div>
+
+  <div class="field">
     <%= f.label 'RUT EJ:11111111' %><br />
     <%= f.number_field :rut, autofocus: true %>
   </div>
@@ -20,6 +25,8 @@
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
+
+
 
   <div class="field">
     <%= f.label :password %>
