@@ -6,8 +6,4 @@ class User < ApplicationRecord
 
   enum role: [ :admin , :engineer, :office_appraiser, :land_appraiser, :assistant]
 
-  def is?( requested_role )
-    self.role == requested_role.to_s
-  end
-
 end

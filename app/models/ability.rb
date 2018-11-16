@@ -9,11 +9,11 @@ class Ability
     if user.admin?
         can :manage, :all
     elsif user.engineer?
-        can :read, :all
+        can [:create, :read, :update], :all
     elsif user.office_appraiser?
-        can :read, :all
+        can [:read, :update], :all
     elsif user.land_appraiser?
-        can :read, :all
+        can [:read, :update], :all
     elsif user.assistant?
         can :read, :all
     else

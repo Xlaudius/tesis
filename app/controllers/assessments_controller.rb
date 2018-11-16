@@ -1,6 +1,7 @@
 class AssessmentsController < ApplicationController
   before_action :set_assessment, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /assessments
   # GET /assessments.json
   def index
