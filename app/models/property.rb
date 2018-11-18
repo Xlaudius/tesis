@@ -63,7 +63,8 @@ class Property < ApplicationRecord
   has_many :property_closets
   has_many :pools
 
-  validates :antiquity, :antiquity, :expropriation, :sill, :assessment_id, :facilities, presence: true
-  
+  validates :expropriation, :sill, :facilities, inclusion: { in: [true, false] }
+  validates :antiquity, :antiquity, :assessment_id, presence: true
+  validates :debt_taxation, :antiquity, :assessment_id, numericality: { greater_than_or_equal_to: 0 }
 
 end
