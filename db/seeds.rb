@@ -423,7 +423,7 @@ end
     habitant = Faker::Name.name
     state = State.find_by(name: 'Entregada')
 
-    Assessment.create(number_assesment: num_assessment, state_id: state.id, location: address, inhabited: false , habitant: habitant, client_id: rngClient, owner_id: rngOwner)
+    Assessment.create(number_assesment: num_assessment, state_id: state.id, location: address, inhabited: false , habitant: habitant, client_id: rngClient, owner_id: rngOwner, start_date: 5.days.ago, end_date:1.days.ago)
     assesment = Assessment.last
     Property.create(debt_taxation: rngDebt, antiquity: rngAnti, expropriation: true, sill: true ,assessment_id: assesment.id, facilities: true)
     property = Property.last
