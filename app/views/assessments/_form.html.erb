@@ -1,0 +1,61 @@
+<%= form_with(model: assessment, local: true) do |form| %>
+  <% if assessment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(assessment.errors.count, "error") %> prohibited this assessment from being saved:</h2>
+      <ul>
+      <% assessment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :number_assesment %>
+    <%= form.number_field :number_assesment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state_id %>
+    <%= form.select :state_id, State.pluck(:name,:id), promp: 'Elige Estado' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :inhabited %>
+    <%= form.check_box :inhabited %>
+  </div>
+
+  <div class="field">
+    <%= form.label :habitant %>
+    <%= form.text_field :habitant %>
+  </div>
+
+  <div class="field">
+    <%= form.label :client_id %>
+    <%= form.select :client_id, Client.pluck(:name, :id), prompt: 'Elige Cliente' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :owner_id %>
+    <%= form.select :owner_id,Owner.pluck(:name,:id), promp: 'Elige Dueño' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.date_select :start_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.date_select :end_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
