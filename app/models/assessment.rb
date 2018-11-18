@@ -6,6 +6,7 @@ class Assessment < ApplicationRecord
   
   validates :state_id, :location, :habitant, :client_id, :owner_id, presence: true
   validates :number_assesment, :client_id, :owner_id, numericality: { greater_than: 0 }
+  validates :number_assesment, uniqueness: true
   validates :inhabited, inclusion: { in: [true, false] }
 
 end
