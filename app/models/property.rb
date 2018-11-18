@@ -63,7 +63,7 @@ class Property < ApplicationRecord
   has_many :property_closets
   has_many :pools
 
-  validates :antiquity, presence: true
+  validates :antiquity, :antiquity, :expropriation, :sill, :assessment_id, :facilities, presence: true
   
 
 end

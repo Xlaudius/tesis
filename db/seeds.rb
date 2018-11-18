@@ -425,7 +425,7 @@ end
 
     Assessment.create(number_assesment: num_assessment, state_id: state.id, location: address, inhabited: false , habitant: habitant, client_id: rngClient, owner_id: rngOwner)
     assesment = Assessment.last
-    Property.create(debt_taxation: rngDebt, antiquity: rngAnti, expropriation: rngExpro, sill: rngSill ,assessment_id: assesment.id, facilities: rngFacil)
+    Property.create(debt_taxation: rngDebt, antiquity: rngAnti, expropriation: true, sill: true ,assessment_id: assesment.id, facilities: true)
     property = Property.last
 
     firstBet = BetweenFloorSlap.first
