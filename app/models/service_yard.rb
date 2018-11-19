@@ -1,4 +1,6 @@
 class ServiceYard < ApplicationRecord
+  mount_uploader :img, ImageUploader
+
   belongs_to :property
 
   validates :img, :mts2, :property_id, presence: true
