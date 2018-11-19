@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Tasaciones</h1>
-
+<%= paginate @assessments %>
 <table>
   <thead>
     <tr>
@@ -38,7 +38,7 @@
     <% end %>
   </tbody>
 </table>
-
+<%= paginate @assessments %>
 <br>
 
 <%= link_to 'Nueva Tasación', new_assessment_path %>

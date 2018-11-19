@@ -5,7 +5,7 @@ class AssessmentsController < ApplicationController
   # GET /assessments
   # GET /assessments.json
   def index
-    @assessments = Assessment.all
+    @assessments = Assessment.order(:number_assesment).page (params[:page])
   end
 
   # GET /assessments/1
