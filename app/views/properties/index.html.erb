@@ -1,16 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Properties</h1>
+<h1>Propiedades</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Debt taxation</th>
-      <th>Antiquity</th>
-      <th>Expropriation</th>
-      <th>Sill</th>
-      <th>Assessment</th>
-      <th>Facilities</th>
+      <th>Deudas tributarias</th>
+      <th>Antiguedad</th>
+      <th>Expropriación</th>
+      <th>Solera</th>
+      <th>Tasación</th>
+      <th>Instalaciones</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,15 +18,15 @@
   <tbody>
     <% @properties.each do |property| %>
       <tr>
-        <td><%= property.debt_taxation %></td>
+        <td>$ <%= property.debt_taxation %></td>
         <td><%= property.antiquity %></td>
         <td><%= property.expropriation %></td>
         <td><%= property.sill %></td>
-        <td><%= property.assessment %></td>
+        <td><%= property.assessment.number_assesment %></td>
         <td><%= property.facilities %></td>
-        <td><%= link_to 'Show', property %></td>
-        <td><%= link_to 'Edit', edit_property_path(property) %></td>
-        <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Detalles', property %></td>
+        <td><%= link_to 'Editar', edit_property_path(property) %></td>
+        <td><%= link_to 'Eliminar', property, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Property', new_property_path %>
+<%= link_to 'Nueva Propiedad', new_property_path %>
