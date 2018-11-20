@@ -22,17 +22,17 @@
   </div>
 
   <div class="field">
-    <%= form.label :Numero contacto %>
+    <%= form.label :Numero_Contacto %>
     <%= form.number_field :number %>
   </div>
 
   <div class="field">
-    <%= form.label :Disponibilidad %>
+    <%= form.label :Disponible %>
     <%= form.check_box :available %>
   </div>
 
   <div class="field">
-    <%= form.label :Tipo de cliente %>
+    <%= form.label :Tipo_cliente %>
     <%= form.select :client_type_id,ClientType.pluck(:name,:id), promp: 'Elige tipo cliente' %>
   </div>
 

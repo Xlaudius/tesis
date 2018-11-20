@@ -5,9 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>Img</th>
+      <th>Imagen</th>
       <th>Mts2</th>
-      <th>Property</th>
+      <th>Propiedad</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,10 +17,10 @@
       <tr>
         <td><%= service_yard.img %></td>
         <td><%= service_yard.mts2 %></td>
-        <td><%= service_yard.property %></td>
-        <td><%= link_to 'Show', service_yard %></td>
-        <td><%= link_to 'Edit', edit_service_yard_path(service_yard) %></td>
-        <td><%= link_to 'Destroy', service_yard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= service_yard.property_id %></td>
+        <td><%= link_to 'Detalles', service_yard %></td>
+        <td><%= link_to 'Editar', edit_service_yard_path(service_yard) %></td>
+        <td><%= link_to 'Eliminar', service_yard, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Service Yard', new_service_yard_path %>
+<%= link_to 'Nuevo patio de servicio', new_service_yard_path %>

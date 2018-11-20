@@ -11,47 +11,47 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :number_assesment %>
+    <%= form.label :Numero_tasación %>
     <%= form.number_field :number_assesment %>
   </div>
 
   <div class="field">
-    <%= form.label :state_id %>
+    <%= form.label :Estatado %>
     <%= form.select :state_id, State.pluck(:name,:id), promp: 'Elige Estado' %>
   </div>
 
   <div class="field">
-    <%= form.label :location %>
+    <%= form.label :Localización %>
     <%= form.text_field :location %>
   </div>
 
   <div class="field">
-    <%= form.label :inhabited %>
+    <%= form.label :Inhabitada %>
     <%= form.check_box :inhabited %>
   </div>
 
   <div class="field">
-    <%= form.label :habitant %>
+    <%= form.label :Habitante %>
     <%= form.text_field :habitant %>
   </div>
 
   <div class="field">
-    <%= form.label :client_id %>
+    <%= form.label :Identidad_Cliente %>
     <%= form.select :client_id, Client.pluck(:name, :id), prompt: 'Elige Cliente' %>
   </div>
 
   <div class="field">
-    <%= form.label :owner_id %>
+    <%= form.label :Dueño %>
     <%= form.select :owner_id,Owner.pluck(:name,:id), promp: 'Elige Dueño' %>
   </div>
 
   <div class="field">
-    <%= form.label :start_date %>
+    <%= form.label :Fecha_inicio %>
     <%= form.date_select :start_date %>
   </div>
 
   <div class="field">
-    <%= form.label :end_date %>
+    <%= form.label :Fecha_termmino %>
     <%= form.date_select :end_date %>
   </div>
 

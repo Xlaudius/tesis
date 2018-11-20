@@ -2,7 +2,7 @@
 
 <p>
   <strong>Img:</strong>
-  <%= image_tag(@service_yard.img.u rl, alt: 'Image') %>
+  <%= image_tag(@service_yard.img.url, alt: 'Image') %>
 </p>
 
 <p>
@@ -12,8 +12,8 @@
 
 <p>
   <strong>Property:</strong>
-  <%= @service_yard.property %>
+  <%= @service_yard.property_id %>
 </p>
 
-<%= link_to 'Edit', edit_service_yard_path(@service_yard) %> |
-<%= link_to 'Back', service_yards_path %>
+<%= link_to 'Editar', edit_service_yard_path(@service_yard) %> |
+<%= link_to 'Volver', service_yards_path %>
