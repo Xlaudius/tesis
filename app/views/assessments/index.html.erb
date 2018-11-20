@@ -1,44 +1,55 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tasaciones</h1>
-<%= paginate @assessments %>
-<table>
-  <thead>
-    <tr>
-      <th>Numero de Tasación</th>
-      <th>Estado</th>
-      <th>Dirección</th>
-      <th>Inhabitada</th>
-      <th>Habitante</th>
-      <th>Cliente</th>
-      <th>Dueño</th>
-      <th>Fecha inicio</th>
-      <th>Fecha cierre</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title ">Tasaciones</h4>
+        <p class="card-category">Lista de tasaciones existentes</p>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="text-primary">
+              
+                <th>Número de Tasación</th>
+                <th>Estado</th>
+                <th>Dirección</th>
+                <th>Inhabitada</th>
+                <th>Habitante</th>
+                <th>Cliente</th>
+                <th>Dueño</th>
+                <th>Fecha inicio</th>
+                <th>Fecha cierre</th>
+                <th colspan="3"></th>
+    
+            </thead>
 
-  <tbody>
-    <% @assessments.each do |assessment| %>
-      <tr>
-        <td><%= assessment.number_assesment %></td>
-        <td><%= assessment.state.name %></td>
-        <td><%= assessment.location %></td>
-        <td><%= assessment.inhabited %></td>
-        <td><%= assessment.habitant %></td>
-        <td><%= assessment.client.name %></td>
-        <td><%= assessment.owner.name %></td>
-        <td><%= assessment.start_date %></td>
-        <td><%= assessment.end_date %></td>
-        <td><%= link_to 'Detalles', assessment %></td>
-        <td><%= link_to 'Editar', edit_assessment_path(assessment) %></td>
-        <td><%= link_to 'Eliminar', assessment, method: :delete, data: { confirm: 'Seguro que desea eliminar esta tasación?' } %></td>
+            <tbody>
+              <% @assessments.each do |assessment| %>
+                <tr>
+                  <td class="text-primary"><%= assessment.number_assesment %></td>
+                  <td><%= assessment.state.name %></td>
+                  <td><%= assessment.location %></td>
+                  <td><%= assessment.inhabited %></td>
+                  <td><%= assessment.habitant %></td>
+                  <td><%= assessment.client.name %></td>
+                  <td><%= assessment.owner.name %></td>
+                  <td><%= assessment.start_date %></td>
+                  <td><%= assessment.end_date %></td>
+                  <td><%= link_to 'Detalles', assessment %></td>
+                  <td><%= link_to 'Editar', edit_assessment_path(assessment) %></td>
+                  <td><%= link_to 'Eliminar', assessment, method: :delete, data: { confirm: 'Seguro que desea eliminar esta tasación?' } %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= paginate @assessments %>
-<br>
-
+    <%= paginate @assessments %>
+    <br>
 <%= link_to 'Nueva Tasación', new_assessment_path %>
