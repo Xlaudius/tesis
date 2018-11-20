@@ -1,6 +1,7 @@
 class OwnersController < ApplicationController
   before_action :set_owner, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /owners
   # GET /owners.json
   def index

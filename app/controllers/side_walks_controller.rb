@@ -1,6 +1,7 @@
 class SideWalksController < ApplicationController
   before_action :set_side_walk, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /side_walks
   # GET /side_walks.json
   def index

@@ -1,6 +1,7 @@
 class PropertyExteriorClosuresController < ApplicationController
   before_action :set_property_exterior_closure, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /property_exterior_closures
   # GET /property_exterior_closures.json
   def index

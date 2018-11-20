@@ -1,6 +1,7 @@
 class PropertyFurnituresController < ApplicationController
   before_action :set_property_furniture, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /property_furnitures
   # GET /property_furnitures.json
   def index

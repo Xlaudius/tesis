@@ -1,6 +1,7 @@
 class WaterRainDuctsController < ApplicationController
   before_action :set_water_rain_duct, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /water_rain_ducts
   # GET /water_rain_ducts.json
   def index

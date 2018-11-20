@@ -1,6 +1,7 @@
 class WindowsController < ApplicationController
   before_action :set_window, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /windows
   # GET /windows.json
   def index

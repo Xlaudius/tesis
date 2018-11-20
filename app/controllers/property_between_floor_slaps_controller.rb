@@ -1,6 +1,7 @@
 class PropertyBetweenFloorSlapsController < ApplicationController
   before_action :set_property_between_floor_slap, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /property_between_floor_slaps
   # GET /property_between_floor_slaps.json
   def index

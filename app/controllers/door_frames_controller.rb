@@ -1,6 +1,7 @@
 class DoorFramesController < ApplicationController
   before_action :set_door_frame, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /door_frames
   # GET /door_frames.json
   def index

@@ -1,6 +1,7 @@
 class PropertyClosetsController < ApplicationController
   before_action :set_property_closet, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /property_closets
   # GET /property_closets.json
   def index

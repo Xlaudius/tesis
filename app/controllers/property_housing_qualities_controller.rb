@@ -1,6 +1,7 @@
 class PropertyHousingQualitiesController < ApplicationController
   before_action :set_property_housing_quality, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /property_housing_qualities
   # GET /property_housing_qualities.json
   def index

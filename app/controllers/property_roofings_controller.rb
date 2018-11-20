@@ -1,6 +1,7 @@
 class PropertyRoofingsController < ApplicationController
   before_action :set_property_roofing, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /property_roofings
   # GET /property_roofings.json
   def index

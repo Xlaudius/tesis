@@ -1,6 +1,7 @@
 class ShedsController < ApplicationController
   before_action :set_shed, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /sheds
   # GET /sheds.json
   def index

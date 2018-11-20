@@ -1,6 +1,7 @@
 class RoadsController < ApplicationController
   before_action :set_road, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /roads
   # GET /roads.json
   def index
