@@ -72,4 +72,5 @@ class PropertiesController < ApplicationController
     def property_params
       params.require(:property).permit(:debt_taxation, :antiquity, :expropriation, :sill, :assessment_id, :facilities)
     end
+
 end
