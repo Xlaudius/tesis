@@ -1,6 +1,7 @@
 class PropertyEnlarQualitiesController < ApplicationController
   before_action :set_property_enlar_quality, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /property_enlar_qualities
   # GET /property_enlar_qualities.json
   def index

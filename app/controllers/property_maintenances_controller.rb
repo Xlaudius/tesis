@@ -1,6 +1,7 @@
 class PropertyMaintenancesController < ApplicationController
   before_action :set_property_maintenance, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /property_maintenances
   # GET /property_maintenances.json
   def index

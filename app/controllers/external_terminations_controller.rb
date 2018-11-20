@@ -1,6 +1,7 @@
 class ExternalTerminationsController < ApplicationController
   before_action :set_external_termination, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /external_terminations
   # GET /external_terminations.json
   def index

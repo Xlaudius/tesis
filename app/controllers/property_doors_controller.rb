@@ -1,6 +1,7 @@
 class PropertyDoorsController < ApplicationController
   before_action :set_property_door, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /property_doors
   # GET /property_doors.json
   def index

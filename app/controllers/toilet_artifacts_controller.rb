@@ -1,6 +1,7 @@
 class ToiletArtifactsController < ApplicationController
   before_action :set_toilet_artifact, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /toilet_artifacts
   # GET /toilet_artifacts.json
   def index

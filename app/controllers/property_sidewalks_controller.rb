@@ -1,6 +1,7 @@
 class PropertySidewalksController < ApplicationController
   before_action :set_property_sidewalk, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /property_sidewalks
   # GET /property_sidewalks.json
   def index
