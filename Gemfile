@@ -7,17 +7,14 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '1.1.3'
-
 gem 'rails-erd'
-
 gem 'devise'
-
 gem 'cancancan', '~> 1.9'
-
 gem 'kaminari'
-
-
-
+gem 'bootstrap-sass'
+gem 'font-awesome-rails'
+gem "jquery-rails"
+gem 'popper_js', '~> 1.12.9'
 gem 'carrierwave'
 
 # Use Puma as the app server
