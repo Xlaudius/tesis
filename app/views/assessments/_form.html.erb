@@ -1,61 +1,110 @@
-<%= form_with(model: assessment, local: true) do |form| %>
-  <% if assessment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(assessment.errors.count, "error") %> prohibited this assessment from being saved:</h2>
-      <ul>
-      <% assessment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="row">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title">Nueva Tasación</h4>
+        <p class="card-category">Completa los datos</p>                
+        </div>
+        <br>
+
+          <%= form_with(model: assessment, local: true) do |form| %>
+            <% if assessment.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(assessment.errors.count, "error") %> prohibited this assessment from being saved:</h2>
+                <ul>
+                <% assessment.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+          <div class="card-body">
+            <form>
+              <div class="row">
+
+                <div class="col-md-5">
+                  <div class="form-group">
+                    <%= form.label :Numero_tasación %>
+                    <%= form.number_field :number_assesment %>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <%= form.label :Fecha_inicio %>
+                    <%= form.date_select :start_date %>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <%= form.label :Fecha_termmino %>
+                    <%= form.date_select :end_date %>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="form-group">
+                  <%= form.label :Cliente %>
+                  <%= form.select :client_id, Client.pluck(:name, :id), prompt: 'Elige Cliente' %>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                  <%= form.label :Habitante %>
+                  <%= form.text_field :habitant %>
+                  </div>
+                </div>                
+                
+                <div class="col-md-3">
+                  <div class="form-group">
+                  <%= form.label :Dueño %>
+                  <%= form.select :owner_id,Owner.pluck(:name,:id), prompt: 'Elige Dueño' %>
+                  </div>
+                </div> 
+              </div>   
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                  <%= form.label :Localización %>
+                  <%= form.text_field :location %>
+                  </div>
+                </div> 
+              </div> 
+
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="form-group">
+                  <%= form.label :Estatado %>
+                  <%= form.select :state_id, State.pluck(:name,:id), prompt: 'Elige Estado' %>
+                  </div>
+                </div> 
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                  <%= form.label :Inhabitada %>
+                  <%= form.check_box :inhabited %>
+                  </div>
+                </div> 
+
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                <%= form.submit %>
+                  </div>
+                </div>              
+              <% end %>
+            </div> 
+          </div>
+        </form>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :Numero_tasación %>
-    <%= form.number_field :number_assesment %>
   </div>
+</div>                  
 
-  <div class="field">
-    <%= form.label :Estatado %>
-    <%= form.select :state_id, State.pluck(:name,:id), promp: 'Elige Estado' %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Localización %>
-    <%= form.text_field :location %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Inhabitada %>
-    <%= form.check_box :inhabited %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Habitante %>
-    <%= form.text_field :habitant %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Identidad_Cliente %>
-    <%= form.select :client_id, Client.pluck(:name, :id), prompt: 'Elige Cliente' %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Dueño %>
-    <%= form.select :owner_id,Owner.pluck(:name,:id), promp: 'Elige Dueño' %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Fecha_inicio %>
-    <%= form.date_select :start_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Fecha_termmino %>
-    <%= form.date_select :end_date %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+                  
