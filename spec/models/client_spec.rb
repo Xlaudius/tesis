@@ -1,4 +1,7 @@
 require 'rails_helper'
+RSpec.configure do |config|
+  config.fuubar_progress_bar_options = { :format => 'Client model test <%B> %p%% %a' }
+end
 
 RSpec.describe Client, :type => :model do
   let(:client_type) { ClientType.create(name: 'Particular') }
