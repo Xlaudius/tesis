@@ -1,6 +1,7 @@
 class StreetLocationsController < ApplicationController
   before_action :set_street_location, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /street_locations
   # GET /street_locations.json
   def index

@@ -1,6 +1,7 @@
 class ClosetsController < ApplicationController
   before_action :set_closet, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /closets
   # GET /closets.json
   def index

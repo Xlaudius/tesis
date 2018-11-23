@@ -1,6 +1,7 @@
 class PoolsController < ApplicationController
   before_action :set_pool, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /pools
   # GET /pools.json
   def index

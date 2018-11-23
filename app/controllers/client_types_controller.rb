@@ -1,6 +1,7 @@
 class ClientTypesController < ApplicationController
   before_action :set_client_type, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /client_types
   # GET /client_types.json
   def index

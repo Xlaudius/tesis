@@ -1,6 +1,7 @@
 class DryWallsController < ApplicationController
   before_action :set_dry_wall, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /dry_walls
   # GET /dry_walls.json
   def index

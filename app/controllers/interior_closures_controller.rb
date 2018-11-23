@@ -1,6 +1,7 @@
 class InteriorClosuresController < ApplicationController
   before_action :set_interior_closure, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /interior_closures
   # GET /interior_closures.json
   def index

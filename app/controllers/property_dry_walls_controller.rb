@@ -1,6 +1,7 @@
 class PropertyDryWallsController < ApplicationController
   before_action :set_property_dry_wall, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /property_dry_walls
   # GET /property_dry_walls.json
   def index

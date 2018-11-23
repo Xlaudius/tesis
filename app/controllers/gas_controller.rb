@@ -1,5 +1,6 @@
 class GasController < ApplicationController
   before_action :set_ga, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /gas
   # GET /gas.json

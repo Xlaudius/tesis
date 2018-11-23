@@ -12,27 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :Nombre %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :contact %>
+    <%= form.label :Contacto %>
     <%= form.text_field :contact %>
   </div>
 
   <div class="field">
-    <%= form.label :number %>
+    <%= form.label :Numero_Contacto %>
     <%= form.number_field :number %>
   </div>
 
   <div class="field">
-    <%= form.label :available %>
+    <%= form.label :Disponible %>
     <%= form.check_box :available %>
   </div>
 
   <div class="field">
-    <%= form.label :client_type_id %>
+    <%= form.label :Tipo_cliente %>
     <%= form.select :client_type_id,ClientType.pluck(:name,:id), promp: 'Elige tipo cliente' %>
   </div>
 

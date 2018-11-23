@@ -1,6 +1,7 @@
 class PropertySeweragesController < ApplicationController
   before_action :set_property_sewerage, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /property_sewerages
   # GET /property_sewerages.json
   def index

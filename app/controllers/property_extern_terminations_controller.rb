@@ -1,6 +1,7 @@
 class PropertyExternTerminationsController < ApplicationController
   before_action :set_property_extern_termination, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /property_extern_terminations
   # GET /property_extern_terminations.json
   def index

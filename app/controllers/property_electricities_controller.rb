@@ -1,6 +1,7 @@
 class PropertyElectricitiesController < ApplicationController
   before_action :set_property_electricity, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /property_electricities
   # GET /property_electricities.json
   def index

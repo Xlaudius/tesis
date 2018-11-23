@@ -1,6 +1,7 @@
 class ExteriorClosuresController < ApplicationController
   before_action :set_exterior_closure, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /exterior_closures
   # GET /exterior_closures.json
   def index
