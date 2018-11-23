@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-12">
     <div class="card">
       <div class="card-header card-header-primary">
         <h4 class="card-title">Nueva Tasación</h4>
@@ -26,21 +26,21 @@
                 <div class="col-md-5">
                   <div class="form-group">
                     <%= form.label :Numero_tasación %>
-                    <%= form.number_field :number_assesment %>
+                    <%= form.number_field :number_assesment, class:'form-control' %>
                   </div>
                 </div>
 
                 <div class="col-md-3">
                   <div class="form-group">
                     <%= form.label :Fecha_inicio %>
-                    <%= form.date_select :start_date %>
+                    <%= form.date_select :start_date, class:'form-control' %>
                   </div>
                 </div>
 
                 <div class="col-md-3">
                   <div class="form-group">
                     <%= form.label :Fecha_termmino %>
-                    <%= form.date_select :end_date %>
+                    <%= form.date_select :end_date, class:'form-control' %>
                   </div>
                 </div>
               </div>
@@ -49,21 +49,21 @@
                 <div class="col-md-3">
                   <div class="form-group">
                   <%= form.label :Cliente %>
-                  <%= form.select :client_id, Client.pluck(:name, :id), prompt: 'Elige Cliente' %>
+                  <%= form.select :client_id , Client.pluck(:name, :id), prompt: 'Elige Cliente', class:"form-control selectpicker" %>
                   </div>
                 </div>
 
                 <div class="col-md-3">
                   <div class="form-group">
                   <%= form.label :Habitante %>
-                  <%= form.text_field :habitant %>
+                  <%= form.text_field :habitant, class:'form-control' %>
                   </div>
                 </div>                
                 
                 <div class="col-md-3">
                   <div class="form-group">
                   <%= form.label :Dueño %>
-                  <%= form.select :owner_id,Owner.pluck(:name,:id), prompt: 'Elige Dueño' %>
+                  <%= form.select :owner_id,Owner.pluck(:name,:id), prompt: 'Elige Dueño', class:'form-control' %>
                   </div>
                 </div> 
               </div>   
@@ -72,7 +72,7 @@
                 <div class="col-md-12">
                   <div class="form-group">
                   <%= form.label :Localización %>
-                  <%= form.text_field :location %>
+                  <%= form.text_field :location, class:'form-control' %>
                   </div>
                 </div> 
               </div> 
@@ -81,23 +81,20 @@
                 <div class="col-md-3">
                   <div class="form-group">
                   <%= form.label :Estatado %>
-                  <%= form.select :state_id, State.pluck(:name,:id), prompt: 'Elige Estado' %>
+                  <%= form.select :state_id, State.pluck(:name,:id), prompt: 'Elige Estado', class:'form-control'  %>
                   </div>
                 </div> 
 
                 <div class="col-md-3">
                   <div class="form-group">
                   <%= form.label :Inhabitada %>
-                  <%= form.check_box :inhabited %>
+                  <%= form.check_box :inhabited, class:'form-check-input'%>
                   </div>
                 </div> 
+              </div>
 
-
-                <div class="col-md-3">
-                  <div class="form-group">
-                <%= form.submit %>
-                  </div>
-                </div>              
+               <%= form.submit 'Crear Tasación', class:'btn btn-primary pull-right' %>
+              
               <% end %>
             </div> 
           </div>
