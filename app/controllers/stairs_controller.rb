@@ -1,6 +1,7 @@
 class StairsController < ApplicationController
   before_action :set_stair, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /stairs
   # GET /stairs.json
   def index

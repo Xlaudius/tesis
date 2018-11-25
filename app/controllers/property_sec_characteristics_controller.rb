@@ -1,6 +1,7 @@
 class PropertySecCharacteristicsController < ApplicationController
   before_action :set_property_sec_characteristic, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /property_sec_characteristics
   # GET /property_sec_characteristics.json
   def index

@@ -1,6 +1,7 @@
 class PropertyGasController < ApplicationController
   before_action :set_property_ga, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /property_gas
   # GET /property_gas.json
   def index

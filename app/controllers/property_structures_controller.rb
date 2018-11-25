@@ -1,6 +1,7 @@
 class PropertyStructuresController < ApplicationController
   before_action :set_property_structure, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /property_structures
   # GET /property_structures.json
   def index

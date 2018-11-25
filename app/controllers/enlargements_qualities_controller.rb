@@ -1,6 +1,7 @@
 class EnlargementsQualitiesController < ApplicationController
   before_action :set_enlargements_quality, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /enlargements_qualities
   # GET /enlargements_qualities.json
   def index

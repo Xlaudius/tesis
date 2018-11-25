@@ -1,6 +1,7 @@
 class CoversController < ApplicationController
   before_action :set_cover, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /covers
   # GET /covers.json
   def index

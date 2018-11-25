@@ -1,6 +1,7 @@
 class PropertyRolsController < ApplicationController
   before_action :set_property_rol, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /property_rols
   # GET /property_rols.json
   def index

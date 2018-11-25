@@ -1,5 +1,6 @@
 class LandShapesController < ApplicationController
   before_action :set_land_shape, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /land_shapes
   # GET /land_shapes.json

@@ -381,6 +381,8 @@ end
     rngQuality1 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]
     rngQuality2 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]
 
+    num_assessment = (1..1000000).sort_by{rand}[1]  
+
     firstClient = Client.first 
     lastClient = Client.last
     rngClient = (firstClient.id .. lastClient.id).sort_by{rand}[1]
@@ -421,9 +423,9 @@ end
     habitant = Faker::Name.name
     state = State.find_by(name: 'Entregada')
 
-    Assessment.create(number_assesment: tasacion, state_id: state.id, location: address, inhabited: false , habitant: habitant, client_id: rngClient, owner_id: rngOwner)
+    Assessment.create(number_assesment: num_assessment, state_id: state.id, location: address, inhabited: false , habitant: habitant, client_id: rngClient, owner_id: rngOwner, start_date: 5.days.ago, end_date:1.days.ago)
     assesment = Assessment.last
-    Property.create(debt_taxation: rngDebt, antiquity: rngAnti, expropriation: rngExpro, sill: rngSill ,assessment_id: assesment.id, facilities: rngFacil)
+    Property.create(debt_taxation: rngDebt, antiquity: rngAnti, expropriation: true, sill: true ,assessment_id: assesment.id, facilities: true)
     property = Property.last
 
     firstBet = BetweenFloorSlap.first

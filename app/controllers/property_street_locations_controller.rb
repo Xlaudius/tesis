@@ -1,6 +1,7 @@
 class PropertyStreetLocationsController < ApplicationController
   before_action :set_property_street_location, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /property_street_locations
   # GET /property_street_locations.json
   def index

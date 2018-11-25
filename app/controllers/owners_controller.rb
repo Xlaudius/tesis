@@ -1,10 +1,11 @@
 class OwnersController < ApplicationController
   before_action :set_owner, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /owners
   # GET /owners.json
   def index
-    @owners = Owner.all
+    @owners = Owner.order(:id).page (params[:page])
   end
 
   # GET /owners/1

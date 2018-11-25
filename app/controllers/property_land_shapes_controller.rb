@@ -1,6 +1,7 @@
 class PropertyLandShapesController < ApplicationController
   before_action :set_property_land_shape, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /property_land_shapes
   # GET /property_land_shapes.json
   def index
