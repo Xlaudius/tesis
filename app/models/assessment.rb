@@ -1,3 +1,4 @@
+
 class Assessment < ApplicationRecord
   belongs_to :state
   belongs_to :client
@@ -8,5 +9,4 @@ class Assessment < ApplicationRecord
   validates :number_assesment, :client_id, :owner_id, numericality: { greater_than: 0 }
   validates :number_assesment, uniqueness: true
   validates :inhabited, inclusion: { in: [true, false] }
-
 end
