@@ -4,7 +4,7 @@ class Assessment < ApplicationRecord
   belongs_to :owner
   has_many :properties
   
-  validates :state_id, :location, :habitant, :client_id, :owner_id, presence: true
+  validates_presence_of :state_id, :location, :habitant, :client_id, :owner_id
 # validates :number_assesment, numericality: { greater_than: 0 }
   validates :inhabited, inclusion: { in: [true, false] }
 
