@@ -5,7 +5,6 @@ end
 
 RSpec.describe Client, :type => :model do
   context 'validation tests' do
-    let(:client_type) { build(:client_type) }
     let(:client) { build(:client) }
     
     it 'is not valid without a name' do
