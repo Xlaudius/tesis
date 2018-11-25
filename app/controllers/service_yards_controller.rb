@@ -1,5 +1,6 @@
 class ServiceYardsController < ApplicationController
   before_action :set_service_yard, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /service_yards
   # GET /service_yards.json

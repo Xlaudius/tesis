@@ -1,6 +1,7 @@
 class PavementsController < ApplicationController
   before_action :set_pavement, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /pavements
   # GET /pavements.json
   def index

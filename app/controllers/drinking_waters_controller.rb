@@ -1,6 +1,7 @@
 class DrinkingWatersController < ApplicationController
   before_action :set_drinking_water, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /drinking_waters
   # GET /drinking_waters.json
   def index

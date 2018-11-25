@@ -1,6 +1,7 @@
 class PropertyCoversController < ApplicationController
   before_action :set_property_cover, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /property_covers
   # GET /property_covers.json
   def index

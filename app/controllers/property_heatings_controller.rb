@@ -1,6 +1,7 @@
 class PropertyHeatingsController < ApplicationController
   before_action :set_property_heating, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /property_heatings
   # GET /property_heatings.json
   def index

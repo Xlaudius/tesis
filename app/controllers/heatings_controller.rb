@@ -1,6 +1,7 @@
 class HeatingsController < ApplicationController
   before_action :set_heating, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /heatings
   # GET /heatings.json
   def index

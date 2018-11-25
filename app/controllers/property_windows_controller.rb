@@ -1,6 +1,7 @@
 class PropertyWindowsController < ApplicationController
   before_action :set_property_window, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /property_windows
   # GET /property_windows.json
   def index

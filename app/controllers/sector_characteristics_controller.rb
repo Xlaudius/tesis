@@ -1,6 +1,7 @@
 class SectorCharacteristicsController < ApplicationController
   before_action :set_sector_characteristic, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /sector_characteristics
   # GET /sector_characteristics.json
   def index

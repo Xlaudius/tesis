@@ -1,6 +1,7 @@
 class FurnitureCoversController < ApplicationController
   before_action :set_furniture_cover, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /furniture_covers
   # GET /furniture_covers.json
   def index

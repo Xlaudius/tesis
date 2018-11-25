@@ -1,6 +1,7 @@
 class PropertyShedsController < ApplicationController
   before_action :set_property_shed, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /property_sheds
   # GET /property_sheds.json
   def index

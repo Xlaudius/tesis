@@ -1,6 +1,7 @@
 class PropertyStairsController < ApplicationController
   before_action :set_property_stair, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /property_stairs
   # GET /property_stairs.json
   def index

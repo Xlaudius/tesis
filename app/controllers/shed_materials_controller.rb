@@ -1,6 +1,7 @@
 class ShedMaterialsController < ApplicationController
   before_action :set_shed_material, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /shed_materials
   # GET /shed_materials.json
   def index

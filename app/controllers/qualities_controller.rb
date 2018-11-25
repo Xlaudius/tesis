@@ -1,6 +1,7 @@
 class QualitiesController < ApplicationController
   before_action :set_quality, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /qualities
   # GET /qualities.json
   def index
