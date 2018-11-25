@@ -1,37 +1,53 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Propiedades</h1>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title ">Propiedades</h4>
+        <p class="card-category">Lista de propiedades existentes</p>
+      </div>
+      <div> 
+      <%= link_to 'Nueva Propiedad', new_property_path if can? :create, :property %>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="text-primary">
+              <table>
+                <thead>
+                    <th>Deudas tributarias</th>
+                    <th>Antiguedad</th>
+                    <th>Expropriación</th>
+                    <th>Solera</th>
+                    <th>Tasación</th>
+                    <th>Instalaciones</th>
+                    <th colspan="3"></th>
+                </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Deudas tributarias</th>
-      <th>Antiguedad</th>
-      <th>Expropriación</th>
-      <th>Solera</th>
-      <th>Tasación</th>
-      <th>Instalaciones</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @properties.each do |property| %>
-      <tr>
-        <td>$ <%= property.debt_taxation %></td>
-        <td><%= property.antiquity %></td>
-        <td><%= property.expropriation %></td>
-        <td><%= property.sill %></td>
-        <td><%= property.assessment.number_assesment %></td>
-        <td><%= property.facilities %></td>
-        <td><%= link_to 'Detalles', property %></td>
-        <td><%= link_to 'Editar', edit_property_path(property) %></td>
-        <td><%= link_to 'Eliminar', property, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+                <tbody>
+                  <% @properties.each do |property| %>
+                    <tr>
+                      <td>$ <%= property.debt_taxation %></td>
+                      <td><%= property.antiquity %></td>
+                      <td><%= property.expropriation %></td>
+                      <td><%= property.sill %></td>
+                      <td><%= property.assessment.number_assesment %></td>
+                      <td><%= property.facilities %></td>
+                      <td><%= link_to 'Detalles', property %></td>
+                      <td><%= link_to 'Editar', edit_property_path(property) %></td>
+                      <td><%= link_to 'Eliminar', property, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+                    </tr>
+                  <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+<%= paginate @properties %>
 <br>
 
 <%= link_to 'Nueva Propiedad', new_property_path %>
