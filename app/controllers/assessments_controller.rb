@@ -15,7 +15,10 @@ class AssessmentsController < ApplicationController
 
   # GET /assessments/new
   def new
-    @assessment = Assessment.new
+    @assessment = Assessment.new   
+    @assessmentlast = Assessment.last
+    @property = Property.new(debt_taxation: 0, antiquity: 0, expropriation: true, sill: true ,assessment_id: assessmentlast.id, facilities: true)
+
   end
 
   # GET /assessments/1/edit
