@@ -8,15 +8,17 @@ RSpec.describe Property, :type => :model do
   let(:property) { build(:property) }
 
     it 'is saved if all fields are present' do
-      #expect(property.save).to eq(true)
+      expect(property.save).to eq(true)
     end
 
     it 'fails with no debt' do
-      
+      property.debt_taxation = nil
+      expect(property.save).to eq(false)
     end
 
     it 'fails with no antiquity' do
-      
+      property.antiquity = nil
+      expect(property.save).to eq(false)
     end
   end
 end
