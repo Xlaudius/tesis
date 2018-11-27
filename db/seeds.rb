@@ -99,13 +99,13 @@ ClientType.create(name: 'Particular')
 
 
 
-25.times do
+5.times do
     name = Faker::Name.name
     clientType = ClientType.find_by(name: 'Particular')
     Client.create(name: name, contact: name, number: 111111, available: 1, client_type_id: clientType.id)
 end
 
-10.times do 
+5.times do 
     clientType = ClientType.find_by(name: 'Banco')
     name = Faker::Bank.name
     phone = Faker::PhoneNumber.phone_number
@@ -224,7 +224,7 @@ Maintenance.create(name: 'Normal', value: 2)
 Maintenance.create(name: 'Regular', value: 3)
 Maintenance.create(name: 'Deficiente', value: 4)
 
-30.times do |i|
+5.times do |i|
     name = Faker::Name.name
     num = 7000000 +i
     dv = (0...9).sort_by{rand}[1]
@@ -354,7 +354,7 @@ Window.create(name: 'PVC con folio', value: 7)
 Window.create(name: 'Otro', value: 8)
 
 
-6.times do
+5.times do
     first = Region.first
     last = Region.last
     rngRegion = (first.id .. last.id).sort_by{rand}[1]
@@ -362,7 +362,7 @@ Window.create(name: 'Otro', value: 8)
     City.create(name: city, region_id: rngRegion)
 end
 
-18.times do
+5.times do
     first = City.first
     last = City.last
     rngCity = (first.id .. last.id).sort_by{rand}[1]
@@ -370,12 +370,12 @@ end
     Province.create(name: province, city_id: rngCity)
 end
 
-50.times do
+5.times do
 street = Faker::Address.street_name
 Sector.create(name: street)
 end
 
-90.times do |tasacion| #indicar cuantas tasaciones quieres crear
+5.times do |tasacion| #indicar cuantas tasaciones quieres crear
     firstQuality = Quality.first
     lastQuality = Quality.last
     rngQuality1 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]

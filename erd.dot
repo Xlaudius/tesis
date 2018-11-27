@@ -1,0 +1,792 @@
+digraph Tesis {
+rankdir = "LR";
+ranksep = "0.5";
+nodesep = "0.4";
+pad = "0.4,0.4";
+margin = "0,0";
+concentrate = "true";
+labelloc = "t";
+fontsize = "13";
+fontname = "Arial Bold";
+splines = "spline";
+node[ shape  =  "Mrecord" , fontsize  =  "10" , fontname  =  "Arial" , margin  =  "0.07,0.05" , penwidth  =  "1.0"];
+edge[ fontname  =  "Arial" , fontsize  =  "7" , dir  =  "both" , arrowsize  =  "0.9" , penwidth  =  "1.0" , labelangle  =  "32" , labeldistance  =  "1.8"];
+rankdir = "TB";
+label = "Tesis domain model\n\n";
+m_Assessment [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Assessment</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="end_date">end_date <font face="Arial Italic" color="grey60">date</font></td></tr>
+  <tr><td align="left" width="130" port="habitant">habitant <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="inhabited">inhabited <font face="Arial Italic" color="grey60">boolean</font></td></tr>
+  <tr><td align="left" width="130" port="location">location <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="number_assesment">number_assesment <font face="Arial Italic" color="grey60">integer U</font></td></tr>
+  <tr><td align="left" width="130" port="start_date">start_date <font face="Arial Italic" color="grey60">date</font></td></tr>
+</table>
+}>];
+m_BetweenFloorSlap [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">BetweenFloorSlap</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_City [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">City</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+</table>
+}>];
+m_Client [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Client</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="available">available <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+  <tr><td align="left" width="130" port="contact">contact <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="number">number <font face="Arial Italic" color="grey60">integer ∗</font></td></tr>
+</table>
+}>];
+m_ClientType [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">ClientType</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+</table>
+}>];
+m_Closet [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Closet</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_Cover [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Cover</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_Door [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Door</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_DoorFrame [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">DoorFrame</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_DrinkingWater [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">DrinkingWater</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_DryWall [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">DryWall</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_Electricity [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Electricity</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_EnlargementsQuality [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">EnlargementsQuality</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_ExteriorClosure [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">ExteriorClosure</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_ExternalTermination [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">ExternalTermination</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_Furniture [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Furniture</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">integer ∗</font></td></tr>
+</table>
+}>];
+m_FurnitureCover [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">FurnitureCover</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_Ga [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Ga</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_Heating [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Heating</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_HousingQuality [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">HousingQuality</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_InteriorClosure [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">InteriorClosure</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_LandShape [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">LandShape</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_Maintenance [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Maintenance</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_Owner [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Owner</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="rut">rut <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+</table>
+}>];
+m_Pavement [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Pavement</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_Pool [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Pool</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="img">img <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="volumen">volumen <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_Property [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Property</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="antiquity">antiquity <font face="Arial Italic" color="grey60">integer ∗</font></td></tr>
+  <tr><td align="left" width="130" port="debt_taxation">debt_taxation <font face="Arial Italic" color="grey60">float</font></td></tr>
+  <tr><td align="left" width="130" port="expropriation">expropriation <font face="Arial Italic" color="grey60">boolean</font></td></tr>
+  <tr><td align="left" width="130" port="facilities">facilities <font face="Arial Italic" color="grey60">boolean</font></td></tr>
+  <tr><td align="left" width="130" port="sill">sill <font face="Arial Italic" color="grey60">boolean</font></td></tr>
+</table>
+}>];
+m_PropertyBetweenFloorSlap [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyBetweenFloorSlap</font></td></tr>
+</table>
+}>];
+m_PropertyCloset [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyCloset</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="qualities_id">qualities_id <font face="Arial Italic" color="grey60">integer (8) ∗</font></td></tr>
+</table>
+}>];
+m_PropertyCover [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyCover</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="observations">observations <font face="Arial Italic" color="grey60">text</font></td></tr>
+</table>
+}>];
+m_PropertyDoor [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyDoor</font></td></tr>
+</table>
+}>];
+m_PropertyDrinkingWater [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyDrinkingWater</font></td></tr>
+</table>
+}>];
+m_PropertyDryWall [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyDryWall</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="other">other <font face="Arial Italic" color="grey60">string</font></td></tr>
+</table>
+}>];
+m_PropertyElectricity [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyElectricity</font></td></tr>
+</table>
+}>];
+m_PropertyEnlarQuality [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyEnlarQuality</font></td></tr>
+</table>
+}>];
+m_PropertyExteriorClosure [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyExteriorClosure</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="other">other <font face="Arial Italic" color="grey60">string</font></td></tr>
+</table>
+}>];
+m_PropertyExternTermination [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyExternTermination</font></td></tr>
+</table>
+}>];
+m_PropertyFurniture [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyFurniture</font></td></tr>
+</table>
+}>];
+m_PropertyGa [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyGa</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="gas_id">gas_id <font face="Arial Italic" color="grey60">integer (8) ∗</font></td></tr>
+</table>
+}>];
+m_PropertyHeating [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyHeating</font></td></tr>
+</table>
+}>];
+m_PropertyHousingQuality [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyHousingQuality</font></td></tr>
+</table>
+}>];
+m_PropertyInteriorClosure [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyInteriorClosure</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="other">other <font face="Arial Italic" color="grey60">string</font></td></tr>
+</table>
+}>];
+m_PropertyLandShape [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyLandShape</font></td></tr>
+</table>
+}>];
+m_PropertyMaintenance [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyMaintenance</font></td></tr>
+</table>
+}>];
+m_PropertyPavement [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyPavement</font></td></tr>
+</table>
+}>];
+m_PropertyPropertyType [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyPropertyType</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="sites">sites <font face="Arial Italic" color="grey60">integer ∗</font></td></tr>
+</table>
+}>];
+m_PropertyRoad [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyRoad</font></td></tr>
+</table>
+}>];
+m_PropertyRol [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyRol</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="block">block <font face="Arial Italic" color="grey60">integer ∗</font></td></tr>
+  <tr><td align="left" width="130" port="predial">predial <font face="Arial Italic" color="grey60">integer ∗</font></td></tr>
+</table>
+}>];
+m_PropertyRoofing [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyRoofing</font></td></tr>
+</table>
+}>];
+m_PropertySecCharacteristic [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertySecCharacteristic</font></td></tr>
+</table>
+}>];
+m_PropertySector [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertySector</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="distance">distance <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_PropertySewerage [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertySewerage</font></td></tr>
+</table>
+}>];
+m_PropertyShed [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyShed</font></td></tr>
+</table>
+}>];
+m_PropertySidewalk [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertySidewalk</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="width">width <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_PropertyStair [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyStair</font></td></tr>
+</table>
+}>];
+m_PropertyStreetLocation [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyStreetLocation</font></td></tr>
+</table>
+}>];
+m_PropertyStructure [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyStructure</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="observations">observations <font face="Arial Italic" color="grey60">text</font></td></tr>
+</table>
+}>];
+m_PropertyToiletArtifact [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyToiletArtifact</font></td></tr>
+</table>
+}>];
+m_PropertyType [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyType</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+</table>
+}>];
+m_PropertyWaterRainDuct [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyWaterRainDuct</font></td></tr>
+</table>
+}>];
+m_PropertyWindow [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">PropertyWindow</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="other">other <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="protections">protections <font face="Arial Italic" color="grey60">boolean ∗</font></td></tr>
+</table>
+}>];
+m_Province [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Province</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+</table>
+}>];
+m_Quality [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Quality</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_Region [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Region</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+</table>
+}>];
+m_Road [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Road</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_Roofing [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Roofing</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_Sector [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Sector</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+</table>
+}>];
+m_SectorCharacteristic [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">SectorCharacteristic</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_ServiceYard [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">ServiceYard</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="img">img <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="mts2">mts2 <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_Sewerage [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Sewerage</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_Shed [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Shed</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+</table>
+}>];
+m_ShedMaterial [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">ShedMaterial</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_SideWalk [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">SideWalk</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_Stair [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Stair</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_State [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">State</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+</table>
+}>];
+m_StreetLocation [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">StreetLocation</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_Structure [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Structure</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_ToiletArtifact [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">ToiletArtifact</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_User [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">User</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="email">email <font face="Arial Italic" color="grey60">string ∗ U</font></td></tr>
+  <tr><td align="left" width="130" port="encrypted_password">encrypted_password <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="first_name">first_name <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="last_name">last_name <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="remember_created_at">remember_created_at <font face="Arial Italic" color="grey60">datetime</font></td></tr>
+  <tr><td align="left" width="130" port="reset_password_sent_at">reset_password_sent_at <font face="Arial Italic" color="grey60">datetime</font></td></tr>
+  <tr><td align="left" width="130" port="reset_password_token">reset_password_token <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="role">role <font face="Arial Italic" color="grey60">integer</font></td></tr>
+  <tr><td align="left" width="130" port="rut">rut <font face="Arial Italic" color="grey60">integer</font></td></tr>
+</table>
+}>];
+m_WaterRainDuct [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">WaterRainDuct</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+m_Window [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Window</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="value">value <font face="Arial Italic" color="grey60">float ∗</font></td></tr>
+</table>
+}>];
+  m_State -> m_Assessment [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Client -> m_Assessment [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Owner -> m_Assessment [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Assessment -> m_Property [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_BetweenFloorSlap -> m_PropertyBetweenFloorSlap [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_BetweenFloorSlap -> m_Property [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_BetweenFloorSlap -> m_Quality [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Region -> m_City [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_City -> m_Province [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_ClientType -> m_Client [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Closet -> m_PropertyCloset [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Cover -> m_PropertyCover [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Cover -> m_Property [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Cover -> m_Quality [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Door -> m_PropertyDoor [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Door -> m_DoorFrame [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Door -> m_Property [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Door -> m_Quality [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_DoorFrame -> m_PropertyDoor [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_DoorFrame -> m_Property [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_DrinkingWater -> m_PropertyDrinkingWater [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_DrinkingWater -> m_Property [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_DrinkingWater -> m_Quality [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_DryWall -> m_PropertyDryWall [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_DryWall -> m_Property [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_DryWall -> m_Quality [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Electricity -> m_PropertyElectricity [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Electricity -> m_Property [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_EnlargementsQuality -> m_PropertyEnlarQuality [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_ExteriorClosure -> m_PropertyExteriorClosure [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_ExteriorClosure -> m_Property [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_ExteriorClosure -> m_Quality [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_ExternalTermination -> m_PropertyExternTermination [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_ExternalTermination -> m_Quality [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Furniture -> m_PropertyFurniture [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Furniture -> m_FurnitureCover [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Furniture -> m_Property [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Furniture -> m_Quality [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_FurnitureCover -> m_PropertyFurniture [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_FurnitureCover -> m_Property [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Ga -> m_PropertyGa [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Heating -> m_PropertyHeating [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Heating -> m_Property [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Heating -> m_Quality [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_HousingQuality -> m_PropertyHousingQuality [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_HousingQuality -> m_Property [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_InteriorClosure -> m_PropertyInteriorClosure [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_InteriorClosure -> m_Property [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_LandShape -> m_PropertyLandShape [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_LandShape -> m_Property [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_LandShape -> m_Quality [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Maintenance -> m_PropertyMaintenance [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Maintenance -> m_Property [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Maintenance -> m_Quality [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Pavement -> m_PropertyPavement [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Pavement -> m_Quality [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Property -> m_Pool [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_PropertyBetweenFloorSlap [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_PropertyCover [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_PropertyDoor [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_PropertyDrinkingWater [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_PropertyDryWall [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_PropertyElectricity [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_PropertyExteriorClosure [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_PropertyFurniture [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_PropertyGa [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_Ga [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "1", constraint = "false"];
+  m_Property -> m_PropertyHeating [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_PropertyHousingQuality [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_PropertyInteriorClosure [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_PropertyLandShape [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_PropertyMaintenance [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_PropertyPavement [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_Pavement [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "1", constraint = "false"];
+  m_Property -> m_PropertyPropertyType [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_PropertyType [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Property -> m_PropertyRoad [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_Road [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Property -> m_PropertyRol [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_Province [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "1", constraint = "false"];
+  m_Property -> m_PropertyRoofing [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_Roofing [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Property -> m_PropertySector [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_Sector [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "1", constraint = "false"];
+  m_Property -> m_PropertySewerage [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_Sewerage [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Property -> m_PropertyShed [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_Shed [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "1", constraint = "false"];
+  m_Property -> m_PropertySidewalk [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_PropertyStair [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_Stair [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Property -> m_PropertyStreetLocation [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_PropertyStructure [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_Structure [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "1", constraint = "false"];
+  m_Property -> m_PropertyToiletArtifact [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_Quality [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "1", constraint = "false"];
+  m_Property -> m_ToiletArtifact [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "1", constraint = "false"];
+  m_Property -> m_PropertyWaterRainDuct [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_WaterRainDuct [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "1", constraint = "false"];
+  m_Property -> m_PropertyWindow [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_Window [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "1", constraint = "false"];
+  m_Property -> m_PropertyCloset [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Quality -> m_PropertyBetweenFloorSlap [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Quality -> m_PropertyCover [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Quality -> m_PropertyDoor [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Quality -> m_PropertyDrinkingWater [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Quality -> m_PropertyDryWall [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_PropertyEnlarQuality [arrowhead = "normal", arrowtail = "none", weight = "1"];
+  m_Quality -> m_PropertyExteriorClosure [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_PropertyExternTermination [arrowhead = "normal", arrowtail = "none", weight = "1"];
+  m_Quality -> m_PropertyExternTermination [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Quality -> m_PropertyFurniture [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Quality -> m_PropertyGa [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Quality -> m_PropertyHeating [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Quality -> m_PropertyLandShape [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Quality -> m_PropertyMaintenance [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Quality -> m_PropertyPavement [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_PropertyType -> m_PropertyPropertyType [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Road -> m_PropertyRoad [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Province -> m_PropertyRol [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Roofing -> m_PropertyRoofing [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Quality -> m_PropertyRoofing [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Property -> m_PropertySecCharacteristic [arrowhead = "normal", arrowtail = "none", weight = "1"];
+  m_SectorCharacteristic -> m_PropertySecCharacteristic [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Sector -> m_PropertySector [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Sewerage -> m_PropertySewerage [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Quality -> m_PropertySewerage [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Shed -> m_PropertyShed [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_ShedMaterial -> m_PropertyShed [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Quality -> m_PropertyShed [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Stair -> m_PropertyStair [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Quality -> m_PropertyStair [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_StreetLocation -> m_PropertyStreetLocation [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Structure -> m_PropertyStructure [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Quality -> m_PropertyStructure [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_ToiletArtifact -> m_PropertyToiletArtifact [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Quality -> m_PropertyToiletArtifact [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_WaterRainDuct -> m_PropertyWaterRainDuct [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Quality -> m_PropertyWaterRainDuct [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Window -> m_PropertyWindow [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Quality -> m_PropertyWindow [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_Quality -> m_ToiletArtifact [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Quality -> m_PropertyCloset [arrowhead = "normal", arrowtail = "none", weight = "1"];
+  m_Quality -> m_Closet [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "1", constraint = "false"];
+  m_Quality -> m_Stair [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Quality -> m_Ga [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "1", constraint = "false"];
+  m_Quality -> m_Shed [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Quality -> m_Sewerage [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Quality -> m_Roofing [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Quality -> m_WaterRainDuct [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Quality -> m_Structure [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Quality -> m_Window [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
+  m_Property -> m_ServiceYard [arrowhead = "normal", arrowtail = "none", weight = "1"];
+  m_SideWalk -> m_PropertySidewalk [arrowhead = "normal", arrowtail = "none", weight = "1"];
+}
