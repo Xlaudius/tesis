@@ -79,8 +79,14 @@ Rails.application.routes.draw do
   resources :regions
   resources :property_property_types
   resources :property_types
-  resources :properties
-  resources :assessments
+  
+
+
+  resources :assessments do
+    resources :properties
+  end
+
+  
   resources :owners
   resources :states
   resources :clients
