@@ -1,5 +1,6 @@
 class AssessmentsController < ApplicationController
   before_action :set_assessment, only: [:show, :edit, :update, :destroy]
+
   load_and_authorize_resource
   
   # GET /assessments
@@ -16,9 +17,7 @@ class AssessmentsController < ApplicationController
   # GET /assessments/new
   def new
     @assessment = Assessment.new   
-    @assessmentlast = Assessment.last
-    @property = Property.new(debt_taxation: 0, antiquity: 0, expropriation: true, sill: true ,assessment_id: assessmentlast.id, facilities: true)
-
+    @property = Property.new 
   end
 
   # GET /assessments/1/edit
@@ -28,11 +27,15 @@ class AssessmentsController < ApplicationController
   # POST /assessments
   # POST /assessments.json
   def create
-    @assessment = Assessment.new(assessment_params)
 
+    @assessment = Assessment.new(assessment_params)
     respond_to do |format|
       if @assessment.save
-        format.html { redirect_to @assessment, notice: 'Assessment was successfully created.' }
+        @assessment2 = Assessment.last.id 
+        @property = Property.new(:debt_taxation => 0, :antiquity => 0, :expropriation => false, :sill => false, :facilities => false, :assessment_id => @assessment2)
+        @property.save  
+
+        format.html { redirect_to @assessment, notice: 'YASASSSS.' }
         format.json { render :show, status: :created, location: @assessment }
       else
         format.html { render :new }
@@ -65,6 +68,7 @@ class AssessmentsController < ApplicationController
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_assessment
@@ -74,5 +78,9 @@ class AssessmentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def assessment_params
       params.require(:assessment).permit(:number_assesment, :state_id, :location, :inhabited, :habitant, :client_id, :owner_id, :start_date, :end_date)
+    end
+
+    def property_params
+      params.require(:property).permit(:debt_taxation => 0, :antiquity => 0, :expropriation => false, :sill => false, :assessment_id => 0, :facilities => false)
     end
 end
