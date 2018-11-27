@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= form.label :Tasación %>
-    <%= form.text_field :assessment_id %>
+    <%= form.select :assessment_id, Assessment.pluck(:number_assesment, :id), prompt: 'Selecciona Nº de Tasación', class:"form-control selectpicker" %>
   </div>
 
   <div class="field">
