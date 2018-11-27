@@ -31,11 +31,11 @@ class AssessmentsController < ApplicationController
     @assessment = Assessment.new(assessment_params)
     respond_to do |format|
       if @assessment.save
-        @assessment = Assessment.last.id 
-        @property = Property.new(:debt_taxation => 0, :antiquity => 0, :expropriation => false, :sill => false, :facilities => false, :assessment_id => @assessment)
+        @assessment2 = Assessment.last.id 
+        @property = Property.new(:debt_taxation => 0, :antiquity => 0, :expropriation => false, :sill => false, :facilities => false, :assessment_id => @assessment2)
         @property.save  
 
-        format.html { redirect_to @assessments, notice: 'YASASSSS.' }
+        format.html { redirect_to @assessment, notice: 'YASASSSS.' }
         format.json { render :show, status: :created, location: @assessment }
       else
         format.html { render :new }
