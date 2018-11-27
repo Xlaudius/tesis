@@ -68,18 +68,6 @@ class AssessmentsController < ApplicationController
     end
   end
 
-  def creating_Property
-    @property = Property.new(property_params)
-    respond_to do |format|
-      if @property.save
-        format.html { redirect_to @assessment, notice: 'PROPIEDAD' }
-        format.json { render :show, status: :created, location: @assessment }
-      else
-        format.html { render :new }
-        format.json { render json: @property.errors, status: :unprocessable_entity }
-      end
-    end
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
