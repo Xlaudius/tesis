@@ -32,9 +32,9 @@
                   <td><%= client.number %></td>
                   <td><%= client.available %></td>
                   <td><%= client.client_type.name %></td>
-                  <td><%= link_to 'Detalles', client %></td>
-                  <td><%= link_to 'Editar', edit_client_path(client) %></td>
-                  <td><%= link_to 'Eliminar', client, method: :delete, data: { confirm: 'Seguro que desea eliminar el cliente?' } %></td>
+                  <td><%= link_to 'Detalles', client if can? :read, :client %></td>
+                  <td><%= link_to 'Editar', edit_client_path(client) if can? :update, :client %></td>
+                  <td><%= link_to 'Eliminar', client, method: :delete, data: { confirm: 'Seguro que desea eliminar el cliente?' } if can? :destroy, :client %></td>
                 </tr>
               <% end %>
             </tbody>
