@@ -14,6 +14,7 @@ gem 'font-awesome-rails'
 gem "jquery-rails"
 gem 'popper_js', '~> 1.12.9'
 gem 'carrierwave'
+gem 'wicked_pdf'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
