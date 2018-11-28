@@ -4,6 +4,15 @@ Rails.application.routes.draw do
               registrations: 'users/registrations'
   }
 
+  devise_scope :user do
+    authenticated :user do
+      root 'assessments#index', as: :authenticated_root
+    end
+  
+    unauthenticated do
+      root 'devise/sessions#new', as: :unauthenticated_root
+    end
+  end
 
   resources :property_closets
   resources :closets
@@ -92,6 +101,5 @@ Rails.application.routes.draw do
   resources :clients
   resources :client_types
 
-  root 'assessments#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
