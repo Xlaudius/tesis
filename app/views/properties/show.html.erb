@@ -41,6 +41,361 @@
 <% else %>
   <p>no hay entre pisos</p>
 <% end %>
+
+
+<% if @property.covers.any? %>
+    <h5> Cubierta: </h5>
+    <ul>
+        <% @property.covers.each do |cover| %>
+        <li><%= cover.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Cubierta</p>
+   <% end %>      
+  
+    <% if @property.doors.any? %>
+    <h5> Puertas: </h5>
+    <ul>
+        <% @property.doors.each do |door| %>
+        <li><%= door.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Puertas</p>
+   <% end %>  
+
+  <% if @property.door_frames.any? %>
+    <h5> Marcos de puertas: </h5>
+    <ul>
+        <% @property.door_frames.each do |door_frame| %>
+        <li><%= door_frame.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Marcos de puertas</p>
+   <% end %>      
+  
+  <% if @property.drinking_waters.any? %>
+    <h5> Agua Potable: </h5>
+    <ul>
+        <% @property.drinking_waters.each do |drinking_water| %>
+        <li><%= drinking_water.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Agua Potable</p>
+   <% end %>      
+  
+  <% if @property.dry_walls.any? %>
+    <h5> Muro falso: </h5>
+    <ul>
+        <% @property.dry_walls.each do |dry_wall| %>
+        <li><%= dry_wall.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Muro falso</p>
+   <% end %>      
+  
+  <% if @property.electricities.any? %>
+    <h5> Electricidad: </h5>
+    <ul>
+        <% @property.electricities.each do |electricitie| %>
+        <li><%= electricitie.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Electricidad</p>
+   <% end %>      
+  
+  <% if @property.exterior_closures.any? %>
+    <h5> Cierros Exteriores: </h5>
+    <ul>
+        <% @property.exterior_closures.each do |exterior_closure| %>
+        <li><%= exterior_closure.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Cierros Exteriores</p>
+   <% end %>    
+
+  <% if @property.interior_closures.any? %>
+    <h5> Cierros interiores: </h5>
+    <ul>
+        <% @property.interior_closures.each do |interior_closure| %>
+        <li><%= interior_closure.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Cierros interiores</p>
+   <% end %>     
+   
+  <% if @property.furnitures.any? %>
+  <h5> Muebles: </h5>
+  <ul>
+      <% @property.furnitures.each do |furniture| %>
+      <li><%= furniture.name %></li>
+      <% end %>
+  </ul>
+  <% else %>
+  <p> no hay Muebles</p>
+  <% end %>     
+  
+  <% if @property.furniture_covers.any? %>
+    <h5> Cubierta Muebles: </h5>
+    <ul>
+        <% @property.furniture_covers.each do |furniture_cover| %>
+        <li><%= furniture_cover.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Cubierta Muebles</p>
+   <% end %>      
+  
+  <% if @property.heatings.any? %>
+    <h5> Calefacción: </h5>
+    <ul>
+        <% @property.heatings.each do |heating| %>
+        <li><%= heating.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Calefacción</p>
+   <% end %>      
+  
+  <% if @property.housing_qualities.any? %>
+    <h5> Calidad de Vivienda: </h5>
+    <ul>
+        <% @property.housing_qualities.each do |housing_qualitie| %>
+        <li><%= housing_qualitie.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Calidad de Vivienda</p>
+   <% end %>      
+      
+  
+  <% if @property.land_shapes.any? %>
+    <h5> Forma Terreno: </h5>
+    <ul>
+        <% @property.land_shapes.each do |land_shape| %>
+        <li><%= land_shape.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Forma Terreno</p>
+   <% end %>      
+  
+  <% if @property.maintenances.any? %>
+    <h5> Mantención: </h5>
+    <ul>
+        <% @property.maintenances.each do |maintenance| %>
+        <li><%= maintenance.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Mantención</p>
+   <% end %>      
+  
+  <% if @property.pavements.any? %>
+    <h5> Pavimento: </h5>
+    <ul>
+        <% @property.pavements.each do |pavement| %>
+        <li><%= pavement.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Pavimento</p>
+   <% end %>      
+  
+  <% if @property.property_types.any? %>
+    <h5> Tipo vivienda: </h5>
+    <ul>
+        <% @property.property_types.each do |property_type| %>
+        <li><%= property_type.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Tipo vivienda</p>
+   <% end %>      
+
+  <% if @property.roads.any? %>
+    <h5> Acera: </h5>
+    <ul>
+        <% @property.roads.each do |road| %>
+        <li><%= road.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Acera</p>
+   <% end %>      
+
+  <% if @property.property_rols.any? %>
+    <h5> ROL (bloque - predial) </h5>
+    <ul>
+        <% @property.property_rols.each do |property_rol| %>
+        <li><%= property_rol.block %></li>
+        <li><%= property_rol.predial %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay ROL</p>
+   <% end %>      
+
+  <% if @property.provinces.any? %>
+    <h5> Comuna: </h5>
+    <ul>
+        <% @property.provinces.each do |province| %>
+        <li><%= province.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Comuna</p>
+   <% end %>      
+  
+  <% if @property.roofings.any? %>
+    <h5> Techumbre: </h5>
+    <ul>
+        <% @property.roofings.each do |roofing| %>
+        <li><%= roofing.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Techumbre</p>
+   <% end %>      
+  
+  <% if @property.sectors.any? %>
+    <h5> Sector: </h5>
+    <ul>
+        <% @property.sectors.each do |sector| %>
+        <li><%= sector.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Sector</p>
+   <% end %>      
+  
+  <% if @property.sewerages.any? %>
+    <h5> Alcantarillado: </h5>
+    <ul>
+        <% @property.sewerages.each do |sewerage| %>
+        <li><%= sewerage.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Alcantarillado</p>
+   <% end %>      
+  
+  <% if @property.sheds.any? %>
+    <h5> Cobertizo: </h5>
+    <ul>
+        <% @property.sheds.each do |shed| %>
+        <li><%= shed.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Cobertizo</p>
+   <% end %>          
+  
+  <% if @property.stairs.any? %>
+    <h5> Escaleras: </h5>
+    <ul>
+        <% @property.stairs.each do |stair| %>
+        <li><%= stair.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Escaleras</p>
+   <% end %>      
+
+  <% if @property.street_locations.any? %>
+    <h5> Ubicacion calle: </h5>
+    <ul>
+        <% @property.street_locations.each do |street_location| %>
+        <li><%= street_location.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Ubicacion calle</p>
+   <% end %>      
+  
+  <% if @property.structures.any? %>
+    <h5> Estructura: </h5>
+    <ul>
+        <% @property.structures.each do |structure| %>
+        <li><%= structure.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Estructura</p>
+   <% end %>      
+  
+  <% if @property.qualities.any? %>
+    <h5> Calidad: </h5>
+    <ul>
+        <% @property.qualities.each do |qualitie| %>
+        <li><%= qualitie.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Calidad</p>
+   <% end %>      
+
+  <% if @property.toilet_artifacts.any? %>
+    <h5> Artefactos sanitarios: </h5>
+    <ul>
+        <% @property.toilet_artifacts.each do |toilet_artifact| %>
+        <li><%= toilet_artifact.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Artefactos sanitarios</p>
+   <% end %>      
+  
+  <% if @property.water_rain_ducts.any? %>
+    <h5> Canales ALL: </h5>
+    <ul>
+        <% @property.water_rain_ducts.each do |water_rain_duct| %>
+        <li><%= water_rain_duct.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Canales ALL</p>
+   <% end %>      
+  
+  <% if @property.windows.any? %>
+    <h5> Ventanas: </h5>
+    <ul>
+        <% @property.windows.each do |window| %>
+        <li><%= window.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Ventanas</p>
+   <% end %>      
+
+  <% if @property.closets.any? %>
+    <h5> Armarios: </h5>
+    <ul>
+        <% @property.closets.each do |closet| %>
+        <li><%= closet.name %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Armarios</p>
+   <% end %>      
+
+  <% if @property.pools.any? %>
+    <h5> Piscina: </h5>
+    <ul>
+        <% @property.pools.each do |pool| %>
+        <li><%= pool.volumen %></li>
+        <% end %>
+    </ul>
+   <% else %>
+    <p> no hay Piscina</p>
+   <% end %>    
  
 
 <%= link_to 'Editar', edit_assessment_property_path(@property) %> |
