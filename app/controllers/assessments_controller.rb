@@ -7,6 +7,11 @@ class AssessmentsController < ApplicationController
   # GET /assessments.json
   def index
     @assessments = Assessment.order(:number_assesment).page (params[:page])
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf { render template: 'assessments/report', pdf: 'Reporte' }
+    end
   end
 
   # GET /assessments/1
