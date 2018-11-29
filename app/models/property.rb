@@ -47,10 +47,11 @@ class Property < ApplicationRecord
   has_many :property_sheds
   has_many :sheds, through: :property_sheds
   has_many :property_sidewalks
-  has_many :sidewalks, through: :property_sidewalks
+  has_many :side_walks, through: :property_sidewalks
   has_many :property_stairs
   has_many :stairs, through: :property_stairs
   has_many :property_street_locations
+  has_many :street_locations, through: :property_street_locations
   has_many :property_structures
   has_many :structures, through: :property_structures
   has_many :property_toilet_artifacts
@@ -61,6 +62,7 @@ class Property < ApplicationRecord
   has_many :property_windows
   has_many :windows, through: :property_windows
   has_many :property_closets
+  has_many :closets, through: :property_closets
   has_many :pools
 
 # validates :expropriation, :sill, :facilities, inclusion: { in: [true, false] }
