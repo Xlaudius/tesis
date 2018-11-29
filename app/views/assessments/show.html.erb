@@ -48,11 +48,21 @@
 
 <h2> Propiedades: </h2>
 
-<% @assessment.properties.each do |property| %>
-  <ul>
-    <li> <%= property.id%> </li>
-  </ul>
-<% end%>
+  <table class="table">
+    <table>
+      <thead>
+        <th>Id Propiedad</th>
+      </thead>
+      <tbody>
+        <% @assessment.properties.each do |property| %>
+          <tr>
+            <td> <%=property.id%></td>
+            <td><%= link_to 'Detalles', assessment_property_path(@assessment.property_ids) %></td>
+          </tr> 
+         <%end%> 
+      </tbody>
+    </table>
+  </table>
 <%= render 'new_property.html', assessment: @assessment %>
 
 <%= link_to 'Editar', edit_assessment_path(@assessment) %> |

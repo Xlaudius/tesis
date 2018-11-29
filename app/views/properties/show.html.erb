@@ -1,34 +1,47 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Debt taxation:</strong>
+  <strong>Deuda tributaria:</strong>
   <%= @property.debt_taxation %>
 </p>
 
 <p>
-  <strong>Antiquity:</strong>
-  <%= @property.antiquity %>
+  <strong>Antigüedad:</strong>
+  <%= @property.antiquity %> 
+   años
 </p>
 
 <p>
-  <strong>Expropriation:</strong>
+  <strong>Expopiada:</strong>
   <%= @property.expropriation %>
 </p>
 
 <p>
-  <strong>Sill:</strong>
+  <strong>Solera:</strong>
   <%= @property.sill %>
 </p>
 
 <p>
-  <strong>Assessment:</strong>
+  <strong>Nº Tasación:</strong>
   <%= @property.assessment.number_assesment %>
 </p>
 
 <p>
-  <strong>Facilities:</strong>
+  <strong>Instalaciones:</strong>
   <%= @property.facilities %>
 </p>
 
-<%= link_to 'Editar', edit_property_path(@property) %> |
-<%= link_to 'volver', properties_path %>
+<% if @property.between_floor_slaps.any? %>
+  <h5>Entre pisos:</h5>
+  <ul>
+    <% @property.between_floor_slaps.each do |between_floor_slap| %>
+    <li><%= between_floor_slap.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>no hay entre pisos</p>
+<% end %>
+ 
+
+<%= link_to 'Editar', edit_assessment_property_path(@property) %> |
+<%= link_to 'volver', assessment_path(@property.assessment.id) %>

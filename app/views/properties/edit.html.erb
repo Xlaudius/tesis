@@ -2,5 +2,4 @@
 
 <%= render 'form', property: @property %>
 
-<%= link_to 'Detalles', @property %> |
-<%= link_to 'Volver', properties_path %>
+<%= link_to 'Volver', assessment_property_path(@assessment.property_ids) %> |
