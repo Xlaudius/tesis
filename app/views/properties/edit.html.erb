@@ -2,4 +2,5 @@
 
 <%= render 'form', property: @property %>
 
-<%= link_to 'Volver', assessment_property_path(@assessment.property_ids) %> |
+<%= link_to 'Volve a propiedad', assessment_property_path(@property.assessment, @property) %>
+<%= link_to 'Volver a tasacion', assessment_path(@property.assessment) %> |
