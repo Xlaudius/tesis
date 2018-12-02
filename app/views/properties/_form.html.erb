@@ -1,4 +1,4 @@
-<%= form_with(model: property, local: true) do |form| %>
+<%= form_with(model: property, local: true, url: [property.assessment, property]) do |form| %>
   <% if property.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
@@ -39,6 +39,17 @@
     <%= form.label :Instalación %>
     <%= form.check_box :facilities %>
   </div>
+
+  <div class="form-group">
+    <%= form.label :Entre_suelo %>
+    <%= form.select :between_floor_slaps_id,BetweenFloorSlap.pluck(:name,:id), prompt: 'Elige Entre suelo', class:'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :Entre_suelo %>
+    <%= form.select :property_between_floor_slaps_id,PropertyBetweenFloorSlap.pluck(:id,:id), prompt: 'Elige property Entre suelo', class:'form-control' %>
+  </div>
+
 
   <div class="actions">
     <%= form.submit %>

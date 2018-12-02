@@ -398,5 +398,5 @@
    <% end %>    
  
 
-<%= link_to 'Editar', edit_assessment_property_path(@property) %> |
+<%= link_to 'Editar', edit_assessment_property_path(@property.assessment.id,@property) %> |
 <%= link_to 'volver', assessment_path(@property.assessment.id) %>
