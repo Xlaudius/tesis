@@ -40,6 +40,17 @@
     <%= form.check_box :facilities %>
   </div>
 
+  <div class="form-group">
+    <%= form.label :Entre_suelo %>
+    <%= form.select :between_floor_slaps_id,BetweenFloorSlap.pluck(:name,:id), prompt: 'Elige Entre suelo', class:'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :Entre_suelo %>
+    <%= form.select :property_between_floor_slaps_id,PropertyBetweenFloorSlap.pluck(:id,:id), prompt: 'Elige property Entre suelo', class:'form-control' %>
+  </div>
+
+
   <div class="actions">
     <%= form.submit %>
   </div>

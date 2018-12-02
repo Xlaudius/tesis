@@ -57,7 +57,7 @@
         <% @assessment.properties.each do |property| %>
           <tr>
             <td> <%=property.id%></td>
-            <td><%= link_to 'Detalles', assessment_property_path(@assessment.property_ids) %></td>
+            <td><%= link_to 'Detalles', assessment_property_path(@assessment,property.id) %></td>
           </tr> 
          <%end%> 
       </tbody>
