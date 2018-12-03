@@ -11,9 +11,9 @@
         <div class="table-responsive">
           <table class="table">
             <thead class="text-primary">
-                <%= link_to 'Nueva Tasación', new_assessment_path if can? :create, :assessment, class:'btn btn-primary' %>
+                <button type="button" class="btn btn-success btn-round pull-right"> <%= link_to 'Nueva Tasación', new_assessment_path if can? :create, :assessment %> </button>
                 <th colspan="1"></th>
-                <th>Número de Tasación</th>
+                <th>Nº Tasación</th>
                 <th>Estado</th>
                 <th>Dirección</th>
                 <th>Fecha inicio</th>
@@ -25,14 +25,14 @@
             <tbody>
               <% @assessments.each do |assessment| %>
                 <tr>
-                  <td><%= link_to 'Detalles', assessment if can? :read, :assessments, class:'btn btn-info btn-round' %></td>
+                  <td><button type="button" rel="tooltip" class="btn btn-info btn-round btn-sm"><%= link_to 'Detalles', assessment if can? :read, :assessments %> </button></td>
                   <td class="text-primary"><%= assessment.number_assesment %></td>
                   <td><%= assessment.state.name %></td>
                   <td><%= assessment.location %></td>
                   <td><%= assessment.start_date %></td>
                   <td><%= assessment.end_date %></td>
-                  <td><%= link_to 'Editar', edit_assessment_path(assessment) if can? :update, :assessments, class:'btn btn-info btn-round' %></td>
-                  <td><%= link_to 'Eliminar', assessment, method: :delete, data: { confirm: 'Seguro que desea eliminar esta tasación?' } if can? :delete, :assessments, class:'btn btn-info btn-round' %></td>
+                  <td><button type="button" rel="tooltip" class="btn btn-warning btn-round btn-sm"><%= link_to 'Editar', edit_assessment_path(assessment) if can? :update, :assessments %></button></td>
+                  <td><button type="button" rel="tooltip" class="btn btn-danger btn-round btn-sm"><%= link_to 'Eliminar', assessment, method: :delete, data: { confirm: 'Seguro que desea eliminar esta tasación?' } if can? :delete, :assessments %></button></td>
                 </tr>
               <% end %>
             </tbody>

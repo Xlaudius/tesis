@@ -77,8 +77,8 @@
                       <% @assessment.properties.each do |property| %>
                         <tr>
                           <td> <%=property.id%></td>
-                          <td><%= link_to 'Detalles', assessment_property_path(@assessment,property.id), class:'btn btn-info btn-round' %></td>
-                          <td><%= link_to 'Editar', edit_assessment_property_path(@assessment,property.id), class:'btn btn-warning btn-round' %> </td>
+                          <td><button type="button" rel="tooltip" class="btn btn-info btn-round btn-sm"> <%= link_to 'Detalles', assessment_property_path(@assessment,property.id) %> </button> </td>
+                          <td><button type="button" rel="tooltip" class="btn btn-warning btn-round btn-sm"> <%= link_to 'Editar', edit_assessment_property_path(@assessment,property.id)%></button> </td>
 
                         </tr> 
                       <%end%> 
