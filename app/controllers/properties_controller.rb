@@ -1,5 +1,6 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: [:show, :edit, :update, :destroy]
+  before_action :materials, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
   
   # GET /properties
@@ -15,7 +16,8 @@ class PropertiesController < ApplicationController
 
   # GET /properties/new
   def new
-    @property = Property.new
+    @property = Property.ne
+    
   end
 
   # GET /properties/1/edit
@@ -43,7 +45,7 @@ class PropertiesController < ApplicationController
   def update
     respond_to do |format|
       if @property.update(property_params)
-        format.html { redirect_to @property, notice: 'Property was successfully updated.' }
+        format.html { redirect_to @property.assessment, notice: 'Property was successfully updated.' }
         format.json { render :show, status: :ok, location: @property }
       else
         format.html { render :edit }
@@ -68,8 +70,12 @@ class PropertiesController < ApplicationController
       @property = Property.find(params[:id])
     end
 
+    def materials
+      @between_floor_slaps = BetweenFloorSlap.all
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_params
-      params.require(:property).permit(:debt_taxation, :antiquity, :expropriation, :sill, :assessment_id, :facilities)
+      params.require(:property).permit(:debt_taxation, :antiquity, :expropriation, :sill, :assessment_id, :facilities, :name)
     end
 end

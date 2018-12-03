@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   resources :heatings
   resources :property_dry_walls
   resources :dry_walls
-  resources :property_between_floor_slaps
+
   resources :between_floor_slaps
   resources :pools
   resources :property_pavements
@@ -92,7 +92,9 @@ Rails.application.routes.draw do
 
 
   resources :assessments do
-    resources :properties
+    resources :properties do
+      resources :property_between_floor_slaps
+    end
   end
 
   

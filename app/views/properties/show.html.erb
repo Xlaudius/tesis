@@ -41,6 +41,7 @@
 <% else %>
   <p>no hay entre pisos</p>
 <% end %>
+<%= render 'new_propery_between_floor_slap', property: @property %>
 
 
 <% if @property.covers.any? %>

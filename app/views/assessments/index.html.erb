@@ -7,14 +7,11 @@
         <h4 class="card-title ">Tasaciones</h4>
         <p class="card-category">Lista de tasaciones existentes</p>
       </div>
-      <div> 
-      <%= link_to 'Nueva Tasación', new_assessment_path if can? :create, :assessment %>
-      </div>
       <div class="card-body">
         <div class="table-responsive">
           <table class="table">
             <thead class="text-primary">
-              
+                <%= link_to 'Nueva Tasación', new_assessment_path if can? :create, :assessment, class:'btn btn-primary' %>
                 <th colspan="1"></th>
                 <th>Número de Tasación</th>
                 <th>Estado</th>
@@ -28,14 +25,14 @@
             <tbody>
               <% @assessments.each do |assessment| %>
                 <tr>
-                  <td><%= link_to 'Detalles', assessment if can? :read, :assessments %></td>
+                  <td><%= link_to 'Detalles', assessment if can? :read, :assessments, class:'btn btn-info btn-round' %></td>
                   <td class="text-primary"><%= assessment.number_assesment %></td>
                   <td><%= assessment.state.name %></td>
                   <td><%= assessment.location %></td>
                   <td><%= assessment.start_date %></td>
                   <td><%= assessment.end_date %></td>
-                  <td><%= link_to 'Editar', edit_assessment_path(assessment) if can? :update, :assessments %></td>
-                  <td><%= link_to 'Eliminar', assessment, method: :delete, data: { confirm: 'Seguro que desea eliminar esta tasación?' } if can? :delete, :assessments %></td>
+                  <td><%= link_to 'Editar', edit_assessment_path(assessment) if can? :update, :assessments, class:'btn btn-info btn-round' %></td>
+                  <td><%= link_to 'Eliminar', assessment, method: :delete, data: { confirm: 'Seguro que desea eliminar esta tasación?' } if can? :delete, :assessments, class:'btn btn-info btn-round' %></td>
                 </tr>
               <% end %>
             </tbody>
