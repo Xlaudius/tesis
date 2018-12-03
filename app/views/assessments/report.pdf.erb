@@ -1,1 +1,106 @@
-<h1> Reporte </h1>  
+<br>
+<br>
+<div class="row" >
+    <div class="col-md-6" >
+    <h3> Tasacion Numero:</h3> <%= @assessment.number_assesment %>   
+    <h3> Cliente: </h3> <%= @assessment.client.name %>
+    <h3> Direccion: </h3> <%= @assessment.location %> 
+    <h3> Dueño: </h3> <%= @assessment.owner.name %>
+    <h3> Propiedad/es </h3>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="text-primary">
+                        <th>Numero de propiedad</th>
+                        <th>ROL</th>
+                    </thead>
+                    <tbody>
+                        <% @property.each_with_index do |property, i| %>
+                            <tr>
+                                <td>
+                                    <%= i+1 %>
+                                </td>
+                                <td> 
+                                    <% if @propertyrol.nil? %>
+                                        No Ingresado
+                                    <% else %>
+                                        <%= @propertyrol[i].block %>
+                                        -
+                                        <%= @propertyrol[i].predial %>
+                                    <% end %>
+                                </td> 
+                            </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" >
+    <div class="col-12">
+        <p> El presente documento es una muestra de informe de tasaciones, en el cual
+            se detallan las caracteristicas de las propiedadas tasadas por el tasador de terreno.</p>
+
+    </div>
+</div>
+<h3>Detalle de tasacion</h3>
+<div class="container">
+
+<div class="table-responsive" >
+    <table class="table">
+        <thead>
+            <th>Losa de entrepiso</th>
+            <th>Closet</th>
+            <th>Cubiertas</th>
+            <th>Puertas</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <% if @property_between.nil? %>
+                        No registrado
+                    <% else %>
+                        <% @property_between.each do |pro_bet| %>
+                            <%= pro_bet.between_floor_slap.name %>
+                        <% end %>
+                    <% end %>    
+                </td>
+                <td> 
+                    <% if @closet.nil? %>
+                        No registrado
+                    <% else %>
+                        <% @closet.each_with_index do |closet, i| %>
+                            <%= "#{i+1} #{closet.closet.name}" %> <br>   
+                        <% end %>    
+                    <% end %>    
+                </td>
+                <td>
+                    <% if @cover.nil? %>
+                        No registrado
+                    <% else %>
+                        <% @Cover.each_with_index do |cover, i| %>
+                            <%= i+1 %>
+                            <%= cover.cover.name %> <br>
+                        <% end %>    
+                    <% end %>    
+                </td>
+                <td>
+                    <% if @doors.nil? %>
+                        No registradas
+                    <% else %>
+                        <% @Cover.each_with_index do |door, i| %>
+                            <%= i+1 %>
+                            <%= door.door.name %> <br>
+                        <% end %>    
+                    <% end %>
+                </td>       
+            </tr>
+        </tbody>
+    </table>
+
+    
+    
+
+</div>

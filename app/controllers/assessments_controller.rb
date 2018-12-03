@@ -7,16 +7,35 @@ class AssessmentsController < ApplicationController
   # GET /assessments.json
   def index
     @assessments = Assessment.order(:number_assesment).page (params[:page])
-    respond_to do |format|
-      format.html
-      format.json
-      format.pdf { render template: 'assessments/report', pdf: 'Reporte' }
-    end
+    
   end
 
   # GET /assessments/1
   # GET /assessments/1.json
   def show
+    @property = Property.where(assessment_id: @assessment.id)
+    @client = Client.where(client_id: @assessment.client_id)
+    @propertyrol = PropertyRol.where(property_id: [@property.ids])
+    @property_between = PropertyBetweenFloorSlap.where(property_id: [@property.ids])
+    @closet = PropertyCloset.where(property_id: [@property.ids])
+    @covers = PropertyCover.where(property_id: [@property.ids])
+    @doors = PropertyDoor.where(property_id: [@property.ids])
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf do
+        render template: 'assessments/report', pdf:"Reporte-Tasacion-#{@assessment.number_assesment}",
+        layout: 'layouts/pdf.html.erb',
+        header: {
+          right: "#{Date.today.to_s}"
+        },
+        footer: {
+          center: "Hecho por 'CRAF solutions'"
+        },
+        viewport_size: '1280x1024',
+        page_size: 'A4'
+      end
+    end
   end
 
   # GET /assessments/new

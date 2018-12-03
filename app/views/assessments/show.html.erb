@@ -53,7 +53,9 @@
     <li> <%= property.id%> </li>
   </ul>
 <% end%>
+
 <%= render 'new_property.html', assessment: @assessment %>
 
-<%= link_to 'Editar', edit_assessment_path(@assessment) %> |
+<%= link_to "Imprimir PDF" , assessment_url(@assessment, :format => :pdf) if :admin? %>
+<%= link_to 'Editar', edit_assessment_path(@assessment) if can? :update, :assessment %> |
 <%= link_to 'Volver', assessments_path %>
