@@ -1,5 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<div>
+<%= form_tag assessments_path, :method => 'get' do %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+
+</div>
 <div class="row">
   <div class="col-md-12">
     <div class="card">
@@ -21,8 +28,9 @@
                 <th colspan="2"></th>
                 
             </thead>
-
             <tbody>
+
+            
               <% @assessments.each do |assessment| %>
                 <tr>
                   <td><button type="button" rel="tooltip" class="btn btn-info btn-round btn-sm"><%= link_to 'Detalles', assessment if can? :read, :assessments %> </button></td>
