@@ -40,16 +40,21 @@
     <%= form.check_box :facilities %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :Entre_suelo %>
-    <%= form.select :between_floor_slaps_id,BetweenFloorSlap.pluck(:name,:id), prompt: 'Elige Entre suelo', class:'form-control' %>
-  </div>
+   <div class="field">
+    <%= form_with(model: [@assessment, @property, PropertyBetweenFloorSlap.new], local: true, url: [@property.assessment, @property, @property_between_floor_slap]) do |form_bfs| %>
+      <div class="field">
+          <%= form_bfs.select :between_floor_slaps_id,BetweenFloorSlap.pluck(:name,:id), prompt: 'Elige Entre Piso', class:'form-control' %>
+      </div>
 
-  <div class="form-group">
-    <%= form.label :Entre_suelo %>
-    <%= form.select :property_between_floor_slaps_id,PropertyBetweenFloorSlap.pluck(:id,:id), prompt: 'Elige property Entre suelo', class:'form-control' %>
-  </div>
+      <div class="field">
+          <%= form_bfs.hidden_field :property_id, value: @property.id  %>
+      </div>
 
+      <div class="actions">        
+      <%= form_bfs.submit 'Añadir', class:'btn btn-primary', method: :post%>
+      </div>
+    <% end %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

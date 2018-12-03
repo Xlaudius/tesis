@@ -29,7 +29,7 @@ class PropertyBetweenFloorSlapsController < ApplicationController
 
     respond_to do |format|
       if @property_between_floor_slap.save
-        format.html { redirect_to @property_between_floor_slap, notice: 'Property between floor slap was successfully created.' }
+        format.html { redirect_to assessment_property_path(@property_between_floor_slap.property), notice: 'Property between floor slap was successfully created.' }
         format.json { render :show, status: :created, location: @property_between_floor_slap }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class PropertyBetweenFloorSlapsController < ApplicationController
   def update
     respond_to do |format|
       if @property_between_floor_slap.update(property_between_floor_slap_params)
-        format.html { redirect_to @property_between_floor_slap, notice: 'Property between floor slap was successfully updated.' }
+        format.html { redirect_to @property_between_floor_slap.property , notice: 'Property between floor slap was successfully updated.' }
         format.json { render :show, status: :ok, location: @property_between_floor_slap }
       else
         format.html { render :edit }
