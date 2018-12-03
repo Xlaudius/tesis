@@ -16,7 +16,7 @@ class PropertiesController < ApplicationController
 
   # GET /properties/new
   def new
-    @property = Property.ne
+    @property = Property.new
     
   end
 
