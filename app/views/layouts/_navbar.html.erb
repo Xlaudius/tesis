@@ -1,3 +1,4 @@
+
 <% 
 =begin %>
 
@@ -14,10 +15,8 @@
             <span class="navbar-toggler-icon icon-bar"></span>
           </button>
           
-
         </div>
       </nav>
-
 <%
 =end %> 
 
@@ -27,7 +26,7 @@
   <div class="navbar-wrapper">
     <a class="navbar-brand" href="<%= assessments_path %>">CRAF SOLUTIONS</a>
   </div>
-
+<% if user_signed_in? %>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
@@ -69,5 +68,6 @@
         </ul>
       </div>
   </div>
+<% end %>
 
 </nav>
