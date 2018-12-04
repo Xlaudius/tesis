@@ -97,5 +97,5 @@ class Property < ApplicationRecord
 
 # validates :expropriation, :sill, :facilities, inclusion: { in: [true, false] }
 #  validates :antiquity, :assessment_id, presence: true
-  validates :debt_taxation, :antiquity, :assessment_id, numericality: { greater_than_or_equal_to: 0 }
+  validates :debt_taxation, :antiquity, numericality: { greater_than_or_equal_to: 0 }
 end
