@@ -41,8 +41,6 @@
 <% else %>
   <p>no hay entre pisos</p>
 <% end %>
-<%= render 'new_propery_between_floor_slap', property: @property %>
-
 
 <% if @property.covers.any? %>
     <h5> Cubierta: </h5>
@@ -399,5 +397,5 @@
    <% end %>    
  
 
-<%= link_to 'Editar', edit_assessment_property_path(@property.assessment.id,@property) %> |
+<%= link_to 'Editar', edit_property_path(@property) %> |
 <%= link_to 'volver', assessment_path(@property.assessment.id) %>

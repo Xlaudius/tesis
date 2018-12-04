@@ -39,8 +39,8 @@
                   <td><%= assessment.location %></td>
                   <td><%= assessment.start_date %></td>
                   <td><%= assessment.end_date %></td>
-                  <td><button type="button" rel="tooltip" class="btn btn-warning btn-round btn-sm"><%= link_to 'Editar', edit_assessment_path(assessment) if can? :update, :assessments %></button></td>
-                  <td><button type="button" rel="tooltip" class="btn btn-danger btn-round btn-sm"><%= link_to 'Eliminar', assessment, method: :delete, data: { confirm: 'Seguro que desea eliminar esta tasación?' } if can? :delete, :assessments %></button></td>
+                  <td><button type="button" rel="tooltip" class="btn btn-warning btn-round btn-sm"><%= link_to 'Editar', edit_assessment_path(assessment) if can? :update, :assessments %> </button></td>
+                  <td><button type="button" rel="tooltip" class="btn btn-danger btn-round btn-sm"><%= link_to 'Eliminar', assessment, method: :delete, data: { confirm: 'Seguro que desea eliminar esta tasación?' } if can? :delete, :assessments %> </button></td>
                 </tr>
               <% end %>
             </tbody>

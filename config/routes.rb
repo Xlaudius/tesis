@@ -91,11 +91,10 @@ Rails.application.routes.draw do
   
 
 
-  resources :assessments do
-    resources :properties do
-      resources :property_between_floor_slaps
-    end
-  end
+  resources :assessments 
+  resources :properties 
+  resources :property_between_floor_slaps
+
 
   
   resources :owners
