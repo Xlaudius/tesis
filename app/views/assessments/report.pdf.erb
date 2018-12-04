@@ -21,7 +21,7 @@
                                     <%= i+1 %>
                                 </td>
                                 <td> 
-                                    <% if @propertyrol.nil? %>
+                                    <% if @propertyrol.nil? || @propertyrol.empty? %>
                                         No Ingresado
                                     <% else %>
                                         <%= @propertyrol[i].block %>
@@ -37,6 +37,7 @@
         </div>
     </div>
 </div>
+
 
 <div class="row" >
     <div class="col-12">
@@ -59,7 +60,7 @@
         <tbody>
             <tr>
                 <td>
-                    <% if @property_between.nil? %>
+                    <% if @property_between.nil? || @property_between.empty? %>
                         No registrado
                     <% else %>
                         <% @property_between.each do |pro_bet| %>
@@ -68,7 +69,7 @@
                     <% end %>    
                 </td>
                 <td> 
-                    <% if @closet.nil? %>
+                    <% if @closet.nil? || @closet.empty? %>
                         No registrado
                     <% else %>
                         <% @closet.each_with_index do |closet, i| %>
@@ -77,20 +78,20 @@
                     <% end %>    
                 </td>
                 <td>
-                    <% if @cover.nil? %>
+                    <% if @cover.nil? || @cover.empty? %>
                         No registrado
                     <% else %>
-                        <% @Cover.each_with_index do |cover, i| %>
+                        <% @cover.each_with_index do |cover, i| %>
                             <%= i+1 %>
                             <%= cover.cover.name %> <br>
                         <% end %>    
                     <% end %>    
                 </td>
                 <td>
-                    <% if @doors.nil? %>
+                    <% if @doors.nil? || @doors.empty? %>
                         No registradas
                     <% else %>
-                        <% @Cover.each_with_index do |door, i| %>
+                        <% @doors.each_with_index do |door, i| %>
                             <%= i+1 %>
                             <%= door.door.name %> <br>
                         <% end %>    
