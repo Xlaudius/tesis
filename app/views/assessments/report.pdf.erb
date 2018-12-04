@@ -21,7 +21,7 @@
                                     <%= i+1 %>
                                 </td>
                                 <td> 
-                                    <% if @propertyrol.empty? || @propertyrol.nil?  %>
+                                    <% if @propertyrol.nil? || @propertyrol.empty? %>
                                         No Ingresado
                                     <% else %>
                                         <%= @propertyrol[i].block %>
