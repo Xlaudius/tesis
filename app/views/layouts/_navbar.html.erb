@@ -24,7 +24,7 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
   <div class="container-fluid">
   <div class="navbar-wrapper">
-    <a class="navbar-brand" href="<%= assessments_path %>">CRAF SOLUTIONS</a>
+    <a class="navbar-brand" href="<%= assessments_path if user_signed_in? %>">CRAF SOLUTIONS</a>
   </div>
 <% if user_signed_in? %>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
