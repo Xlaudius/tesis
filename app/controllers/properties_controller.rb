@@ -17,11 +17,12 @@ class PropertiesController < ApplicationController
   # GET /properties/new
   def new
     @property = Property.new
-    
+    @property.property_between_floor_slaps.build
   end
 
   # GET /properties/1/edit
   def edit
+    @property.property_between_floor_slaps.build
   end
 
   # POST /properties
@@ -76,6 +77,7 @@ class PropertiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_params
-      params.require(:property).permit(:debt_taxation, :antiquity, :expropriation, :sill, :assessment_id, :facilities, :name)
+      params.require(:property).permit(:debt_taxation, :antiquity, :expropriation, :sill, :assessment_id, :facilities, :name,
+        property_between_floor_slaps_attributes:[:id,:between_floor_slap_id, :property_id, :quality_id])
     end
 end

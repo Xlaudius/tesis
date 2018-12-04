@@ -1,6 +1,8 @@
 class Property < ApplicationRecord
   belongs_to :assessment
+  
   has_many :property_between_floor_slaps
+  accepts_nested_attributes_for :property_between_floor_slaps
   has_many :between_floor_slaps, through: :property_between_floor_slaps
 
   has_many :property_covers
