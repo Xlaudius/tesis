@@ -1,61 +1,100 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Numero de tasación:</strong>
-  <%= @assessment.number_assesment %>
-</p>
+<div class="row">
+  <div class="col-md-6">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title">Detalles de Tasación</h4>
+            <p class="card-category">Datos básicos</p> 
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                      <p id="notice"><%= notice %></p>
+                      <p>
+                        <strong class="text-primary">Numero de tasación:</strong>
+                        <%= @assessment.number_assesment %>
+                      </p>
 
-<p>
-  <strong>Estado:</strong>
-  <%= @assessment.state.name%>
-</p>
+                      <p>
+                        <strong class="text-primary">Estado:</strong>
+                        <%= @assessment.state.name%>
+                      </p>
 
-<p>
-  <strong>Dirección:</strong>
-  <%= @assessment.location %>
-</p>
+                      <p>
+                        <strong class="text-primary">Dirección:</strong>
+                        <%= @assessment.location %>
+                      </p>
 
-<p>
-  <strong>Inhabitada:</strong>
-  <%= @assessment.inhabited %>
-</p>
+                      <p>
+                        <strong class="text-primary">Inhabitada:</strong>
+                        <%= @assessment.inhabited %>
+                      </p>
 
-<p>
-  <strong>Habitante:</strong>
-  <%= @assessment.habitant %>
-</p>
+                      <p>
+                        <strong class="text-primary">Habitante:</strong>
+                        <%= @assessment.habitant %>
+                      </p>
 
-<p>
-  <strong>Cliente:</strong>
-  <%= @assessment.client.name%>
-</p>
+                      <p>
+                        <strong class="text-primary">Cliente:</strong>
+                        <%= @assessment.client.name%>
+                      </p>
 
-<p>
-  <strong>Dueño:</strong>
-  <%= @assessment.owner.name%>
-</p>
+                      <p>
+                        <strong class="text-primary">Dueño:</strong>
+                        <%= @assessment.owner.name%>
+                      </p>
 
-<p>
-  <strong>Fecha de Inicio:</strong>
-  <%= @assessment.start_date %>
-</p>
+                      <p>
+                        <strong class="text-primary">Fecha de Inicio:</strong>
+                        <%= @assessment.start_date %>
+                      </p>
 
-<p>
-  <strong>Fecha de Termino:</strong>
-  <%= @assessment.end_date %>
-</p>
+                      <p>
+                        <strong class="text-primary">Fecha de Termino:</strong>
+                        <%= @assessment.end_date %>
+                      </p>
+                  </tbody>
+                </table>
+              </div>
+            </div> 
+          </div>           
+        </div>
 
-
-<h2> Propiedades: </h2>
-
-<% @assessment.properties.each do |property| %>
-  <ul>
-    <li> <%= property.id%> </li>
-  </ul>
-<% end%>
-
-<%= render 'new_property.html', assessment: @assessment %>
-
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title">Propiedades</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+                  <table>
+                    <thead>
+                      <th>Id Propiedad</th>
+                      <th>Nombre</th>
+                    </thead>
+                    <tbody>
+                      <% @assessment.properties.each do |property| %>
+                        <tr>
+                          <td> <%=property.id%></td>
+                          <td> <%=property.name%></td>
+                          <td><button type="button" rel="tooltip" class="btn btn-info btn-round btn-sm"> <%= link_to 'Detalles', property_path(property) %> </button> </td>
+                          <td><button type="button" rel="tooltip" class="btn btn-warning btn-round btn-sm"> <%= link_to 'Editar', edit_property_path(property)%></button> </td>
+                        </tr> 
+                      <%end%> 
+                    </tbody>
+                  </table>
+                </table>
+          </div>
+        </div> 
+      </div>           
+    </div>
+  </div>
+  
+</div>
 <%= link_to "Imprimir PDF" , assessment_url(@assessment, :format => :pdf) if :admin? %>
-<%= link_to 'Editar', edit_assessment_path(@assessment) if can? :update, :assessment %> |
-<%= link_to 'Volver', assessments_path %>
+<%= link_to 'Volver', assessments_path, class:'btn btn-info'%>
+<%= link_to 'Editar', edit_assessment_path(@assessment),  class:'btn btn-warning ' %> 
+

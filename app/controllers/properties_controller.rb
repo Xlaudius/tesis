@@ -1,5 +1,6 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: [:show, :edit, :update, :destroy]
+  before_action :materials, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
   
   # GET /properties
@@ -16,10 +17,12 @@ class PropertiesController < ApplicationController
   # GET /properties/new
   def new
     @property = Property.new
+    @property.property_between_floor_slaps.build
   end
 
   # GET /properties/1/edit
   def edit
+    @property.property_between_floor_slaps.build
   end
 
   # POST /properties
@@ -29,7 +32,7 @@ class PropertiesController < ApplicationController
 
     respond_to do |format|
       if @property.save
-        format.html { redirect_to @property.assessment, notice: 'Property was successfully created.' }
+        format.html { redirect_to @property, notice: 'Property was successfully created.' }
         format.json { render :show, status: :created, location: @property }
       else
         format.html { render :new }
@@ -68,8 +71,13 @@ class PropertiesController < ApplicationController
       @property = Property.find(params[:id])
     end
 
+    def materials
+      @between_floor_slaps = BetweenFloorSlap.all
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_params
-      params.require(:property).permit(:debt_taxation, :antiquity, :expropriation, :sill, :assessment_id, :facilities)
+      params.require(:property).permit(:debt_taxation, :antiquity, :expropriation, :sill, :assessment_id, :facilities, :name,
+        property_between_floor_slaps_attributes:[:id,:between_floor_slap_id, :property_id, :quality_id])
     end
 end

@@ -70,6 +70,6 @@ class ServiceYardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_yard_params
-      params.require(:service_yard).permit(:img, :mts2, :property_id)
+      params.require(:service_yard).permit(:img, :mts2, :property_id, attachments: [])
     end
 end
