@@ -15,7 +15,7 @@ class Ability
     elsif user.land_appraiser?
         can [:read, :update], :all
     elsif user.assistant?
-        can :read, :all
+        can [:read, :update], :property
     else
         can :read, :all
     end
