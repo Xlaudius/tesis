@@ -7,21 +7,46 @@ class AssessmentsController < ApplicationController
   # GET /assessments.json
   def index
     @assessments = Assessment.order(:number_assesment).page (params[:page])
+    
   end
 
   # GET /assessments/1
   # GET /assessments/1.json
   def show
+    @property = Property.where(assessment_id: @assessment.id)
+    @client = Client.where(client_id: @assessment.client_id)
+    @propertyrol = PropertyRol.where(property_id: [@property.ids])
+    @property_between = PropertyBetweenFloorSlap.where(property_id: [@property.ids])
+    @closet = PropertyCloset.where(property_id: [@property.ids])
+    @covers = PropertyCover.where(property_id: [@property.ids])
+    @doors = PropertyDoor.where(property_id: [@property.ids])
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf do
+        render template: 'assessments/report', pdf:"Reporte-Tasacion-#{@assessment.number_assesment}",
+        layout: 'layouts/pdf.html.erb',
+        header: {
+          right: "#{Date.today.to_s}"
+        },
+        footer: {
+          center: "Hecho por 'CRAF solutions'"
+        },
+        viewport_size: '1280x1024',
+        page_size: 'A4'
+      end
+    end
   end
 
   # GET /assessments/new
   def new
-    @assessment = Assessment.new   
-    @property = Property.new 
+    @assessment = Assessment.new
+    @assessment.properties.build
   end
 
   # GET /assessments/1/edit
   def edit
+    @assessment.properties.build
   end
 
   # POST /assessments
@@ -31,9 +56,6 @@ class AssessmentsController < ApplicationController
     @assessment = Assessment.new(assessment_params)
     respond_to do |format|
       if @assessment.save
-        @assessment2 = Assessment.last.id 
-        @property = Property.new(:debt_taxation => 0, :antiquity => 0, :expropriation => false, :sill => false, :facilities => false, :assessment_id => @assessment2)
-        @property.save  
         format.html { redirect_to @assessment, notice: 'YASASSSS.' }
         format.json { render :show, status: :created, location: @assessment }
       else
@@ -76,10 +98,7 @@ class AssessmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def assessment_params
-      params.require(:assessment).permit(:number_assesment, :state_id, :location, :inhabited, :habitant, :client_id, :owner_id, :start_date, :end_date)
-    end
-
-    def property_params
-      params.require(:property).permit(:debt_taxation => 0, :antiquity => 0, :expropriation => false, :sill => false, :assessment_id => 0, :facilities => false)
+      params.require(:assessment).permit(:number_assesment, :state_id, :location, :inhabited, :habitant, :client_id, :owner_id, :start_date, 
+        :end_date, properties_attributes:[:id, :debt_taxation, :antiquity, :expropriation, :sill, :facilities, :name])
     end
 end

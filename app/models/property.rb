@@ -1,6 +1,8 @@
 class Property < ApplicationRecord
   belongs_to :assessment
+  
   has_many :property_between_floor_slaps
+  accepts_nested_attributes_for :property_between_floor_slaps
   has_many :between_floor_slaps, through: :property_between_floor_slaps
 
   has_many :property_covers
@@ -97,5 +99,5 @@ class Property < ApplicationRecord
 
 # validates :expropriation, :sill, :facilities, inclusion: { in: [true, false] }
 #  validates :antiquity, :assessment_id, presence: true
-  validates :debt_taxation, :antiquity, :assessment_id, numericality: { greater_than_or_equal_to: 0 }
+  validates :debt_taxation, :antiquity, numericality: { greater_than_or_equal_to: 0 }
 end

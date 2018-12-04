@@ -1,3 +1,4 @@
+
 <div class="row">
   <div class="col-md-6">
         <div class="card">
@@ -72,20 +73,20 @@
                   <table>
                     <thead>
                       <th>Id Propiedad</th>
+                      <th>Nombre</th>
                     </thead>
                     <tbody>
                       <% @assessment.properties.each do |property| %>
                         <tr>
                           <td> <%=property.id%></td>
-                          <td><button type="button" rel="tooltip" class="btn btn-info btn-round btn-sm"> <%= link_to 'Detalles', assessment_property_path(@assessment,property.id) %> </button> </td>
-                          <td><button type="button" rel="tooltip" class="btn btn-warning btn-round btn-sm"> <%= link_to 'Editar', edit_assessment_property_path(@assessment,property.id)%></button> </td>
-
+                          <td> <%=property.name%></td>
+                          <td><button type="button" rel="tooltip" class="btn btn-info btn-round btn-sm"> <%= link_to 'Detalles', property_path(property) %> </button> </td>
+                          <td><button type="button" rel="tooltip" class="btn btn-warning btn-round btn-sm"> <%= link_to 'Editar', edit_property_path(property)%></button> </td>
                         </tr> 
                       <%end%> 
                     </tbody>
                   </table>
                 </table>
-              <%= render 'new_property.html', assessment: @assessment %>
           </div>
         </div> 
       </div>           
@@ -93,6 +94,7 @@
   </div>
   
 </div>
-
+<%= link_to "Imprimir PDF" , assessment_url(@assessment, :format => :pdf) if :admin? %>
 <%= link_to 'Volver', assessments_path, class:'btn btn-info'%>
 <%= link_to 'Editar', edit_assessment_path(@assessment),  class:'btn btn-warning ' %> 
+
