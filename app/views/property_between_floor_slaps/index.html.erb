@@ -14,16 +14,13 @@
   <tbody>
     <% @property_between_floor_slaps.each do |property_between_floor_slap| %>
       <tr>
-        <td><%= property_between_floor_slap.between_floor_slap %></td>
-        <td><%= property_between_floor_slap.property %></td>
-        <td><%= link_to 'Show', property_between_floor_slap %></td>
-        <td><%= link_to 'Edit', edit_property_between_floor_slap_path(property_between_floor_slap) %></td>
-        <td><%= link_to 'Destroy', property_between_floor_slap, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= property_between_floor_slap.between_floor_slap.name %></td>
+        <td><%= property_between_floor_slap.property.id %></td>
+        <td><%= link_to 'Show', assessment_property_property_between_floor_slap_path(property_between_floor_slap.property.assessment.id, property_between_floor_slap.property, property_between_floor_slap) %></td>
+        <td><%= link_to 'Edit', edit_assessment_property_property_between_floor_slap_path(property_between_floor_slap.property.assessment.id, property_between_floor_slap.property, property_between_floor_slap) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Property Between Floor Slap', new_property_between_floor_slap_path %>

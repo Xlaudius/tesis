@@ -1,0 +1,20 @@
+mplement in the views that require it:
+
+the controller must have:
+
+def index
+     @assessments = Assessment.order (: number_assesment) .page (params [: page])
+   end
+
+and in the Index view:
+
+<% = paginate @assessments%>
+
+remember to do :
+
+
+docker-compose web build
+docker-compose stop
+docker-compose up -d
+
+

@@ -93,7 +93,32 @@
                 </div> 
               </div>
 
-               <%= form.submit 'Crear Tasación', class:'btn btn-primary pull-right' %>
+              <h2>Propiedades</h2>
+                <%= form.fields_for :properties do |property|%>
+                    <div class="properties_fields"> 
+                    <div class="fields">  
+                        <%= property.label :name, "Nombre de Propiedad:"%>
+                        <%= property.text_field :name %><br>
+
+                        <%= property.label :debt_taxation, "Deuda Tributaria:"%>
+                        <%= property.number_field :debt_taxation %><br>
+
+                        <%= property.label :antiquity, "Antigüedad:"%>
+                        <%= property.number_field :antiquity %><br>  
+
+                        <%= property.label :expropriation, "Expropiada:"%>
+                        <%= property.check_box :expropriation %><br> 
+
+                        <%= property.label :facilities, "Instalaciones:"%>
+                        <%= property.check_box :facilities %><br>
+
+                        <%= property.label :sill, "Solera:"%>
+                        <%= property.check_box :sill %><br>
+                    </div>
+                    </div>
+                <% end %>
+
+               <%= form.submit 'Aceptar', class:'btn btn-primary pull-right' %>
               
               <% end %>
             </div> 
