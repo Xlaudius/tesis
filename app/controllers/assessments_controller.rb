@@ -6,8 +6,11 @@ class AssessmentsController < ApplicationController
   # GET /assessments
   # GET /assessments.json
   def index
-    @assessments = Assessment.order(:number_assesment).page (params[:page])
-    
+    if params[:q].present?
+      @assessments = Assessment.where('location like ?',"%#{params[:q]}%")
+    else
+      @assessments = Assessment.all
+    end
   end
 
   # GET /assessments/1

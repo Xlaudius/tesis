@@ -1,12 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<div>
-<%= form_tag assessments_path, :method => 'get' do %>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-<% end %>
+<form action="<%= assessments_path %>">
+<input name="q">
+</form>
 
-</div>
 <div class="row">
   <div class="col-md-12">
     <div class="card">
@@ -51,6 +48,4 @@
   </div>
 </div>
 
-    <%= paginate @assessments %>
-    <br>
 
