@@ -45,17 +45,18 @@
     <%= form.check_box :facilities %>
   </div>
 
-  <h2>Entre Piso</h2>
+    <h2>Entre Piso</h2>
     <%= form.fields_for :property_between_floor_slaps do |property_bfs|%>
         <div class="properties_fields"> 
         <div class="fields">  
             <%= property_bfs.label :name, "material:"%>
-            <%= property_bfs.select :between_floor_slap_id, BetweenFloorSlap.pluck(:name,:id), prompt: "tipo entre pisos", class:'form-control'%><br>
+            <%= property_bfs.select :between_floor_slap_id, BetweenFloorSlap.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
             <%= property_bfs.label :name, "Calidad:"%>
-            <%= property_bfs.select :quality_id, Quality.pluck(:name,:id), prompt: "calidad", class:'form-control'%><br>
+            <%= property_bfs.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
         </div>
         </div>
     <% end %>
+
 
   <div class="actions">
     <%= form.submit %>

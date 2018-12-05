@@ -17,7 +17,7 @@ class PropertiesController < ApplicationController
   # GET /properties/new
   def new
     @property = Property.new
-    @property.property_between_floor_slaps.build
+    3.times {@property.property_between_floor_slaps.build}
   end
 
   # GET /properties/1/edit
