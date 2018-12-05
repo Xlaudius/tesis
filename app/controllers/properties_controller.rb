@@ -1,6 +1,5 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: [:show, :edit, :update, :destroy]
-  before_action :materials, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
   
   # GET /properties
@@ -17,12 +16,14 @@ class PropertiesController < ApplicationController
   # GET /properties/new
   def new
     @property = Property.new
-    3.times {@property.property_between_floor_slaps.build}
+    2.times {@property.property_between_floor_slaps.build}
+    2.times {@property.property_covers.build}
   end
 
   # GET /properties/1/edit
   def edit
     @property.property_between_floor_slaps.build
+    @property.property_covers.build
   end
 
   # POST /properties
@@ -71,13 +72,13 @@ class PropertiesController < ApplicationController
       @property = Property.find(params[:id])
     end
 
-    def materials
-      @between_floor_slaps = BetweenFloorSlap.all
-    end
 
+ 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_params
       params.require(:property).permit(:debt_taxation, :antiquity, :expropriation, :sill, :assessment_id, :facilities, :name,
-        property_between_floor_slaps_attributes:[:id,:between_floor_slap_id, :property_id, :quality_id])
+        property_between_floor_slaps_attributes:[:id,:between_floor_slap_id, :property_id, :quality_id],
+        property_closets_attributes:[:id, :closet_id, :property_id, :qualities_id],
+        property_covers_attributes:[:id, :observations, :property_id, :cover_id, :quality_id])
     end
 end

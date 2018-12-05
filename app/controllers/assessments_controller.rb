@@ -99,6 +99,7 @@ class AssessmentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def assessment_params
       params.require(:assessment).permit(:number_assesment, :state_id, :location, :inhabited, :habitant, :client_id, :owner_id, :start_date, 
-        :end_date, properties_attributes:[:id, :debt_taxation, :antiquity, :expropriation, :sill, :facilities, :name])
+        :end_date, 
+        properties_attributes:[:id, :debt_taxation, :antiquity, :expropriation, :sill, :facilities, :name])
     end
 end

@@ -44,7 +44,7 @@
     <%= form.label :Instalación %>
     <%= form.check_box :facilities %>
   </div>
-
+  
     <h2>Entre Piso</h2>
     <%= form.fields_for :property_between_floor_slaps do |property_bfs|%>
         <div class="properties_fields"> 
@@ -53,6 +53,20 @@
             <%= property_bfs.select :between_floor_slap_id, BetweenFloorSlap.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
             <%= property_bfs.label :name, "Calidad:"%>
             <%= property_bfs.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
+        </div>
+        </div>
+    <% end %>
+
+    <h2>Cuviertas</h2>
+    <%= form.fields_for :property_covers do |property_cover|%>
+        <div class="properties_fields"> 
+        <div class="fields">  
+            <%= property_cover.label :name, "Material:"%>
+            <%= property_cover.select :cover_id, Cover.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+            <%= property_cover.label :observations, "Observaciones:"%>
+            <%= property_cover.text_field :observations %><br>
+            <%= property_cover.label :name, "Calidad:"%>
+            <%= property_cover.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>      
         </div>
         </div>
     <% end %>

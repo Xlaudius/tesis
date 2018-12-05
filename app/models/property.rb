@@ -6,6 +6,7 @@ class Property < ApplicationRecord
   has_many :between_floor_slaps, through: :property_between_floor_slaps
 
   has_many :property_covers
+  accepts_nested_attributes_for :property_covers, reject_if: :all_blank
   has_many :covers, through: :property_covers
 
   has_many :property_doors
@@ -98,6 +99,6 @@ class Property < ApplicationRecord
   has_many :pools
 
 # validates :expropriation, :sill, :facilities, inclusion: { in: [true, false] }
-#  validates :antiquity, :assessment_id, presence: true
-  validates :debt_taxation, :antiquity, numericality: { greater_than_or_equal_to: 0 }
+# validates :antiquity, :assessment_id, presence: true
+# validates :debt_taxation, :antiquity, numericality: { greater_than_or_equal_to: 0 }
 end
