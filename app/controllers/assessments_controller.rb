@@ -46,7 +46,6 @@ class AssessmentsController < ApplicationController
 
   # GET /assessments/1/edit
   def edit
-    @assessment.properties.build
   end
 
   # POST /assessments

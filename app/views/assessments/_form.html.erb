@@ -1,12 +1,11 @@
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-8">
     <div class="card">
       <div class="card-header card-header-primary">
-        <h4 class="card-title">Nueva Tasación</h4>
+        <h4 class="card-title">Tasación</h4>
         <p class="card-category">Completa los datos</p>                
         </div>
         <br>
-
           <%= form_with(model: assessment, local: true) do |form| %>
             <% if assessment.errors.any? %>
               <div id="error_explanation">
@@ -32,14 +31,14 @@
 
                 <div class="col-md-3">
                   <div class="form-group">
-                    <%= form.label :Fecha_inicio %>
+                    <%= form.label :Fecha_inicio %><br>
                     <%= form.date_select :start_date, class:'form-control' %>
                   </div>
                 </div>
 
                 <div class="col-md-3">
                   <div class="form-group">
-                    <%= form.label :Fecha_termmino %>
+                    <%= form.label :Fecha_termmino %><br>
                     <%= form.date_select :end_date, class:'form-control' %>
                   </div>
                 </div>
@@ -48,7 +47,7 @@
               <div class="row">
                 <div class="col-md-3">
                   <div class="form-group">
-                  <%= form.label :Cliente %>
+                  <%= form.label :Cliente %><br>
                   <%= form.select :client_id , Client.pluck(:name, :id), prompt: 'Elige Cliente', class:"form-control selectpicker" %>
                   </div>
                 </div>
@@ -62,12 +61,19 @@
                 
                 <div class="col-md-3">
                   <div class="form-group">
-                  <%= form.label :Dueño %>
+                  <%= form.label :Dueño %><br>
                   <%= form.select :owner_id,Owner.pluck(:name,:id), prompt: 'Elige Dueño', class:'form-control' %>
                   </div>
                 </div> 
-              </div>   
-
+                
+                <div class="col-md-3">
+                  <div class="form-group">
+                  <br>
+                  <%= form.check_box :inhabited, class:'form-check-input'%>
+                  <%= form.label :Inhabitada %>
+                  </div>
+                </div>               
+                </div> 
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
@@ -84,49 +90,82 @@
                   <%= form.select :state_id, State.pluck(:name,:id), prompt: 'Elige Estado', class:'form-control'  %>
                   </div>
                 </div> 
-
-                <div class="col-md-3">
-                  <div class="form-group">
-                  <%= form.label :Inhabitada %>
-                  <%= form.check_box :inhabited, class:'form-check-input'%>
-                  </div>
-                </div> 
               </div>
-
-              <h2>Propiedades</h2>
-                <%= form.fields_for :properties do |property|%>
-                    <div class="properties_fields"> 
-                    <div class="fields">  
-                        <%= property.label :name, "Nombre de Propiedad:"%>
-                        <%= property.text_field :name %><br>
-
-                        <%= property.label :debt_taxation, "Deuda Tributaria:"%>
-                        <%= property.number_field :debt_taxation %><br>
-
-                        <%= property.label :antiquity, "Antigüedad:"%>
-                        <%= property.number_field :antiquity %><br>  
-
-                        <%= property.label :expropriation, "Expropiada:"%>
-                        <%= property.check_box :expropriation %><br> 
-
-                        <%= property.label :facilities, "Instalaciones:"%>
-                        <%= property.check_box :facilities %><br>
-
-                        <%= property.label :sill, "Solera:"%>
-                        <%= property.check_box :sill %><br>
-                    </div>
-                    </div>
-                <% end %>
-
-               <%= form.submit 'Aceptar', class:'btn btn-primary pull-right' %>
-              
-              <% end %>
             </div> 
           </div>
-        </form>
+        
       </div>
-    </div>
-  </div>
+
+      <div class="col-md-3">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h2 class="card-title">Propiedad</h2>
+                <p class="card-category">Completa los datos</p>                
+            </div>
+            <br>
+
+            <div class="card-body">
+                <form>
+                  <div class="row">
+                    <%= form.fields_for :properties do |property|%>
+                      <div class="properties_fields"> 
+                        <div class="fields">  
+
+                          <div class="col-md-8">
+                            <div class="form-group">
+                              <%= property.label :name, "Nombre de Propiedad:"%>
+                              <%= property.text_field :name %><br>
+                            </div>
+                          </div>   
+
+                          <div class="col-md-8">
+                            <div class="form-group">
+                              <%= property.label :debt_taxation, "Deuda Tributaria:"%>
+                              <%= property.number_field :debt_taxation %><br>
+                            </div>
+                          </div>
+
+                          <div class="col-md-8">
+                            <div class="form-group"> 
+                              <%= property.label :antiquity, "Antigüedad:"%>
+                              <%= property.number_field :antiquity %><br>  
+                            </div>
+                          </div>
+
+                          <div class="col-md-8">
+                            <div class="form-group">                     
+                              <%= property.label :expropriation, "Expropiada:"%>
+                              <%= property.check_box :expropriation %><br> 
+                            </div>
+                          </div>
+
+                          <div class="col-md-8">
+                            <div class="form-group">                      
+                              <%= property.label :facilities, "Instalaciones:"%>
+                              <%= property.check_box :facilities %><br>
+                            </div>
+                          </div> 
+
+                          <div class="col-md-8">
+                            <div class="form-group">                     
+                              <%= property.label :sill, "Solera:"%>
+                              <%= property.check_box :sill %><br>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      <%= form.submit 'Aceptar', class:'btn btn-success btn-lg pull-right' %>
+    <% end %>
+  <% end %>
+  </form>
+   </form>
+</div>
 </div>                  
 
                   

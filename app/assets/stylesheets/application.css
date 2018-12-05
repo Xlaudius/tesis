@@ -13,12 +13,4 @@
  *
  *= require_tree .
  *= require_self
-
- *= require material/material-dashboard.css
- *= require material/material-dashboard-rtl
- *= require material/material-dashboard.min
- *= require material/demo.css
- *= require material/docs.css 
- *= require font-awesome
  */
-

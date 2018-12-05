@@ -1,6 +1,7 @@
-<h1>Editing Assessment</h1>
+<h1>Editar Tasación</h1>
 
 <%= render 'form', assessment: @assessment %>
 
-<%= link_to 'Detalles', @assessment %> |
-<%= link_to 'Volver', assessments_path %>
+<%= link_to 'Salir', assessments_path, class:"btn btn-outline-danger btn-round btn-lg" %>
+<%= link_to 'Volver', @assessment, class:"btn btn-outline-warning btn-round btn-lg" %> 
+

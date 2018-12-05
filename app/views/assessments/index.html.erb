@@ -1,12 +1,4 @@
 <p id="notice"><%= notice %></p>
-
-<div>
-<%= form_tag assessments_path, :method => 'get' do %>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-<% end %>
-
-</div>
 <div class="row">
   <div class="col-md-12">
     <div class="card">
@@ -18,7 +10,7 @@
         <div class="table-responsive">
           <table class="table">
             <thead class="text-primary">
-                <button type="button" class="btn btn-success btn-round pull-right"> <%= link_to 'Nueva Tasación', new_assessment_path if can? :create, :assessment %> </button>
+                <button type="button" class="btn btn-outline-success btn-round pull-right"> <%= link_to 'Nueva Tasación', new_assessment_path if can? :create, :assessment %> </button>
                 <th colspan="1"></th>
                 <th>Nº Tasación</th>
                 <th>Estado</th>
@@ -26,21 +18,19 @@
                 <th>Fecha inicio</th>
                 <th>Fecha cierre</th>
                 <th colspan="2"></th>
-                
             </thead>
             <tbody>
-
             
               <% @assessments.each do |assessment| %>
                 <tr>
-                  <td><button type="button" rel="tooltip" class="btn btn-info btn-round btn-sm"><%= link_to 'Detalles', assessment if can? :read, :assessments %> </button></td>
+                  <td><button type="button" rel="tooltip" class="btn btn-outline-info btn-round btn-sm"><%= link_to 'Detalles', assessment if can? :read, :assessments %> </button></td>
                   <td class="text-primary"><%= assessment.number_assesment %></td>
                   <td><%= assessment.state.name %></td>
                   <td><%= assessment.location %></td>
                   <td><%= assessment.start_date %></td>
                   <td><%= assessment.end_date %></td>
-                  <td><button type="button" rel="tooltip" class="btn btn-warning btn-round btn-sm"><%= link_to 'Editar', edit_assessment_path(assessment) if can? :update, :assessments %> </button></td>
-                  <td><button type="button" rel="tooltip" class="btn btn-danger btn-round btn-sm"><%= link_to 'Eliminar', assessment, method: :delete, data: { confirm: 'Seguro que desea eliminar esta tasación?' } if can? :delete, :assessments %> </button></td>
+                  <td><button type="button" rel="tooltip" class="btn btn-outline-warning btn-round btn-sm"><%= link_to 'Editar', edit_assessment_path(assessment) if can? :update, :assessments %> </button></td>
+                  <td><button type="button" rel="tooltip" class="btn btn-outline-danger btn-round btn-sm"><%= link_to 'Eliminar', assessment, method: :delete, data: { confirm: 'Seguro que desea eliminar esta tasación?' } if can? :delete, :assessments %> </button></td>
                 </tr>
               <% end %>
             </tbody>
@@ -51,6 +41,6 @@
   </div>
 </div>
 
-    <%= paginate @assessments %>
-    <br>
+<%= paginate @assessments %>
+<br>
 
