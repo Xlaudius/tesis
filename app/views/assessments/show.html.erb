@@ -94,7 +94,7 @@
   </div>
   
 </div>
-<%= link_to "Imprimir PDF" , assessment_url(@assessment, :format => :pdf) if :admin? %>
 <%= link_to 'Volver', assessments_path, class:'btn btn-info'%>
+<%= link_to "Imprimir PDF" , assessment_url(@assessment, :format => :pdf), class:'btn btn-success' %>
 <%= link_to 'Editar', edit_assessment_path(@assessment),  class:'btn btn-warning ' %> 
 
