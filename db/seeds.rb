@@ -678,4 +678,10 @@ end
         ServiceYard.create(img: 'img', mts2: rngM2, property_id: property.id)
     end
 end
+
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+10.times do |i|
+    u = Faker::Zelda.character
+    User.create(email:"#{u}@gmail.com", password:'123qwe123')
+end
