@@ -56,9 +56,11 @@ class Property < ApplicationRecord
   has_many :land_shapes, through: :property_land_shapes
 
   has_many :property_maintenances
+  accepts_nested_attributes_for :property_maintenances, reject_if: :all_blank
   has_many :maintenances, through: :property_maintenances
 
   has_many :property_pavements
+  accepts_nested_attributes_for :property_pavements, reject_if: :all_blank
   has_many :pavements, through: :property_pavements
 
   has_many :property_property_types
