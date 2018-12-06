@@ -396,6 +396,19 @@
         </div>
     <% end %>
 
+    <h2>Canales Agua Lluvia</h2>
+    <%= form.fields_for :property_water_rain_ducts do |property_WRD|%>
+        <div class="properties_fields"> 
+        <div class="fields">  
+            <%= property_WRD.label :name, "Material:"%>
+            <%= property_WRD.select :water_rain_duct_id, WaterRainDuct.pluck(:name,:id),prompt: "material" , class:'form-control'%><br>
+            <%= property_WRD.label :name, "Calidad:"%>
+            <%= property_WRD.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
+         
+        </div>
+        </div>
+    <% end %>
+
 
   <div class="actions">
     <%= form.submit %>

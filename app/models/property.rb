@@ -113,6 +113,7 @@ class Property < ApplicationRecord
   has_many :toilet_artifacts, through: :property_toilet_artifacts
 
   has_many :property_water_rain_ducts
+  accepts_nested_attributes_for :property_water_rain_ducts, reject_if: :all_blank
   has_many :water_rain_ducts, through: :property_water_rain_ducts
 
   has_many :property_windows
