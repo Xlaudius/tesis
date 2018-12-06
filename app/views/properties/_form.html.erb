@@ -306,6 +306,18 @@
         </div>
     <% end %>
 
+    <h2>Alcantarillado</h2>
+    <%= form.fields_for :property_sewerages do |property_sewe|%>
+        <div class="properties_fields"> 
+        <div class="fields">  
+            <%= property_sewe.label :name, "Tipo:"%>
+            <%= property_sewe.select :sewerage_id, Sewerage.pluck(:name,:id),prompt: "Tipo" , class:'form-control'%><br>
+            <%= property_sewe.label :name, "Calidad:"%>
+            <%= property_sewe.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
+        </div>
+        </div>
+    <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

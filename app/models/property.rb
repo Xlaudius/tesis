@@ -84,6 +84,7 @@ class Property < ApplicationRecord
   has_many :sectors, through: :property_sectors
 
   has_many :property_sewerages
+  accepts_nested_attributes_for :property_sewerages, reject_if: :all_blank
   has_many :sewerages, through: :property_sewerages
 
   has_many :property_sheds
