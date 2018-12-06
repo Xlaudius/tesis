@@ -48,6 +48,7 @@ class Property < ApplicationRecord
   has_many :housing_qualities, through: :property_housing_qualities
 
   has_many :property_interior_closures
+  accepts_nested_attributes_for :property_interior_closures, reject_if: :all_blank
   has_many :interior_closures, through: :property_interior_closures
 
   has_many :property_land_shapes

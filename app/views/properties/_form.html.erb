@@ -196,6 +196,22 @@
         </div>
     <% end %>
 
+
+    <h2>Cierros Interiores</h2>
+    <%= form.fields_for :property_interior_closures do |property_in_clo|%>
+        <div class="properties_fields"> 
+        <div class="fields">  
+            <%= property_in_clo.label :name, "Material:"%>
+            <%= property_in_clo.select :interior_closure_id, InteriorClosure.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+            <%= property_in_clo.label :other, "Otros:"%>
+            <%= property_in_clo.text_field :other %><br>
+            
+        </div>
+        </div>
+    <% end %>
+
+
+
   <div class="actions">
     <%= form.submit %>
   </div>
