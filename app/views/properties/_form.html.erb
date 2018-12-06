@@ -147,6 +147,19 @@
         </div>
     <% end %>
 
+    <h2>Muebles</h2>
+    <%= form.fields_for :property_furnitures do |property_forni|%>
+        <div class="properties_fields"> 
+        <div class="fields">  
+            <%= property_forni.label :name, "Material:"%>
+            <%= property_forni.select :furniture_id, Furniture.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+            <%= property_forni.label :name, "Material:"%>
+            <%= property_forni.select :furniture_cover_id, FurnitureCover.pluck(:name,:id),prompt: "Cubierta" , class:'form-control'%><br>
+            <%= property_forni.label :name, "Calidad:"%>
+            <%= property_forni.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
+        </div>
+        </div>
+    <% end %>
 
 
   <div class="actions">

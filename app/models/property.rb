@@ -31,6 +31,7 @@ class Property < ApplicationRecord
   has_many :exterior_closures, through: :property_exterior_closures
 
   has_many :property_furnitures
+  accepts_nested_attributes_for :property_furnitures, reject_if: :all_blank
   has_many :furniture_covers, through: :property_furnitures
   has_many :furnitures, through: :property_furnitures
 
