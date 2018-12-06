@@ -38,6 +38,7 @@ class PropertiesController < ApplicationController
     2.times {@property.property_roofings.build}
     2.times {@property.property_sectors.build}
     2.times {@property.property_sewerages.build}
+    2.times {@property.property_sheds.build}
   end
 
   # GET /properties/1/edit
@@ -64,6 +65,7 @@ class PropertiesController < ApplicationController
     @property.property_roofings.build
     @property.property_sectors.build
     @property.property_sewerages.build
+    @property.property_sheds.build
   end
 
   # POST /properties
@@ -138,7 +140,8 @@ class PropertiesController < ApplicationController
         property_rols_attributes:[:id, :block, :predial, :province_id, :property_id],
         property_roofings_attributes:[:id, :property_id, :roofing_id, :quality_id],
         property_sectors_attributes:[:id, :distance, :property_id, :sector_id],
-        property_sewerages_attributes:[:id, :sewerage_id, :property_id, :quality_id]
+        property_sewerages_attributes:[:id, :sewerage_id, :property_id, :quality_id],
+        property_sheds_attributes:[:id, :shed_id, :property_id, :shed_material_id, :quality_id]
         )
     end
 end

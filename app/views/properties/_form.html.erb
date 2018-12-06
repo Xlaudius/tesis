@@ -318,6 +318,20 @@
         </div>
     <% end %>
 
+    <h2>Cobertizo </h2>
+    <%= form.fields_for :property_sheds do |property_shed|%>
+        <div class="properties_fields"> 
+        <div class="fields">  
+            <%= property_shed.label :name, "Tipo:"%>
+            <%= property_shed.select :shed_id, Shed.pluck(:name,:id),prompt: "Tipo" , class:'form-control'%><br>
+            <%= property_shed.label :name, "Tipo:"%>
+            <%= property_shed.select :shed_material_id, ShedMaterial.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+            <%= property_shed.label :name, "Calidad:"%>
+            <%= property_shed.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
+        </div>
+        </div>
+    <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
