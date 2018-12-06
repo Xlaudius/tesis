@@ -80,6 +80,7 @@ class Property < ApplicationRecord
   has_many :roofings, through: :property_roofings
 
   has_many :property_sectors
+  accepts_nested_attributes_for :property_sectors, reject_if: :all_blank
   has_many :sectors, through: :property_sectors
 
   has_many :property_sewerages

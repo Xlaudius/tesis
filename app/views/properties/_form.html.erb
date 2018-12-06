@@ -293,6 +293,19 @@
         </div>
     <% end %>
 
+    <h2>Sector</h2>
+    <%= form.fields_for :property_sectors do |property_sec|%>
+        <div class="properties_fields"> 
+        <div class="fields">  
+            <%= property_sec.label :name, "Sector:"%>
+            <%= property_sec.select :sector_id, Sector.pluck(:name,:id),prompt: "Calle" , class:'form-control'%><br>
+            <%= property_sec.label :distance, "Distancia:"%>
+            <%= property_sec.number_field :distance %><br>
+         
+        </div>
+        </div>
+    <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
