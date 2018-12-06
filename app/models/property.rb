@@ -27,6 +27,7 @@ class Property < ApplicationRecord
   has_many :electricities, through: :property_electricities
 
   has_many :property_exterior_closures
+  accepts_nested_attributes_for :property_exterior_closures, reject_if: :all_blank
   has_many :exterior_closures, through: :property_exterior_closures
 
   has_many :property_furnitures

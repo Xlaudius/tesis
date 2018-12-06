@@ -133,6 +133,19 @@
         </div>
     <% end %>
  
+    <h2>Cierros Exteriores</h2>
+    <%= form.fields_for :property_exterior_closures do |property_ex_clo|%>
+        <div class="properties_fields"> 
+        <div class="fields">  
+            <%= property_ex_clo.label :name, "Material:"%>
+            <%= property_ex_clo.select :exterior_closure_id, ExteriorClosure.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+            <%= property_ex_clo.label :other, "Otros:"%>
+            <%= property_ex_clo.text_field :other %><br>
+            <%= property_ex_clo.label :name, "Calidad:"%>
+            <%= property_ex_clo.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
+        </div>
+        </div>
+    <% end %>
 
 
 
