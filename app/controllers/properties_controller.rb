@@ -18,12 +18,14 @@ class PropertiesController < ApplicationController
     @property = Property.new
     2.times {@property.property_between_floor_slaps.build}
     2.times {@property.property_covers.build}
+    2.times {@property.property_closets.build}
   end
 
   # GET /properties/1/edit
   def edit
     @property.property_between_floor_slaps.build
     @property.property_covers.build
+    @property.property_closets.build
   end
 
   # POST /properties

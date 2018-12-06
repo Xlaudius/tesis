@@ -94,6 +94,7 @@ class Property < ApplicationRecord
   has_many :windows, through: :property_windows
 
   has_many :property_closets
+  accepts_nested_attributes_for :property_closets, reject_if: :all_blank
   has_many :closets, through: :property_closets
   
   has_many :pools
