@@ -10,6 +10,7 @@ class Property < ApplicationRecord
   has_many :covers, through: :property_covers
 
   has_many :property_doors
+  accepts_nested_attributes_for :property_doors, reject_if: :all_blank
   has_many :door_frames, through: :property_doors
   has_many :doors, through: :property_doors
 

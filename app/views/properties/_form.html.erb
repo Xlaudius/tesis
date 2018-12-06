@@ -83,6 +83,20 @@
         </div>
     <% end %>
 
+    <h2>Puertas</h2>
+    <%= form.fields_for :property_doors do |property_door|%>
+        <div class="properties_fields"> 
+        <div class="fields">  
+            <%= property_door.label :name, "Material:"%>
+            <%= property_door.select :door_id, Door.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+            <%= property_door.label :name, "Marco:"%>
+            <%= property_door.select :door_frame_id, DoorFrame.pluck(:name,:id),prompt: "Marco" , class:'form-control'%><br>
+            <%= property_door.label :name, "Calidad:"%>
+            <%= property_door.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>      
+        </div>
+        </div>
+    <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

@@ -19,6 +19,7 @@ class PropertiesController < ApplicationController
     2.times {@property.property_between_floor_slaps.build}
     2.times {@property.property_covers.build}
     2.times {@property.property_closets.build}
+    2.times {@property.property_doors.build}
   end
 
   # GET /properties/1/edit
@@ -26,6 +27,7 @@ class PropertiesController < ApplicationController
     @property.property_between_floor_slaps.build
     @property.property_covers.build
     @property.property_closets.build
+    @property.property_doors.build
   end
 
   # POST /properties
@@ -81,6 +83,8 @@ class PropertiesController < ApplicationController
       params.require(:property).permit(:debt_taxation, :antiquity, :expropriation, :sill, :assessment_id, :facilities, :name,
         property_between_floor_slaps_attributes:[:id,:between_floor_slap_id, :property_id, :quality_id],
         property_closets_attributes:[:id, :closet_id, :property_id, :qualities_id],
-        property_covers_attributes:[:id, :observations, :property_id, :cover_id, :quality_id])
+        property_covers_attributes:[:id, :observations, :property_id, :cover_id, :quality_id],
+        property_doors_attributes:[:id, :door_id, :door_frame_id, :property_id, :quality_id]
+        )
     end
 end
