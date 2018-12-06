@@ -425,6 +425,19 @@
         </div>
     <% end %>
 
+    <h2>Piscina</h2>
+    <%= form.fields_for :pools do |pool|%>
+        <div class="properties_fields"> 
+        <div class="fields">  
+            <%= pool.label :img, "Img:"%>
+            <%= pool.text_field :img %><br>
+            <%= pool.label :volumen, "Volumen:"%>
+            <%= pool.number_field :volumen %><br>
+         
+        </div>
+        </div>
+    <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

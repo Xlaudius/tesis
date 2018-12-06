@@ -46,6 +46,7 @@ class PropertiesController < ApplicationController
     2.times {@property.property_toilet_artifacts.build}
     2.times {@property.property_water_rain_ducts.build}
     2.times {@property.property_windows.build}
+    2.times {@property.pools.build}
   end
 
   # GET /properties/1/edit
@@ -80,6 +81,7 @@ class PropertiesController < ApplicationController
     @property.property_toilet_artifacts.build
     @property.property_water_rain_ducts.build
     @property.property_windows.build
+    @property.pools.build
   end
 
   # POST /properties
@@ -162,7 +164,8 @@ class PropertiesController < ApplicationController
         property_structures_attributes:[:id,:observations, :property_id, :structure_id, :quality_id],
         property_toilet_artifacts_attributes:[:id,:property_id, :toilet_artifact_id, :quality_id],
         property_water_rain_ducts_attributes:[:id,:property_id, :water_rain_duct_id, :quality_id],
-        property_windows_attributes:[:id,:window_id, :property_id, :other, :protections, :quality_id]
+        property_windows_attributes:[:id,:window_id, :property_id, :other, :protections, :quality_id],
+        pools_attributes:[:id,:img, :volumen, :property_id]
         )
     end
 end

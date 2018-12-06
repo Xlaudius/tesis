@@ -125,6 +125,7 @@ class Property < ApplicationRecord
   has_many :closets, through: :property_closets
   
   has_many :pools
+  accepts_nested_attributes_for :pools, reject_if: :all_blank
 
 # validates :expropriation, :sill, :facilities, inclusion: { in: [true, false] }
 # validates :antiquity, :assessment_id, presence: true
