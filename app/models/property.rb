@@ -108,6 +108,7 @@ class Property < ApplicationRecord
   has_many :structures, through: :property_structures
 
   has_many :property_toilet_artifacts
+  accepts_nested_attributes_for :property_toilet_artifacts, reject_if: :all_blank
   has_many :qualities, through: :property_toilet_artifacts
   has_many :toilet_artifacts, through: :property_toilet_artifacts
 

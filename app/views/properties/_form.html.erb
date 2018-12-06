@@ -383,6 +383,19 @@
         </div>
     <% end %>
 
+    <h2>Artefactos Sanitarios</h2>
+    <%= form.fields_for :property_toilet_artifacts do |property_toilet|%>
+        <div class="properties_fields"> 
+        <div class="fields">  
+            <%= property_toilet.label :name, "Material:"%>
+            <%= property_toilet.select :toilet_artifact_id, ToiletArtifact.pluck(:name,:id),prompt: "material" , class:'form-control'%><br>
+            <%= property_toilet.label :name, "Calidad:"%>
+            <%= property_toilet.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
+         
+        </div>
+        </div>
+    <% end %>
+
 
   <div class="actions">
     <%= form.submit %>
