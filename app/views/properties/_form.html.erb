@@ -97,6 +97,18 @@
         </div>
     <% end %>
 
+    <h2>Agua Potable</h2>
+    <%= form.fields_for :property_drinking_waters do |property_dw|%>
+        <div class="properties_fields"> 
+        <div class="fields">  
+            <%= property_dw.label :name, "Material:"%>
+            <%= property_dw.select :drinking_water_id, DrinkingWater.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+            <%= property_dw.label :name, "Calidad:"%>
+            <%= property_dw.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>      
+        </div>
+        </div>
+    <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

@@ -15,6 +15,7 @@ class Property < ApplicationRecord
   has_many :doors, through: :property_doors
 
   has_many :property_drinking_waters
+  accepts_nested_attributes_for :property_drinking_waters, reject_if: :all_blank
   has_many :drinking_waters, through: :property_drinking_waters
 
   has_many :property_dry_walls
