@@ -332,6 +332,19 @@
         </div>
     <% end %>
 
+    <h2>Acera</h2>
+    <%= form.fields_for :property_sidewalks do |property_side|%>
+        <div class="properties_fields"> 
+        <div class="fields">  
+            <%= property_side.label :name, "Material:"%>
+            <%= property_side.select :side_walk_id, SideWalk.pluck(:name,:id),prompt: "material" , class:'form-control'%><br>
+            <%= property_side.label :width, "Ancho:"%>
+            <%= property_side.number_field :width %><br>
+         
+        </div>
+        </div>
+    <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

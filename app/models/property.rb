@@ -92,6 +92,7 @@ class Property < ApplicationRecord
   has_many :sheds, through: :property_sheds
 
   has_many :property_sidewalks
+  accepts_nested_attributes_for :property_sidewalks, reject_if: :all_blank
   has_many :side_walks, through: :property_sidewalks
 
   has_many :property_stairs
