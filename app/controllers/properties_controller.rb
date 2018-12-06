@@ -33,6 +33,8 @@ class PropertiesController < ApplicationController
     2.times {@property.property_maintenances.build}
     2.times {@property.property_pavements.build}
     2.times {@property.property_property_types.build}
+    2.times {@property.property_roads.build}
+
   end
 
   # GET /properties/1/edit
@@ -54,6 +56,8 @@ class PropertiesController < ApplicationController
     @property.property_maintenances.build
     @property.property_pavements.build
     @property.property_property_types.build
+    @property.property_roads.build
+
   end
 
   # POST /properties
@@ -123,7 +127,8 @@ class PropertiesController < ApplicationController
         property_land_shapes_attributes:[:id,:property_id, :land_shape_id, :quality_id],
         property_maintenances_attributes:[:id, :maintenance_id, :property_id, :quality_id],
         property_pavements_attributes:[:id, :pavement_id, :property_id, :quality_id],
-        property_property_types_attributes:[:id, :property_type_id, :property_id, :sites]
+        property_property_types_attributes:[:id, :property_type_id, :property_id, :sites],
+        property_roads_attributes:[:id, :property_id, :road_id]
         )
     end
 end

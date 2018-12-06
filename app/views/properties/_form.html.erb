@@ -256,6 +256,15 @@
         </div>
     <% end %>
 
+    <h2>Calzada </h2>
+    <%= form.fields_for :property_roads do |property_road|%>
+        <div class="properties_fields"> 
+        <div class="fields">  
+            <%= property_road.label :name, "Tipo:"%>
+            <%= property_road.select :road_id, Road.pluck(:name,:id),prompt: "Tipo" , class:'form-control'%><br>
+        </div>
+        </div>
+    <% end %>
 
 
   <div class="actions">

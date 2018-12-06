@@ -68,6 +68,7 @@ class Property < ApplicationRecord
   has_many :property_types, through: :property_property_types
 
   has_many :property_roads
+  accepts_nested_attributes_for :property_roads, reject_if: :all_blank
   has_many :roads, through: :property_roads
 
   has_many :property_rols

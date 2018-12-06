@@ -221,14 +221,14 @@
    <% end %>      
 
   <% if @property.roads.any? %>
-    <h5> Acera: </h5>
+    <h5> Calzada: </h5>
     <ul>
         <% @property.roads.each do |road| %>
         <li><%= road.name %></li>
         <% end %>
     </ul>
    <% else %>
-    <p> no hay Acera</p>
+    <p> no hay Calzada</p>
    <% end %>      
 
   <% if @property.property_rols.any? %>
