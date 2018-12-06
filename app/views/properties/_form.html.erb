@@ -161,6 +161,17 @@
         </div>
     <% end %>
 
+    <h2>Gas</h2>
+    <%= form.fields_for :property_gas do |property_ga|%>
+        <div class="properties_fields"> 
+        <div class="fields">  
+            <%= property_ga.label :name, "Tipo de Gas:"%>
+            <%= property_ga.select :gas_id, Ga.pluck(:name,:id),prompt: "Tipo de gas" , class:'form-control'%><br>
+            <%= property_ga.label :name, "Calidad:"%>
+            <%= property_ga.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
+        </div>
+        </div>
+    <% end %>
 
   <div class="actions">
     <%= form.submit %>
