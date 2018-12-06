@@ -104,6 +104,7 @@ class Property < ApplicationRecord
   has_many :street_locations, through: :property_street_locations
 
   has_many :property_structures
+  accepts_nested_attributes_for :property_structures, reject_if: :all_blank
   has_many :structures, through: :property_structures
 
   has_many :property_toilet_artifacts

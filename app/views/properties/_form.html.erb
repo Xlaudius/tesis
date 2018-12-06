@@ -369,6 +369,20 @@
         </div>
     <% end %>
 
+    <h2>Estructura</h2>
+    <%= form.fields_for :property_structures do |property_struc|%>
+        <div class="properties_fields"> 
+        <div class="fields">  
+            <%= property_struc.label :name, "Material:"%>
+            <%= property_struc.select :structure_id, Structure.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+            <%= property_struc.label :observations, "Observaciones:"%>
+            <%= property_struc.text_field :observations %><br>
+            <%= property_struc.label :name, "Calidad:"%>
+            <%= property_struc.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>      
+        </div>
+        </div>
+    <% end %>
+
 
   <div class="actions">
     <%= form.submit %>
