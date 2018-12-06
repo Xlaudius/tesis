@@ -123,7 +123,16 @@
         </div>
     <% end %>
 
-    PropertyDryWall
+    <h2>Electricidad</h2>
+    <%= form.fields_for :property_electricities do |property_elect|%>
+        <div class="properties_fields"> 
+        <div class="fields">  
+            <%= property_elect.label :name, "Material:"%>
+            <%= property_elect.select :electricity_id, Electricity.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+        </div>
+        </div>
+    <% end %>
+ 
 
 
 

@@ -23,6 +23,7 @@ class Property < ApplicationRecord
   has_many :dry_walls, through: :property_dry_walls
 
   has_many :property_electricities
+  accepts_nested_attributes_for :property_electricities, reject_if: :all_blank
   has_many :electricities, through: :property_electricities
 
   has_many :property_exterior_closures
