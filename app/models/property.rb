@@ -36,9 +36,11 @@ class Property < ApplicationRecord
   has_many :furnitures, through: :property_furnitures
 
   has_many :property_gas
+  accepts_nested_attributes_for :property_gas, reject_if: :all_blank
   has_many :gas, through: :property_gas
 
   has_many :property_heatings
+  accepts_nested_attributes_for :property_heatings, reject_if: :all_blank
   has_many :heatings, through: :property_heatings
 
   has_many :property_housing_qualities

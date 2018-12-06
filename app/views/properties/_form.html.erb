@@ -173,6 +173,18 @@
         </div>
     <% end %>
 
+    <h2>Calefacción</h2>
+    <%= form.fields_for :property_heatings do |property_heat|%>
+        <div class="properties_fields"> 
+        <div class="fields">  
+            <%= property_heat.label :name, "Calecafcion"%>
+            <%= property_heat.select :heating_id, Heating.pluck(:name,:id),prompt: "Calefaccion" , class:'form-control'%><br>
+            <%= property_heat.label :name, "Calidad:"%>
+            <%= property_heat.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
+        </div>
+        </div>
+    <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
