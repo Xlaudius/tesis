@@ -345,6 +345,19 @@
         </div>
     <% end %>
 
+    <h2>Escalera</h2>
+    <%= form.fields_for :property_stairs do |property_stair|%>
+        <div class="properties_fields"> 
+        <div class="fields">  
+            <%= property_stair.label :name, "Material:"%>
+            <%= property_stair.select :stair_id, Stair.pluck(:name,:id),prompt: "material" , class:'form-control'%><br>
+            <%= property_stair.label :name, "Calidad:"%>
+            <%= property_stair.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
+         
+        </div>
+        </div>
+    <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

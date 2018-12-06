@@ -96,9 +96,11 @@ class Property < ApplicationRecord
   has_many :side_walks, through: :property_sidewalks
 
   has_many :property_stairs
+  accepts_nested_attributes_for :property_stairs, reject_if: :all_blank
   has_many :stairs, through: :property_stairs
 
   has_many :property_street_locations
+  accepts_nested_attributes_for :property_street_locations, reject_if: :all_blank
   has_many :street_locations, through: :property_street_locations
 
   has_many :property_structures
