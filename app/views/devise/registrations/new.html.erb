@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h2>Crear cuenta</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -7,43 +7,43 @@
     <%= f.label 'Cargo' %><br />
     <%= f.text_field :role, autofocus: true, autocomplete: "role" %>
   </div>
-
+  <br>
   <div class="field">
     <%= f.label 'RUT EJ:11111111' %><br />
     <%= f.number_field :rut, autofocus: true %>
   </div>
+  <br>
   <div class="field">
     <%= f.label 'Nombre' %><br />
     <%= f.text_field :first_name, autofocus: true %>
   </div>
+  <br>
   <div class="field">
     <%= f.label 'Apellido' %><br />
     <%= f.text_field :last_name, autofocus: true %>
   </div>
-  
+  <br>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
-
-
-
+<br>
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :Contraseña %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> caracteres mínimo)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :Confirmar_contraseña %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
-
+<br>
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Crear cuenta" %>
   </div>
 <% end %>
-
+<br>
 <%= render "devise/shared/links" %>
