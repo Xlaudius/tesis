@@ -12,6 +12,15 @@ ActiveAdmin.register_page "Dashboard" do
           end
         end
       end
+      
+      column do
+        panel 'Tasaciones' do
+          ul do
+            li "Total Assessments to date: #{Assessment.count}"
+            li "Total registered properties: #{Property.count}"
+          end
+        end
+      end
     end
   end # content
 end
