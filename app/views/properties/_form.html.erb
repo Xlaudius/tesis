@@ -185,6 +185,17 @@
         </div>
     <% end %>
 
+    <h2>Calidad de la vivienda</h2>
+    <%= form.fields_for :property_housing_qualities do |property_hou_qua|%>
+        <div class="properties_fields"> 
+        <div class="fields">  
+            <%= property_hou_qua.label :name, "Calecafcion"%>
+            <%= property_hou_qua.select :housing_quality_id, HousingQuality.pluck(:name,:id),prompt: "Calidades" , class:'form-control'%><br>
+            
+        </div>
+        </div>
+    <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

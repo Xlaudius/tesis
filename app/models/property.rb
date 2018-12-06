@@ -44,6 +44,7 @@ class Property < ApplicationRecord
   has_many :heatings, through: :property_heatings
 
   has_many :property_housing_qualities
+  accepts_nested_attributes_for :property_housing_qualities, reject_if: :all_blank
   has_many :housing_qualities, through: :property_housing_qualities
 
   has_many :property_interior_closures

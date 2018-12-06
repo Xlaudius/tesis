@@ -27,6 +27,8 @@ class PropertiesController < ApplicationController
     2.times {@property.property_furnitures.build}
     2.times {@property.property_gas.build}
     2.times {@property.property_heatings.build}
+    2.times {@property.property_housing_qualities.build}
+    
   end
 
   # GET /properties/1/edit
@@ -42,6 +44,7 @@ class PropertiesController < ApplicationController
     @property.property_furnitures.build
     @property.property_gas.build
     @property.property_heatings.build
+    @property.property_housing_qualities.build
   end
 
   # POST /properties
@@ -105,7 +108,8 @@ class PropertiesController < ApplicationController
         property_exterior_closures_attributes:[:id, :other, :property_id, :exterior_closure_id, :quality_id],
         property_furnitures_attributes:[:id, :furniture_id, :property_id, :furniture_cover_id, :quality_id],
         property_gas_attributes:[:id, :property_id, :gas_id, :quality_id],
-        property_heatings_attributes:[:id, :heating_id, :property_id, :quality_id]
+        property_heatings_attributes:[:id, :heating_id, :property_id, :quality_id],
+        property_housing_qualities_attributes:[:id,:housing_quality_id, :property_id]
         )
     end
 end
