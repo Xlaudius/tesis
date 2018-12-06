@@ -29,7 +29,7 @@ class PropertyBetweenFloorSlapsController < ApplicationController
 
     respond_to do |format|
       if @property_between_floor_slap.save
-        format.html { redirect_to @property_between_floor_slap), notice: 'Property between floor slap was successfully created.' }
+        format.html { redirect_to @property_between_floor_slap, notice: 'Property between floor slap was successfully created.' }
         format.json { render :show, status: :created, location: @property_between_floor_slap }
       else
         format.html { render :new }
