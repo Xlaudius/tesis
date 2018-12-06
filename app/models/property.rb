@@ -64,6 +64,7 @@ class Property < ApplicationRecord
   has_many :pavements, through: :property_pavements
 
   has_many :property_property_types
+  accepts_nested_attributes_for :property_property_types, reject_if: :all_blank
   has_many :property_types, through: :property_property_types
 
   has_many :property_roads

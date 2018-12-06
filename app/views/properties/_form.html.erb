@@ -235,13 +235,29 @@
     <%= form.fields_for :property_pavements do |property_pavi|%>
         <div class="properties_fields"> 
         <div class="fields">  
-            <%= property_pavi.label :name, "Forma:"%>
-            <%= property_pavi.select :pavement_id, Pavement.pluck(:name,:id),prompt: "Pavimento" , class:'form-control'%><br>
+            <%= property_pavi.label :name, "Pavimento:"%>
+            <%= property_pavi.select :pavement_id, Pavement.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
             <%= property_pavi.label :name, "Calidad:"%>
             <%= property_pavi.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
         </div>
         </div>
     <% end %>
+
+
+    <h2>Tipo propiedad</h2>
+    <%= form.fields_for :property_property_types do |property_tipe|%>
+        <div class="properties_fields"> 
+        <div class="fields">  
+            <%= property_tipe.label :name, "Tipo:"%>
+            <%= property_tipe.select :property_type_id, PropertyType.pluck(:name,:id),prompt: "Tipo" , class:'form-control'%><br>
+            <%= property_tipe.label :sites, "Sites:"%>
+            <%= property_tipe.number_field :sites %><br>
+        </div>
+        </div>
+    <% end %>
+
+
+
   <div class="actions">
     <%= form.submit %>
   </div>
