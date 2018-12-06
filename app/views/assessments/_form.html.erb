@@ -22,21 +22,21 @@
             <form>
               <div class="row">
 
-                <div class="col-md-5">
+                <div class="col-md-3">
                   <div class="form-group">
                     <%= form.label :Numero_tasación %>
                     <%= form.number_field :number_assesment, class:'form-control' %>
                   </div>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <div class="form-group">
                     <%= form.label :Fecha_inicio %><br>
                     <%= form.date_select :start_date, class:'form-control' %>
                   </div>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <div class="form-group">
                     <%= form.label :Fecha_termmino %><br>
                     <%= form.date_select :end_date, class:'form-control' %>
@@ -73,7 +73,8 @@
                   <%= form.label :Inhabitada %>
                   </div>
                 </div>               
-                </div> 
+              </div> 
+
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
@@ -96,7 +97,7 @@
         
       </div>
 
-      <div class="col-md-3">
+      <div class="col-md-4">
           <div class="card">
             <div class="card-header card-header-primary">
               <h2 class="card-title">Propiedad</h2>
