@@ -109,6 +109,24 @@
         </div>
     <% end %>
 
+    <h2>Tabiqueria</h2>
+    <%= form.fields_for :property_dry_walls do |property_dry_wall|%>
+        <div class="properties_fields"> 
+        <div class="fields">  
+            <%= property_dry_wall.label :name, "Material:"%>
+            <%= property_dry_wall.select :dry_wall_id, DryWall.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+            <%= property_dry_wall.label :other, "Otros:"%>
+            <%= property_dry_wall.text_field :other %><br>
+            <%= property_dry_wall.label :name, "Calidad:"%>
+            <%= property_dry_wall.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>      
+        </div>
+        </div>
+    <% end %>
+
+    PropertyDryWall
+
+
+
   <div class="actions">
     <%= form.submit %>
   </div>

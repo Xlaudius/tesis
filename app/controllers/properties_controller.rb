@@ -21,6 +21,7 @@ class PropertiesController < ApplicationController
     2.times {@property.property_closets.build}
     2.times {@property.property_doors.build}
     2.times {@property.property_drinking_waters.build}
+    2.times {@property.property_dry_walls.build}
   end
 
   # GET /properties/1/edit
@@ -30,6 +31,7 @@ class PropertiesController < ApplicationController
     @property.property_closets.build
     @property.property_doors.build
     @property.property_drinking_waters.build
+    @property.property_dry_walls.build
   end
 
   # POST /properties
@@ -87,7 +89,8 @@ class PropertiesController < ApplicationController
         property_closets_attributes:[:id, :closet_id, :property_id, :qualities_id],
         property_covers_attributes:[:id, :observations, :property_id, :cover_id, :quality_id],
         property_doors_attributes:[:id, :door_id, :door_frame_id, :property_id, :quality_id],
-        property_drinking_waters_attributes:[:id, :drinking_water_id, :property_id, :quality_id]
+        property_drinking_waters_attributes:[:id, :drinking_water_id, :property_id, :quality_id],
+        property_dry_walls_attributes:[:id, :dry_wall_id, :property_id, :other, :quality_id]
         )
     end
 end
