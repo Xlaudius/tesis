@@ -267,6 +267,20 @@
     <% end %>
 
 
+    <h2>ROL </h2>
+    <%= form.fields_for :property_rols do |property_rol|%>
+        <div class="properties_fields"> 
+        <div class="fields">  
+            <%= property_rol.label :name, "Tipo:"%>
+            <%= property_rol.select :province_id, Province.pluck(:name,:id),prompt: "Comuna" , class:'form-control'%><br>
+            <%= property_rol.label :block, "Bloque:"%>
+            <%= property_rol.number_field :block %><br>
+            <%= property_rol.label :predial, "Numero:"%>
+            <%= property_rol.number_field :predial %><br>
+        </div>
+        </div>
+    <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
