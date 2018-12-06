@@ -117,6 +117,7 @@ class Property < ApplicationRecord
   has_many :water_rain_ducts, through: :property_water_rain_ducts
 
   has_many :property_windows
+  accepts_nested_attributes_for :property_windows, reject_if: :all_blank
   has_many :windows, through: :property_windows
 
   has_many :property_closets

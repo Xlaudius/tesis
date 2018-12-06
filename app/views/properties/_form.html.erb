@@ -409,6 +409,21 @@
         </div>
     <% end %>
 
+    <h2>Ventana</h2>
+    <%= form.fields_for :property_windows do |property_wind|%>
+        <div class="properties_fields"> 
+        <div class="fields">  
+            <%= property_wind.label :name, "Material:"%>
+            <%= property_wind.select :window_id, Window.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+            <%= property_wind.label :other, "Observaciones:"%>
+            <%= property_wind.text_field :other %><br>
+            <%= property_wind.label :protections %>
+            <%= property_wind.check_box :protections %>
+            <%= property_wind.label :name, "Calidad:"%>
+            <%= property_wind.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>      
+        </div>
+        </div>
+    <% end %>
 
   <div class="actions">
     <%= form.submit %>
