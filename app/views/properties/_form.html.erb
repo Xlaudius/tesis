@@ -358,6 +358,18 @@
         </div>
     <% end %>
 
+
+    <h2>Ubicacion Calle </h2>
+    <%= form.fields_for :property_street_locations do |property_street|%>
+        <div class="properties_fields"> 
+        <div class="fields">  
+            <%= property_street.label :name, "calle:"%>
+            <%= property_street.select :street_location_id, StreetLocation.pluck(:name,:id),prompt: "Tipo" , class:'form-control'%><br>
+        </div>
+        </div>
+    <% end %>
+
+
   <div class="actions">
     <%= form.submit %>
   </div>

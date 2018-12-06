@@ -41,6 +41,7 @@ class PropertiesController < ApplicationController
     2.times {@property.property_sheds.build}
     2.times {@property.property_sidewalks.build}
     2.times {@property.property_stairs.build}
+    2.times {@property.property_street_locations.build}
   end
 
   # GET /properties/1/edit
@@ -70,6 +71,7 @@ class PropertiesController < ApplicationController
     @property.property_sheds.build
     @property.property_sidewalks.build
     @property.property_stairs.build
+    @property.property_street_locations.build
   end
 
   # POST /properties
@@ -147,7 +149,8 @@ class PropertiesController < ApplicationController
         property_sewerages_attributes:[:id, :sewerage_id, :property_id, :quality_id],
         property_sheds_attributes:[:id, :shed_id, :property_id, :shed_material_id, :quality_id],
         property_sidewalks_attributes:[:id,:side_walk_id, :property_id, :width],
-        property_stairs_attributes:[:id,:property_id, :stair_id, :quality_id]
+        property_stairs_attributes:[:id,:property_id, :stair_id, :quality_id],
+        property_street_locations_attributes:[:id,:property_id, :street_location_id]
         )
     end
 end
