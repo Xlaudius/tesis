@@ -20,28 +20,28 @@ class PropertiesController < ApplicationController
     2.times {@property.property_covers.build}
     2.times {@property.property_closets.build}
     2.times {@property.property_doors.build}
-    2.times {@property.property_drinking_waters.build}
+    @property.property_drinking_waters.build
     2.times {@property.property_dry_walls.build}
-    2.times {@property.property_electricities.build}
+    @property.property_electricities.build
     2.times {@property.property_exterior_closures.build}
     2.times {@property.property_furnitures.build}
-    2.times {@property.property_gas.build}
-    2.times {@property.property_heatings.build}
+    @property.property_gas.build
+    @property.property_heatings.build
     2.times {@property.property_housing_qualities.build}
     2.times {@property.property_interior_closures.build}
-    2.times {@property.property_land_shapes.build}
-    2.times {@property.property_maintenances.build}
-    2.times {@property.property_pavements.build}
-    2.times {@property.property_property_types.build}
-    2.times {@property.property_roads.build}
-    2.times {@property.property_rols.build}
+    @property.property_land_shapes.build
+    @property.property_maintenances.build
+    @property.property_pavements.build
+    @property.property_property_types.build
+    @property.property_roads.build
+    @property.property_rols.build
     2.times {@property.property_roofings.build}
     2.times {@property.property_sectors.build}
-    2.times {@property.property_sewerages.build}
+    @property.property_sewerages.build
     2.times {@property.property_sheds.build}
-    2.times {@property.property_sidewalks.build}
+    @property.property_sidewalks.build
     2.times {@property.property_stairs.build}
-    2.times {@property.property_street_locations.build}
+    @property.property_street_locations.build
     2.times {@property.property_structures.build}
     2.times {@property.property_toilet_artifacts.build}
     2.times {@property.property_water_rain_ducts.build}
@@ -55,28 +55,28 @@ class PropertiesController < ApplicationController
     @property.property_covers.build
     @property.property_closets.build
     @property.property_doors.build
-    @property.property_drinking_waters.build
+    #@property.property_drinking_waters.build
     @property.property_dry_walls.build
-    @property.property_electricities.build
+    #@property.property_electricities.build
     @property.property_exterior_closures.build
     @property.property_furnitures.build
-    @property.property_gas.build
-    @property.property_heatings.build
+    #@property.property_gas.build
+    #@property.property_heatings.build
     @property.property_housing_qualities.build
     @property.property_interior_closures.build
-    @property.property_land_shapes.build
-    @property.property_maintenances.build
-    @property.property_pavements.build
-    @property.property_property_types.build
-    @property.property_roads.build
-    @property.property_rols.build
+    #@property.property_land_shapes.build
+    #@property.property_maintenances.build
+    #@property.property_pavements.build
+    #@property.property_property_types.build
+    #@property.property_roads.build
+    #@property.property_rols.build
     @property.property_roofings.build
     @property.property_sectors.build
-    @property.property_sewerages.build
+    #@property.property_sewerages.build
     @property.property_sheds.build
-    @property.property_sidewalks.build
+    #@property.property_sidewalks.build
     @property.property_stairs.build
-    @property.property_street_locations.build
+   # @property.property_street_locations.build
     @property.property_structures.build
     @property.property_toilet_artifacts.build
     @property.property_water_rain_ducts.build

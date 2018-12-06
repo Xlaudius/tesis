@@ -17,7 +17,7 @@
   
     <div class="field">
       <%= form.label :Tasación %>
-      <%= form.select :assessment_id, Assessment.pluck(:number_assesment, :id), prompt: 'Selecciona Nº de Tasación', class:"form-control selectpicker" %>
+      <%= form.label @property.assessment.number_assesment %>
     </div>
   
     <div class="field">
