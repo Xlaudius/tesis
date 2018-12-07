@@ -99,13 +99,13 @@ ClientType.create(name: 'Particular')
 
 
 
-5.times do
+50.times do
     name = Faker::Name.name
     clientType = ClientType.find_by(name: 'Particular')
     Client.create(name: name, contact: name, number: 111111, available: 1, client_type_id: clientType.id)
 end
 
-5.times do 
+50.times do 
     clientType = ClientType.find_by(name: 'Banco')
     name = Faker::Bank.name
     phone = Faker::PhoneNumber.phone_number
@@ -224,7 +224,7 @@ Maintenance.create(name: 'Normal', value: 2)
 Maintenance.create(name: 'Regular', value: 3)
 Maintenance.create(name: 'Deficiente', value: 4)
 
-5.times do |i|
+50.times do |i|
     name = Faker::Name.name
     num = 7000000 +i
     dv = (0...9).sort_by{rand}[1]
@@ -354,7 +354,7 @@ Window.create(name: 'PVC con folio', value: 7)
 Window.create(name: 'Otro', value: 8)
 
 
-5.times do
+50.times do
     first = Region.first
     last = Region.last
     rngRegion = (first.id .. last.id).sort_by{rand}[1]
@@ -362,7 +362,7 @@ Window.create(name: 'Otro', value: 8)
     City.create(name: city, region_id: rngRegion)
 end
 
-5.times do
+50.times do
     first = City.first
     last = City.last
     rngCity = (first.id .. last.id).sort_by{rand}[1]
@@ -370,12 +370,12 @@ end
     Province.create(name: province, city_id: rngCity)
 end
 
-5.times do
+50.times do
 street = Faker::Address.street_name
 Sector.create(name: street)
 end
 
-5.times do |tasacion| #indicar cuantas tasaciones quieres crear
+50.times do |tasacion| #indicar cuantas tasaciones quieres crear
     firstQuality = Quality.first
     lastQuality = Quality.last
     rngQuality1 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]
@@ -507,7 +507,7 @@ end
     rngEnlar = (firstExterClos.id .. lastExterClos.id).sort_by{rand}[1]
     PropertyExteriorClosure.create(other: '',property_id: property.id, exterior_closure_id: rngEnlar, quality_id: rngQuality1)
     
-    2.times do
+    20.times do
     firstQuality = Quality.first
     lastQuality = Quality.last
     rngQuality1 = (firstQuality.id .. lastQuality.id).sort_by{rand}[1]

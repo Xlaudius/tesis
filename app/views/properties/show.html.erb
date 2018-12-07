@@ -163,6 +163,7 @@
     <p> no hay Calefacción</p>
    <% end %>      
   
+
   <% if @property.housing_qualities.any? %>
     <h5> Calidad de Vivienda: </h5>
     <ul>
@@ -220,14 +221,14 @@
    <% end %>      
 
   <% if @property.roads.any? %>
-    <h5> Acera: </h5>
+    <h5> Calzada: </h5>
     <ul>
         <% @property.roads.each do |road| %>
         <li><%= road.name %></li>
         <% end %>
     </ul>
    <% else %>
-    <p> no hay Acera</p>
+    <p> no hay Calzada</p>
    <% end %>      
 
   <% if @property.property_rols.any? %>
@@ -385,6 +386,7 @@
     <p> no hay Armarios</p>
    <% end %>      
 
+   
   <% if @property.pools.any? %>
     <h5> Piscina: </h5>
     <ul>

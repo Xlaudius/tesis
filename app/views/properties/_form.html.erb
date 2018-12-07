@@ -1,63 +1,669 @@
 <%= form_with(model: property, local: true) do |form| %>
-  <% if property.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
-      <ul>
-      <% property.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <% if property.errors.any? %>
+      <div id="error_explanation">
+        <h4><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h4>
+        <ul>
+        <% property.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="field">
+      <%= form.label :Nombre %>
+      <%= form.text_field :name %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :Tasación %>
+      <%= form.label @property.assessment.number_assesment %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :Instalación %>
+      <%= form.check_box :facilities %>
+    </div>
+  
+      <div class="accordion" id="accordionExample">
+          <div class="card">
+              <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Urbanización
+                      </button>
+                  </h5>
+              </div>
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                      <div class="row">
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Calzada </h4>
+                                  <%= form.fields_for :property_roads do |property_road|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_road.label :name, "Tipo:"%>
+                                          <%= property_road.select :road_id, Road.pluck(:name,:id),prompt: "Tipo" , class:'form-control'%><br>
+                                      </div>
+                                      </div>
+                                  <% end %>
+                                  <br colspan="5">
+                              </div>
+                          </div>
+  
+  
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Acera</h4>
+                                  <%= form.fields_for :property_sidewalks do |property_side|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_side.label :name, "Material:"%>
+                                          <%= property_side.select :side_walk_id, SideWalk.pluck(:name,:id),prompt: "material" , class:'form-control'%><br>
+                                          <%= property_side.label :width, "Ancho:"%>
+                                          <%= property_side.number_field :width %><br>
+                                      
+                                      </div>
+                                      </div>
+                                  <% end %>
+                                  <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                              <h4>Solera</h4>
+                                  <div class="field">
+                                      <%= form.label :Solera %>
+                                      <%= form.check_box :sill %>
+                                  </div>
+                                  <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Electricidad</h4>
+                                  <%= form.fields_for :property_electricities do |property_elect|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_elect.label :name, "Material:"%>
+                                          <%= property_elect.select :electricity_id, Electricity.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+                                      </div>
+                                      </div>
+                                  <% end %>
+                                  <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Agua Potable</h4>
+                                  <%= form.fields_for :property_drinking_waters do |property_dw|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_dw.label :name, "Material:"%>
+                                          <%= property_dw.select :drinking_water_id, DrinkingWater.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+                                          <%= property_dw.label :name, "Calidad:"%>
+                                          <%= property_dw.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>      
+                                      </div>
+                                      </div>
+                                  <% end %>
+                                  <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Alcantarillado</h4>
+                                  <%= form.fields_for :property_sewerages do |property_sewe|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_sewe.label :name, "Tipo:"%>
+                                          <%= property_sewe.select :sewerage_id, Sewerage.pluck(:name,:id),prompt: "Tipo" , class:'form-control'%><br>
+                                          <%= property_sewe.label :name, "Calidad:"%>
+                                          <%= property_sewe.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
+                                      </div>
+                                      </div>
+                                  <% end %>
+                                  <br colspan="5">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">    
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Expropiación</h4>
+                                  <div class="field">
+                                      <%= form.label :Expropiación %>
+                                      <%= form.check_box :expropriation %>
+                                  </div>
+                                  <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Sector</h4>
+                                  <%= form.fields_for :property_sectors do |property_sec|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_sec.label :name, "Sector:"%>
+                                          <%= property_sec.select :sector_id, Sector.pluck(:name,:id),prompt: "Calle" , class:'form-control'%><br>
+                                          <%= property_sec.label :distance, "Distancia:"%>
+                                          <%= property_sec.number_field :distance %><br>
+                                      </div>
+                                      </div>
+                                  <% end %>
+                              <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Ubicacion Calle </h4>
+                                  <%= form.fields_for :property_street_locations do |property_street|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_street.label :name, "calle:"%>
+                                          <%= property_street.select :street_location_id, StreetLocation.pluck(:name,:id),prompt: "Tipo" , class:'form-control'%><br>
+                                      </div>
+                                      </div>
+                                  <% end %>                            
+                              <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Forma del Terreno</h4>
+                                  <%= form.fields_for :property_land_shapes do |property_land|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_land.label :name, "Forma:"%>
+                                          <%= property_land.select :land_shape_id, LandShape.pluck(:name,:id),prompt: "Forma" , class:'form-control'%><br>
+                                          <%= property_land.label :name, "Calidad:"%>
+                                          <%= property_land.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
+                                      </div>
+                                      </div>
+                                  <% end %>                            
+                              <br colspan="5">
+                              </div>
+                          </div>
+  
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+          <div class="accordion" id="accordionExample">
+          <div class="card">
+              <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                      Inmueble
+                      </button>
+                  </h5>
+              </div>
+              <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                      <div class="row">
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>ROL </h4>
+                                  <%= form.fields_for :property_rols do |property_rol|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_rol.label :name, "Tipo:"%>
+                                          <%= property_rol.select :province_id, Province.pluck(:name,:id),prompt: "Comuna" , class:'form-control'%><br>
+                                          <%= property_rol.label :block, "Bloque:"%>
+                                          <%= property_rol.number_field :block %><br>
+                                          <%= property_rol.label :predial, "Numero:"%>
+                                          <%= property_rol.number_field :predial %><br>
+                                      </div>
+                                      </div>
+                                  <% end %>                            
+                              <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Deuda CB. </h4>
+                                  <div class="field">
+                                      <%= form.label :Deuda_Tributaria %>
+                                      <%= form.number_field :debt_taxation %>
+                                  </div>                                
+                              <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <div class="field">
+                                  <h4>Antigüedad</h4>
+                                      <%= form.label :Antiguedad %>
+                                      <%= form.number_field :antiquity %>
+                                  </div>
+                              <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Tipo propiedad</h4>
+                                  <%= form.fields_for :property_property_types do |property_tipe|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_tipe.label :name, "Tipo:"%>
+                                          <%= property_tipe.select :property_type_id, PropertyType.pluck(:name,:id),prompt: "Tipo" , class:'form-control'%><br>
+                                          <%= property_tipe.label :sites, "Lados:"%>
+                                          <%= property_tipe.number_field :sites %><br>
+                                      </div>
+                                      </div>
+                                  <% end %>
+                              <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Estructura</h4>
+                                  <%= form.fields_for :property_structures do |property_struc|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_struc.label :name, "Material:"%>
+                                          <%= property_struc.select :structure_id, Structure.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+                                          <%= property_struc.label :observations, "Observaciones:"%>
+                                          <%= property_struc.text_field :observations %><br>
+                                          <%= property_struc.label :name, "Calidad:"%>
+                                          <%= property_struc.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>      
+                                      </div>
+                                      </div>
+                                  <% end %>
+                              <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Cubiertas</h4>
+                                  <%= form.fields_for :property_covers do |property_cover|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_cover.label :name, "Material:"%>
+                                          <%= property_cover.select :cover_id, Cover.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+                                          <%= property_cover.label :observations, "Observaciones:"%>
+                                          <%= property_cover.text_field :observations %><br>
+                                          <%= property_cover.label :name, "Calidad:"%>
+                                          <%= property_cover.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>      
+                                      </div>
+                                      </div>
+                                  <% end %>                       
+                              <br colspan="5">
+                              </div>
+                          </div>
+                      </div>
+  
+                      <div class="row">
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Techumbre</h4>
+                                  <%= form.fields_for :property_roofings do |property_roof|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_roof.label :name, "Material:"%>
+                                          <%= property_roof.select :roofing_id, Roofing.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+                                          <%= property_roof.label :name, "Calidad:"%>
+                                          <%= property_roof.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
+                                      </div>
+                                      </div>
+                                  <% end %>
+                              <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Cierros Exteriores</h4>
+                                      <%= form.fields_for :property_exterior_closures do |property_ex_clo|%>
+                                          <div class="properties_fields"> 
+                                          <div class="fields">  
+                                              <%= property_ex_clo.label :name, "Material:"%>
+                                              <%= property_ex_clo.select :exterior_closure_id, ExteriorClosure.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+                                              <%= property_ex_clo.label :other, "Otros:"%>
+                                              <%= property_ex_clo.text_field :other %><br>
+                                              <%= property_ex_clo.label :name, "Calidad:"%>
+                                              <%= property_ex_clo.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
+                                          </div>
+                                          </div>
+                                      <% end %>
+                              <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Cierros Interiores</h4>
+                                  <%= form.fields_for :property_interior_closures do |property_in_clo|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_in_clo.label :name, "Material:"%>
+                                          <%= property_in_clo.select :interior_closure_id, InteriorClosure.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+                                          <%= property_in_clo.label :other, "Otros:"%>
+                                          <%= property_in_clo.text_field :other %><br>  
+                                      </div>
+                                      </div>
+                                  <% end %>
+                              <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Canales Agua Lluvia</h4>
+                                  <%= form.fields_for :property_water_rain_ducts do |property_WRD|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_WRD.label :name, "Material:"%>
+                                          <%= property_WRD.select :water_rain_duct_id, WaterRainDuct.pluck(:name,:id),prompt: "material" , class:'form-control'%><br>
+                                          <%= property_WRD.label :name, "Calidad:"%>
+                                          <%= property_WRD.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
+                                      
+                                      </div>
+                                      </div>
+                                  <% end %>
+                              <br colspan="5">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+   
+      
+          <div class="accordion" id="accordionExample">
+          <div class="card">
+              <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                      Terreno y Edificación
+                      </button>
+                  </h5>
+              </div>
+              <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                      <div class="row">
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Cobertizo </h4>
+                                  <%= form.fields_for :property_sheds do |property_shed|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_shed.label :name, "Tipo:"%>
+                                          <%= property_shed.select :shed_id, Shed.pluck(:name,:id),prompt: "Tipo" , class:'form-control'%><br>
+                                          <%= property_shed.label :name, "Tipo:"%>
+                                          <%= property_shed.select :shed_material_id, ShedMaterial.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+                                          <%= property_shed.label :name, "Calidad:"%>
+                                          <%= property_shed.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
+                                      </div>
+                                      </div>
+                                  <% end %>
+                              <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Pavimento</h4>
+                                  <%= form.fields_for :property_pavements do |property_pavi|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_pavi.label :name, "Pavimento:"%>
+                                          <%= property_pavi.select :pavement_id, Pavement.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+                                          <%= property_pavi.label :name, "Calidad:"%>
+                                          <%= property_pavi.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
+                                      </div>
+                                      </div>
+                                  <% end %>                                
+                              <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Piscina</h4>
+                                  <%= form.fields_for :pools do |pool|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= pool.label :img, "Img:"%>
+                                          <%= pool.text_field :img %><br>
+                                          <%= pool.label :volumen, "Volumen:"%>
+                                          <%= pool.number_field :volumen %><br>
+                                      </div>
+                                      </div>
+                                  <% end %>
+                              <br colspan="5">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>    
+          <div class="accordion" id="accordionExample">
+          <div class="card">
+              <div class="card-header" id="headingFour">
+                  <h5 class="mb-0">
+                      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                      Interior
+                      </button>
+                  </h5>
+              </div>
+              <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">
+                      <div class="row">   
+  
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Entre Piso</h4>
+                                  <%= form.fields_for :property_between_floor_slaps do |property_bfs|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_bfs.label :name, "material:"%>
+                                          <%= property_bfs.select :between_floor_slap_id, BetweenFloorSlap.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+                                          <%= property_bfs.label :name, "Calidad:"%>
+                                          <%= property_bfs.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
+                                      </div>
+                                      </div>
+                                  <% end %>
+                              <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Tabiqueria</h4>
+                                  <%= form.fields_for :property_dry_walls do |property_dry_wall|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_dry_wall.label :name, "Material:"%>
+                                          <%= property_dry_wall.select :dry_wall_id, DryWall.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+                                          <%= property_dry_wall.label :other, "Otros:"%>
+                                          <%= property_dry_wall.text_field :other %><br>
+                                          <%= property_dry_wall.label :name, "Calidad:"%>
+                                          <%= property_dry_wall.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>      
+                                      </div>
+                                      </div>
+                                  <% end %>
+                              <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Calefacción</h4>
+                                  <%= form.fields_for :property_heatings do |property_heat|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_heat.label :name, "Calecafcion"%>
+                                          <%= property_heat.select :heating_id, Heating.pluck(:name,:id),prompt: "Calefaccion" , class:'form-control'%><br>
+                                          <%= property_heat.label :name, "Calidad:"%>
+                                          <%= property_heat.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
+                                      </div>
+                                      </div>
+                                  <% end %>
+                              <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Ventana</h4>
+                                  <%= form.fields_for :property_windows do |property_wind|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_wind.label :name, "Material:"%>
+                                          <%= property_wind.select :window_id, Window.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+                                          <%= property_wind.label :other, "Observaciones:"%>
+                                          <%= property_wind.text_field :other %><br>
+                                          <%= property_wind.label :protections %>
+                                          <%= property_wind.check_box :protections %>
+                                          <%= property_wind.label :name, "Calidad:"%>
+                                          <%= property_wind.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>      
+                                      </div>
+                                      </div>
+                                  <% end %>
+                              <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Puertas</h4>
+                                  <%= form.fields_for :property_doors do |property_door|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_door.label :name, "Material:"%>
+                                          <%= property_door.select :door_id, Door.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+                                          <%= property_door.label :name, "Marco:"%>
+                                          <%= property_door.select :door_frame_id, DoorFrame.pluck(:name,:id),prompt: "Marco" , class:'form-control'%><br>
+                                          <%= property_door.label :name, "Calidad:"%>
+                                          <%= property_door.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>      
+                                      </div>
+                                      </div>
+                                  <% end %>
+                              <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Closets</h4>
+                                  <%= form.fields_for :property_closets do |property_closet|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_closet.label :name, "Material:"%>
+                                          <%= property_closet.select :closet_id, Closet.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+                                          <%= property_closet.label :name, "Calidad:"%>
+                                          <%= property_closet.select :qualities_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>      
+                                      </div>
+                                      </div>
+                                  <% end %>
+                              <br colspan="5">
+                              </div>
+                          </div>
+  
+                      </div>
+                      <div class="row">   
+  
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Escalera</h4>
+                                  <%= form.fields_for :property_stairs do |property_stair|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_stair.label :name, "Material:"%>
+                                          <%= property_stair.select :stair_id, Stair.pluck(:name,:id),prompt: "material" , class:'form-control'%><br>
+                                          <%= property_stair.label :name, "Calidad:"%>
+                                          <%= property_stair.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
+                                      
+                                      </div>
+                                      </div>
+                                  <% end %>
+                              <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Artefactos Sanitarios</h4>
+                                  <%= form.fields_for :property_toilet_artifacts do |property_toilet|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_toilet.label :name, "Material:"%>
+                                          <%= property_toilet.select :toilet_artifact_id, ToiletArtifact.pluck(:name,:id),prompt: "material" , class:'form-control'%><br>
+                                          <%= property_toilet.label :name, "Calidad:"%>
+                                          <%= property_toilet.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
+                                      
+                                      </div>
+                                      </div>
+                                  <% end %>
+                              <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Muebles</h4>
+                                  <%= form.fields_for :property_furnitures do |property_forni|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_forni.label :name, "Material:"%>
+                                          <%= property_forni.select :furniture_id, Furniture.pluck(:name,:id),prompt: "Material" , class:'form-control'%><br>
+                                          <%= property_forni.label :name, "Cubierta:"%>
+                                          <%= property_forni.select :furniture_cover_id, FurnitureCover.pluck(:name,:id),prompt: "Cubierta" , class:'form-control'%><br>
+                                          <%= property_forni.label :name, "Calidad:"%>
+                                          <%= property_forni.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
+                                      </div>
+                                      </div>
+                                  <% end %>
+                              <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Gas</h4>
+                                  <%= form.fields_for :property_gas do |property_ga|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_ga.label :name, "Tipo de Gas:"%>
+                                          <%= property_ga.select :gas_id, Ga.pluck(:name,:id),prompt: "Tipo de gas" , class:'form-control'%><br>
+                                          <%= property_ga.label :name, "Calidad:"%>
+                                          <%= property_ga.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
+                                      </div>
+                                      </div>
+                                  <% end %>
+                              <br colspan="5">
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Mantencion</h4>
+                                  <%= form.fields_for :property_maintenances do |property_main|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_main.label :name, "Forma:"%>
+                                          <%= property_main.select :maintenance_id, Maintenance.pluck(:name,:id),prompt: "Tipo mantencion" , class:'form-control'%><br>
+                                          <%= property_main.label :name, "Calidad:"%>
+                                          <%= property_main.select :quality_id, Quality.pluck(:name,:id),prompt: "Calidad", class:'form-control'%><br>
+                                      </div>
+                                      </div>
+                                  <% end %>
+                              <br colspan="5">
+                              </div>
+                          </div>
+                          
+                          <div class="col-md-2">
+                              <div class="form-group">
+                                  <h4>Calidad de la vivienda</h4>
+                                  <%= form.fields_for :property_housing_qualities do |property_hou_qua|%>
+                                      <div class="properties_fields"> 
+                                      <div class="fields">  
+                                          <%= property_hou_qua.label :name, "Calecafcion"%>
+                                          <%= property_hou_qua.select :housing_quality_id, HousingQuality.pluck(:name,:id),prompt: "Calidades" , class:'form-control'%><br>
+                                      </div>
+                                      </div>
+                                  <% end %>
+                              <br colspan="5">
+                              </div>
+                          </div>
+  
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>                                         
+  
+    <div class="actions">
+      <%= form.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :Nombre %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Deudas_Tributarias %>
-    <%= form.number_field :debt_taxation %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Antiguedad %>
-    <%= form.number_field :antiquity %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Expropiación %>
-    <%= form.check_box :expropriation %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Solera %>
-    <%= form.check_box :sill %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Tasación %>
-    <%= form.select :assessment_id, Assessment.pluck(:number_assesment, :id), prompt: 'Selecciona Nº de Tasación', class:"form-control selectpicker" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Instalación %>
-    <%= form.check_box :facilities %>
-  </div>
-
-  <h2>Entre Piso</h2>
-    <%= form.fields_for :property_between_floor_slaps do |property_bfs|%>
-        <div class="properties_fields"> 
-        <div class="fields">  
-            <%= property_bfs.label :name, "material:"%>
-            <%= property_bfs.select :between_floor_slap_id, BetweenFloorSlap.pluck(:name,:id), prompt: "tipo entre pisos", class:'form-control'%><br>
-            <%= property_bfs.label :name, "Calidad:"%>
-            <%= property_bfs.select :quality_id, Quality.pluck(:name,:id), prompt: "calidad", class:'form-control'%><br>
-        </div>
-        </div>
-    <% end %>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>

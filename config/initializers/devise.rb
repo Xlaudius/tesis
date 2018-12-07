@@ -251,8 +251,10 @@ Devise.setup do |config|
   # config.navigational_formats = ['*/*', :html]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
-  config.sign_out_via = :delete
-
+  Devise.setup do |config|
+    # The default HTTP method used to sign out a resource. Default is :delete.
+    config.sign_out_via = :get
+  end
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
@@ -284,7 +286,7 @@ Devise.setup do |config|
   # ==> Turbolinks configuration
   # If your app is using Turbolinks, Turbolinks::Controller needs to be included to make redirection work correctly:
   #
-  # ActiveSupport.on_load(:devise_failure_app) do
-  #   include Turbolinks::Controller
-  # end
+   ActiveSupport.on_load(:devise_failure_app) do
+     include Turbolinks::Controller
+   end
 end
