@@ -55,28 +55,28 @@ class PropertiesController < ApplicationController
     @property.property_covers.build
     @property.property_closets.build
     @property.property_doors.build
-    #@property.property_drinking_waters.build
+    @property.property_drinking_waters.build if @property.property_drinking_waters.empty?
     @property.property_dry_walls.build
-    #@property.property_electricities.build
-    @property.property_exterior_closures.build
+    @property.property_electricities.build if @property.property_electricities.empty?
+    @property.property_exterior_closures.build if @property.exterior_closures.empty?
     @property.property_furnitures.build
-    #@property.property_gas.build
-    #@property.property_heatings.build
+    @property.property_gas.build if @property.property_gas.empty?
+    @property.property_heatings.build if @property.property_heatings.empty?
     @property.property_housing_qualities.build
     @property.property_interior_closures.build
-    #@property.property_land_shapes.build
-    #@property.property_maintenances.build
-    #@property.property_pavements.build
-    #@property.property_property_types.build
-    #@property.property_roads.build
-    #@property.property_rols.build
+    @property.property_land_shapes.build if @property.property_land_shapes.empty?
+    @property.property_maintenances.build if @property.property_maintenances.empty?
+    @property.property_pavements.build if @property.property_pavements.empty?
+    @property.property_property_types.build if @property.property_property_types.empty?
+    @property.property_roads.build if @property.property_roads.empty?
+    @property.property_rols.build if @property.property_rols.empty?
     @property.property_roofings.build
     @property.property_sectors.build
-    #@property.property_sewerages.build
+    @property.property_sewerages.build if @property.property_sewerages.empty?
     @property.property_sheds.build
-    #@property.property_sidewalks.build
+    @property.property_sidewalks.build if @property.property_sidewalks.empty?
     @property.property_stairs.build
-   # @property.property_street_locations.build
+    @property.property_street_locations.build if @property.property_street_locations.empty?
     @property.property_structures.build
     @property.property_toilet_artifacts.build
     @property.property_water_rain_ducts.build
