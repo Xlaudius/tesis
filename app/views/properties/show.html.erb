@@ -545,6 +545,7 @@
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
+                                <th scope="col">Puertas</th>
                             </tr>    
                                 <tbody>
                                 <% if @property.doors.any? %>
@@ -556,27 +557,6 @@
                                <% else %>
                                 <td><p> -</p>
                                <% end %>  
-                               <% if @property.door_frames.any? %>
-                               <h5> Marcos de puertas: </h5>
-                               
-                                   <% @property.door_frames.each do |door_frame| %>
-                                   <%= door_frame.name %>
-                                   <% end %>
-                               
-                              <% else %>
-                               <td><p> - de puertas</p>
-                              <% end %> 
-                                </tbody>
-                    </table>
-                </div>
-                <div class="col-md-2">
-                    <table class="table">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope="col">Calzada</th>
-                            </tr>    
-                                <tbody>
-
 
                                 </tbody>
                     </table>
@@ -585,10 +565,38 @@
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
-                                <th scope="col">Calzada</th>
+                                <th scope="col">Marcos de Puerta</th>
                             </tr>    
                                 <tbody>
 
+                                <% if @property.door_frames.any? %>
+
+                                <tr>
+                                    <% @property.door_frames.each do |door_frame| %>
+                                    <td><%= door_frame.name %></td></tr>
+                                    <% end %>
+                               <% else %>
+                                <td><p> - de puertas</p>
+                               <% end %> 
+                                </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Closets</th>
+                            </tr>    
+                                <tbody>
+                                <% if @property.closets.any? %>
+                                <tr>
+                                    <% @property.closets.each do |closet| %>
+                                    <td><%= closet.name %></td></tr>
+                                    <% end %>
+                                
+                               <% else %>
+                                <td><p> -</p>
+                               <% end %> 
 
                                 </tbody>
                     </table>
@@ -597,11 +605,19 @@
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
-                                <th scope="col">Calzada</th>
+                                <th scope="col">Escaleras</th>
                             </tr>    
                                 <tbody>
 
-
+                                <% if @property.stairs.any? %>
+                                <tr>
+                                    <% @property.stairs.each do |stair| %>
+                                    <td><%= stair.name %></td></tr>
+                                    <% end %>
+                                
+                               <% else %>
+                                <td><p> -</p>
+                               <% end %>      
                                 </tbody>
                     </table>
                 </div>
@@ -708,27 +724,9 @@
 
       
   
-  <% if @property.closets.any? %>
-    <h5> Closets: </h5>
-    
-        <% @property.closets.each do |closet| %>
-        <%= closet.name %>
-        <% end %>
-    
-   <% else %>
-    <td><p> -</p>
-   <% end %> 
+  
 
-  <% if @property.stairs.any? %>
-    <h5> Escaleras: </h5>
-    
-        <% @property.stairs.each do |stair| %>
-        <%= stair.name %>
-        <% end %>
-    
-   <% else %>
-    <td><p> -</p>
-   <% end %>      
+ 
 
   <% if @property.toilet_artifacts.any? %>
     <h5> Artefactos sanitarios: </h5>
