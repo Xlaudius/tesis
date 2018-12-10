@@ -1,403 +1,745 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Deuda tributaria:</strong>
-  <%= @property.debt_taxation %>
-</p>
-
-<p>
-  <strong>Antigüedad:</strong>
-  <%= @property.antiquity %> 
-   años
-</p>
-
-<p>
-  <strong>Expopiada:</strong>
-  <%= @property.expropriation %>
-</p>
-
-<p>
-  <strong>Solera:</strong>
-  <%= @property.sill %>
-</p>
-
-<p>
+<h1>
   <strong>Nº Tasación:</strong>
   <%= @property.assessment.number_assesment %>
-</p>
+</h1>
+<h2><%= @property.name %></h2>
+<br>
 
-<p>
-  <strong>Instalaciones:</strong>
-  <%= @property.facilities %>
-</p>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title">Urbanización</h4>
+        </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Calzada</th>
+                            </tr>    
+                                <tbody>
+                                    <% if @property.roads.any? %>
+                                        <% @property.roads.each do |road| %>
+                                        </tr>
+                                            <td><%= road.name %></td>
+                                        </tr>
+                                        <% end %>
+                                    <% else %>
+                                    <tr>
+                                        <td><p> - </p></td>
+                                    </tr>
+                                    <% end %> 
+                                </tbody>
+                    </table>
+                </div>
 
-<% if @property.between_floor_slaps.any? %>
-  <h5>Entre pisos:</h5>
-  <ul>
-    <% @property.between_floor_slaps.each do |between_floor_slap| %>
-    <li><%= between_floor_slap.name %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>no hay entre pisos</p>
-<% end %>
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Solera</th>
+                            </tr>    
+                                <tbody>
+                                    <tr>
+                                        <td><%= @property.sill %></td>
+                                    </tr>    
+                                </tbody>
+                    </table>
+                </div>
 
-<% if @property.covers.any? %>
-    <h5> Cubierta: </h5>
-    <ul>
-        <% @property.covers.each do |cover| %>
-        <li><%= cover.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Cubierta</p>
-   <% end %>      
-  
-    <% if @property.doors.any? %>
-    <h5> Puertas: </h5>
-    <ul>
-        <% @property.doors.each do |door| %>
-        <li><%= door.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Puertas</p>
-   <% end %>  
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Electricidad</th>
+                            </tr>
+                                <tbody>
+                                    <% if @property.electricities.any? %>
+                                        <% @property.electricities.each do |electricitie| %>
+                                            <tr>
+                                            <td><%= electricitie.name %></td>
+                                            </tr>
+                                        <% end %> 
+                                    <% else %>
+                                    <tr>
+                                        <td><p>-</p></td>
+                                    </tr>
+                                    <% end %>  
+                                </tbody>
+                    </table>
+                </div>
 
-  <% if @property.door_frames.any? %>
-    <h5> Marcos de puertas: </h5>
-    <ul>
-        <% @property.door_frames.each do |door_frame| %>
-        <li><%= door_frame.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Marcos de puertas</p>
-   <% end %>      
-  
-  <% if @property.drinking_waters.any? %>
-    <h5> Agua Potable: </h5>
-    <ul>
-        <% @property.drinking_waters.each do |drinking_water| %>
-        <li><%= drinking_water.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Agua Potable</p>
-   <% end %>      
-  
-  <% if @property.dry_walls.any? %>
-    <h5> Muro falso: </h5>
-    <ul>
-        <% @property.dry_walls.each do |dry_wall| %>
-        <li><%= dry_wall.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Muro falso</p>
-   <% end %>      
-  
-  <% if @property.electricities.any? %>
-    <h5> Electricidad: </h5>
-    <ul>
-        <% @property.electricities.each do |electricitie| %>
-        <li><%= electricitie.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Electricidad</p>
-   <% end %>      
-  
-  <% if @property.exterior_closures.any? %>
-    <h5> Cierros Exteriores: </h5>
-    <ul>
-        <% @property.exterior_closures.each do |exterior_closure| %>
-        <li><%= exterior_closure.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Cierros Exteriores</p>
-   <% end %>    
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Agua Potable</th>
+                            </tr>
+                                <tbody>
+                                <% if @property.drinking_waters.any? %>
+                                        <% @property.drinking_waters.each do |drinking_water| %>
+                                        <tr>
+                                        <td><%= drinking_water.name %></td>
+                                        </tr>
+                                        <% end %>
+                                <% else %>
+                                    <td><p> - </p>
+                                <% end %>
+                                </tbody>
+                    </table>
+                </div>
 
-  <% if @property.interior_closures.any? %>
-    <h5> Cierros interiores: </h5>
-    <ul>
-        <% @property.interior_closures.each do |interior_closure| %>
-        <li><%= interior_closure.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Cierros interiores</p>
-   <% end %>     
-   
-  <% if @property.furnitures.any? %>
-  <h5> Muebles: </h5>
-  <ul>
-      <% @property.furnitures.each do |furniture| %>
-      <li><%= furniture.name %></li>
-      <% end %>
-  </ul>
-  <% else %>
-  <p> no hay Muebles</p>
-  <% end %>     
-  
-  <% if @property.furniture_covers.any? %>
-    <h5> Cubierta Muebles: </h5>
-    <ul>
-        <% @property.furniture_covers.each do |furniture_cover| %>
-        <li><%= furniture_cover.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Cubierta Muebles</p>
-   <% end %>      
-  
-  <% if @property.heatings.any? %>
-    <h5> Calefacción: </h5>
-    <ul>
-        <% @property.heatings.each do |heating| %>
-        <li><%= heating.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Calefacción</p>
-   <% end %>      
-  
 
-  <% if @property.housing_qualities.any? %>
-    <h5> Calidad de Vivienda: </h5>
-    <ul>
-        <% @property.housing_qualities.each do |housing_qualitie| %>
-        <li><%= housing_qualitie.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Calidad de Vivienda</p>
-   <% end %>      
-      
-  
-  <% if @property.land_shapes.any? %>
-    <h5> Forma Terreno: </h5>
-    <ul>
-        <% @property.land_shapes.each do |land_shape| %>
-        <li><%= land_shape.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Forma Terreno</p>
-   <% end %>      
-  
-  <% if @property.maintenances.any? %>
-    <h5> Mantención: </h5>
-    <ul>
-        <% @property.maintenances.each do |maintenance| %>
-        <li><%= maintenance.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Mantención</p>
-   <% end %>      
-  
-  <% if @property.pavements.any? %>
-    <h5> Pavimento: </h5>
-    <ul>
-        <% @property.pavements.each do |pavement| %>
-        <li><%= pavement.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Pavimento</p>
-   <% end %>      
-  
-  <% if @property.property_types.any? %>
-    <h5> Tipo vivienda: </h5>
-    <ul>
-        <% @property.property_types.each do |property_type| %>
-        <li><%= property_type.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Tipo vivienda</p>
-   <% end %>      
 
-  <% if @property.roads.any? %>
-    <h5> Calzada: </h5>
-    <ul>
-        <% @property.roads.each do |road| %>
-        <li><%= road.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Calzada</p>
-   <% end %>      
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Alcantarillado</th>
+                            </tr>
+                                <tbody>
+                                <% if @property.sewerages.any? %>
+                                        <% @property.sewerages.each do |sewerage| %>
+                                        <tr>
+                                        <td><%= sewerage.name %></td>
+                                        </tr>
+                                        <% end %>
+                                <% else %>
+                                    <td><p> -</p></td>
+                                <% end %>
+                                </tbody>
+                    </table>
+                </div>
 
-  <% if @property.property_rols.any? %>
-    <h5> ROL (bloque - predial) </h5>
-    <ul>
-        <% @property.property_rols.each do |property_rol| %>
-        <li><%= property_rol.block %></li>
-        <li><%= property_rol.predial %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay ROL</p>
-   <% end %>      
 
-  <% if @property.provinces.any? %>
-    <h5> Comuna: </h5>
-    <ul>
-        <% @property.provinces.each do |province| %>
-        <li><%= province.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Comuna</p>
-   <% end %>      
-  
-  <% if @property.roofings.any? %>
-    <h5> Techumbre: </h5>
-    <ul>
-        <% @property.roofings.each do |roofing| %>
-        <li><%= roofing.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Techumbre</p>
-   <% end %>      
-  
-  <% if @property.sectors.any? %>
-    <h5> Sector: </h5>
-    <ul>
-        <% @property.sectors.each do |sector| %>
-        <li><%= sector.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Sector</p>
-   <% end %>      
-  
-  <% if @property.sewerages.any? %>
-    <h5> Alcantarillado: </h5>
-    <ul>
-        <% @property.sewerages.each do |sewerage| %>
-        <li><%= sewerage.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Alcantarillado</p>
-   <% end %>      
-  
-  <% if @property.sheds.any? %>
-    <h5> Cobertizo: </h5>
-    <ul>
-        <% @property.sheds.each do |shed| %>
-        <li><%= shed.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Cobertizo</p>
-   <% end %>          
-  
-  <% if @property.stairs.any? %>
-    <h5> Escaleras: </h5>
-    <ul>
-        <% @property.stairs.each do |stair| %>
-        <li><%= stair.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Escaleras</p>
-   <% end %>      
 
-  <% if @property.street_locations.any? %>
-    <h5> Ubicacion calle: </h5>
-    <ul>
-        <% @property.street_locations.each do |street_location| %>
-        <li><%= street_location.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Ubicacion calle</p>
-   <% end %>      
-  
-  <% if @property.structures.any? %>
-    <h5> Estructura: </h5>
-    <ul>
-        <% @property.structures.each do |structure| %>
-        <li><%= structure.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Estructura</p>
-   <% end %>      
-  
-  <% if @property.qualities.any? %>
-    <h5> Calidad: </h5>
-    <ul>
-        <% @property.qualities.each do |qualitie| %>
-        <li><%= qualitie.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Calidad</p>
-   <% end %>      
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Expropieada</th>
+                            </tr>
+                                <tbody>
+                                    <tr>
+                                    <td><%= @property.expropriation %></td>
+                                    </tr>
+                                </tbody>
+                    </table>
+                </div>
 
-  <% if @property.toilet_artifacts.any? %>
-    <h5> Artefactos sanitarios: </h5>
-    <ul>
-        <% @property.toilet_artifacts.each do |toilet_artifact| %>
-        <li><%= toilet_artifact.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Artefactos sanitarios</p>
-   <% end %>      
-  
-  <% if @property.water_rain_ducts.any? %>
-    <h5> Canales ALL: </h5>
-    <ul>
-        <% @property.water_rain_ducts.each do |water_rain_duct| %>
-        <li><%= water_rain_duct.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Canales ALL</p>
-   <% end %>      
-  
-  <% if @property.windows.any? %>
-    <h5> Ventanas: </h5>
-    <ul>
-        <% @property.windows.each do |window| %>
-        <li><%= window.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Ventanas</p>
-   <% end %>      
 
-  <% if @property.closets.any? %>
-    <h5> Armarios: </h5>
-    <ul>
-        <% @property.closets.each do |closet| %>
-        <li><%= closet.name %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Armarios</p>
-   <% end %>      
 
-   
-  <% if @property.pools.any? %>
-    <h5> Piscina: </h5>
-    <ul>
-        <% @property.pools.each do |pool| %>
-        <li><%= pool.volumen %></li>
-        <% end %>
-    </ul>
-   <% else %>
-    <p> no hay Piscina</p>
-   <% end %>    
- 
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Sector</th>
+                            </tr>
+                                <tbody>
+                                    <tr>
+                                    <% if @property.sectors.any? %>
+                                            <% @property.sectors.each do |sector| %>
+                                            <tr>
+                                                <td><%= sector.name %></td>
+                                            </tr>
+                                            <% end %>
+                                    <% else %>
+                                        <td><p> - </p></td>
+                                    <% end %> 
+                                    </tr>
+                                </tbody>
+                    </table>
+                </div>
 
+
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Ubicación Calle</th>
+                            </tr>
+                                <tbody>
+                                <% if @property.street_locations.any? %>
+                                    <% @property.street_locations.each do |street_location| %>
+                                        <tr>
+                                        <td><%= street_location.name %></td>
+                                        </tr>
+                                        <% end %>
+                                <% else %>
+                                    <td><p> - </p></td>
+                                <% end %> 
+                                </tbody>
+                    </table>
+                </div>
+
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Forma Terreno</th>
+                            </tr>
+                                <tbody>
+                                <% if @property.land_shapes.any? %>
+                                        <% @property.land_shapes.each do |land_shape| %>
+                                        <td><%= land_shape.name %></td>
+                                        <% end %>
+                                <% else %>
+                                    <td><p> - </p></td>
+                                <% end %>  
+                                </tbody>
+                    </table>
+                </div>
+            </div>
+    </div>
+  </div>
+</div>   
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title">Inmueble</h4>
+        </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">ROL</th>
+                            </tr>    
+                                <tbody>
+                                <% if @property.property_rols.any? %>
+                                    <tr>
+                                        <% @property.property_rols.each do |property_rol| %>
+                                        <td><%= property_rol.block %>-
+                                        <%=property_rol.predial %></td>
+                                        <% end %>
+                                    </tr>
+                                <% else %>
+                                    <td><p> -</p></td>
+                                <% end %> 
+                                </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Deuda tributaria</th>
+                            </tr>    
+                                <tbody>
+                                  <td><%= @property.debt_taxation %></td>
+                                </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                            <th scope="col">Antigüedad</th>
+                            
+                            </tr>    
+                                <tbody>
+
+                                <td><%= @property.antiquity %> años</td>
+                                </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                               <th scope="col">Tipo propiedad</th>
+                            </tr>    
+                                <tbody>
+                                <% if @property.property_types.any? %>
+                                <tr>
+                                <% @property.property_types.each do |property_type| %>
+                                <td><%= property_type.name %></td></tr>
+                                <% end %>
+                            
+                        <% else %>
+                            <td><p> - </p></td>
+                        <% end %> 
+
+                                </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                            <th scope="col">Estructura</th>
+                            </tr>    
+                                <tbody>
+                                <% if @property.structures.any? %>
+                                <tr>
+                                <% @property.structures.each do |structure| %>
+                               <td> <%= structure.name %></td></tr>
+                                <% end %>
+                            
+                        <% else %>
+                            <td><p> -</p></td>
+                        <% end %> 
+
+                                </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                            <th scope="col">Cubiertas</th>
+                            </tr>    
+                                <tbody>
+                                <% if @property.covers.any? %>
+                                <tr>
+                                <% @property.covers.each do |cover| %>
+                                    <td><%= cover.name %></td></tr>
+                                <% end %>
+                            
+                        <% else %>
+                            <td><p> -</p></td>
+                        <% end %>  
+    
+
+                                </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                            <th scope="col">Techumbre</th>
+                            </tr>    
+                                <tbody>
+                                <% if @property.roofings.any? %>
+                                <tr>
+                                <% @property.roofings.each do |roofing| %></tr>
+                                    <td><%= roofing.name %></td>
+                                <% end %>
+                            
+                            <% else %>
+                                <td><p> -</p></td>
+                            <% end %>   
+        
+
+                                </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                            <th scope="col">Cierros Exteriores</th>
+                            </tr>    
+                                <tbody>
+
+                                <% if @property.exterior_closures.any? %>
+                                
+                                    <% @property.exterior_closures.each do |exterior_closure| %>
+                                    <td><%= exterior_closure.name %></td>
+                                    <% end %>
+                                
+                            <% else %>
+                                <td><p> - </p></td>
+                            <% end %>  
+
+                                </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                            <th scope="col">Cierros Interiores</th>
+                            </tr>    
+                                <tbody>
+                                <% if @property.interior_closures.any? %>
+                        
+                                <% @property.interior_closures.each do |interior_closure| %>
+                                    <td><%= interior_closure.name %></td>
+                                <% end %>
+                            
+                        <% else %>
+                            <td><p> - </p></td>
+                        <% end %>   
+
+                                </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                            <th scope="col">Canales All</th>
+                            </tr>    
+                                <tbody>
+                                <% if @property.water_rain_ducts.any? %>
+                        
+                                <% @property.water_rain_ducts.each do |water_rain_duct| %>
+                                    <td><%= water_rain_duct.name %></td>
+                                <% end %>
+                            
+                        <% else %>
+                            <td><p> - </p></td>
+                        <% end %> 
+
+                                </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+    </div>
+  </div>
+</div> 
+
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title">Terreno y Edificacion</h4>
+        </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                                <th scope="col">Covertizo</th>
+                                <tbody>
+                                <% if @property.sheds.any? %>
+                                <tr>
+                                    <% @property.sheds.each do |shed| %>
+                                    <td><%= shed.name %></td>
+                                </tr>
+                                <% end %>
+                               <% else %>
+                                <td><p> -</p>
+                               <% end %> 
+                                </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Pavimento</th>
+                            </tr>    
+                                <tbody>
+                                <% if @property.pavements.any? %>
+                                <tr>
+                                    <% @property.pavements.each do |pavement| %>
+                                    <td><%= pavement.name %></td></tr>
+                                    <% end %>
+                                
+                               <% else %>
+                                <td><p> -</p>
+                               <% end %>  
+                                </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">               
+                                <th scope="col">Piscina</th>
+                            </tr>   
+                                <tbody>
+                                <% if @property.pools.any? %>    
+                                <tr> <% @property.pools.each do |pool| %>
+                                   <td> <%= pool.volumen %></td></tr>
+                                    <% end %>      
+                               <% else %>
+                                <td><p> -</p>
+                               <% end %> 
+                                </tbody>
+                    </table>
+                </div>
+            </div>
+    </div>
+  </div>
+</div> 
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title">Interior</h4>
+        </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Entre pisos</th>
+                            </tr>    
+                                <tbody>
+                                <% if @property.between_floor_slaps.any? %>
+                                    <tr>
+                                    <% @property.between_floor_slaps.each do |between_floor_slap| %>
+                                    <td><%= between_floor_slap.name %></td></tr>
+                                    <% end %>
+                                
+                                <% else %>
+                               <td> <p>- pisos</p>
+                                <% end %>
+
+                                </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                                <th scope="col">Tabiquería</th>
+                            </tr>    
+                                <tbody>
+                                <% if @property.dry_walls.any? %>
+                                <tr>
+                                    <% @property.dry_walls.each do |dry_wall| %>
+                                    <td><%= dry_wall.name %></td></tr>
+                                    <% end %>    
+                            <% else %>
+                                <td><p> -</p>
+                            <% end %>  
+                                </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Calefacción</th>
+                            </tr>    
+                                <tbody>
+                                <% if @property.heatings.any? %>
+                                <tr>
+                                    <% @property.heatings.each do |heating| %>
+                                   <td><%= heating.name %></td></tr>
+                                    <% end %>
+                            <% else %>
+                                <td><p> -</p>
+                            <% end %> 
+                                </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Ventanas</th>
+                            </tr>    
+                                <tbody>
+                                <% if @property.windows.any? %>
+                                <tr>
+                                    <% @property.windows.each do |window| %>
+                                   <td><%= window.name %></td></tr>
+                                    <% end %>
+                               <% else %>
+                                <td><p> -</p>
+                               <% end %> 
+                                </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Puertas</th>
+                            </tr>    
+                                <tbody>
+                                <% if @property.doors.any? %>
+                                <tr>
+                                    <% @property.doors.each do |door| %>
+                                    <td><%= door.name %></td></tr>
+                                    <% end %>
+                                
+                               <% else %>
+                                <td><p> -</p>
+                               <% end %>  
+
+                                </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Marcos de Puerta</th>
+                            </tr>    
+                                <tbody>
+
+                                <% if @property.door_frames.any? %>
+
+                                <tr>
+                                    <% @property.door_frames.each do |door_frame| %>
+                                    <td><%= door_frame.name %></td></tr>
+                                    <% end %>
+                               <% else %>
+                                <td><p> - de puertas</p>
+                               <% end %> 
+                                </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Closets</th>
+                            </tr>    
+                                <tbody>
+                                <% if @property.closets.any? %>
+                                <tr>
+                                    <% @property.closets.each do |closet| %>
+                                    <td><%= closet.name %></td></tr>
+                                    <% end %>
+                                
+                               <% else %>
+                                <td><p> -</p>
+                               <% end %> 
+
+                                </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Escaleras</th>
+                            </tr>    
+                                <tbody>
+
+                                <% if @property.stairs.any? %>
+                                <tr>
+                                    <% @property.stairs.each do |stair| %>
+                                    <td><%= stair.name %></td></tr>
+                                    <% end %>
+                                
+                               <% else %>
+                                <td><p> -</p>
+                               <% end %>      
+                                </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Sanitarios</th>
+                            </tr>    
+                                <tbody>
+                                <% if @property.toilet_artifacts.any? %>
+                                <tr>        
+                                    <% @property.toilet_artifacts.each do |toilet_artifact| %>
+                                    <td><%= toilet_artifact.name %></td></tr>
+                                    <% end %>
+                                
+                               <% else %>
+                                <td><p> - sanitarios</p>
+                               <% end %>    
+
+                                </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Muebles</th>
+                            </tr>    
+                                <tbody>
+                                <% if @property.furnitures.any? %>
+                                <tr>
+                                
+                                    <% @property.furnitures.each do |furniture| %>
+                                    <td><%= furniture.name %></td></tr>
+                                    <% end %>
+                                
+                                <% else %>
+                                <td><p> -</p>
+                                <% end %>   
+
+                                </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Cubierta Muebles</th>
+                            </tr>    
+                                <tbody>
+                                <% if @property.furniture_covers.any? %>
+                                <tr>
+                                
+                                    <% @property.furniture_covers.each do |furniture_cover| %>
+                                    <td><%= furniture_cover.name %></td></tr>
+                                    <% end %>
+                                
+                            <% else %>
+                                <td><p> - Muebles</p>
+                            <% end %> 
+                            
+                                </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Gas</th>
+                            </tr>    
+                                <tbody>
+               
+                                <td><p> - de </p>
+
+                                </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Mantención</th>
+                        </tr>    
+                            <tbody>
+                            <% if @property.maintenances.any? %>
+                            <tr>
+                                <% @property.maintenances.each do |maintenance| %>
+                                <td><%= maintenance.name %></td></tr>
+                                <% end %>
+                            
+                           <% else %>
+                            <td><p> -</p>
+                           <% end %>  
+
+                            </tbody>
+                </table>
+            </div>
+            <div class="col-md-2">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Calidad de Vivienda</th>
+                    </tr>    
+                        <tbody>
+                        <% if @property.housing_qualities.any? %>
+                        <tr>
+                            <% @property.housing_qualities.each do |housing_qualitie| %>
+                            <td><%= housing_qualitie.name %></td></tr>
+                            <% end %>
+                        
+                       <% else %>
+                        <td><p> - de Vivienda</p>
+                       <% end %>
+
+                        </tbody>
+            </table>
+        </div>
+
+            </div>
+    </div>
+  </div>
+</div>  
 <%= link_to 'Editar', edit_property_path(@property) %> |
 <%= link_to 'volver', assessment_path(@property.assessment.id) %>
